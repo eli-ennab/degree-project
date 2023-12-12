@@ -12,5 +12,5 @@ export const container = style({
 })
 
 globalStyle('body', {
-  margin: 0,
+  margin: '0',
 })
