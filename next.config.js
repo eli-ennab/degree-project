@@ -1,4 +1,9 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin')
 
-module.exports = nextConfig
+const withVanillaExtract = createVanillaExtractPlugin({
+  identifiers: ({ hash }) => `prefix_${hash}`,
+})
+
+module.exports = withVanillaExtract({
+  reactStrictMode: true,
+})
