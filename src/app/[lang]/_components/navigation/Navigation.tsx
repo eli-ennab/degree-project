@@ -10,7 +10,6 @@ interface NavigationProps extends NavigationData {
 const Navigation = ({ data, lang }: NavigationProps) => {
   const { title } = data
 
-  console.log(lang)
   return (
     <div className={container}>
       <h1>{title}</h1>
