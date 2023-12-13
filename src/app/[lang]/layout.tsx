@@ -1,7 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Nioosha Shams',
@@ -15,7 +12,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="sv">
-      <body className={inter.className}>{children}</body>
+      <body>{children}</body>
     </html>
   )
 }

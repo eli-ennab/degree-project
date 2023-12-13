@@ -1,6 +1,5 @@
-import Content from './_components/Content'
-import Navigation from './_components/Navigation'
-import { container } from './vanilla_extract/styles.css'
+import Content from './_components/content/Content'
+import Navigation from './_components/navigation/Navigation'
 
 const getLandingPageData = async (lang: string) => {
   const version = process.env.STORYBLOK_DATA_VERSION
@@ -21,9 +20,9 @@ export default async function Home({ params: { lang } }: any) {
   const data = await getLandingPageData(lang)
 
   return (
-    <main className={container}>
-      <Navigation data={data.nav_section} />
-      <Content data={data.content} />
+    <main>
+      <Navigation data={data.nav_section} lang={lang} />
+      <Content data={data.content} lang={lang} />
     </main>
   )
 }

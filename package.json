@@ -12,6 +12,8 @@
   "dependencies": {
     "@storyblok/react": "^2.4.7",
     "@vanilla-extract/css": "^1.14.0",
+    "@vanilla-extract/recipes": "^0.5.1",
+    "@vercel/postgres": "^0.5.1",
     "local-ssl-proxy": "^2.0.5",
     "next": "14.0.4",
     "react": "^18",
