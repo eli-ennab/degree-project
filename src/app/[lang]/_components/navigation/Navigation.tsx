@@ -12,12 +12,8 @@ interface NavigationProps extends NavigationData {
 
 const Navigation = ({ data, lang }: NavigationProps) => {
   const { title } = data
-
   const params = useParams()
-  console.log(params.lang)
-
   const router = useRouter()
-  console.log(router)
 
   return (
     <div className={container}>
