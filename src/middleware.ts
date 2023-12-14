@@ -1,4 +1,4 @@
-let locales = ['sv', 'fa-ir']
+let locales = ['sv', 'fa-ir', 'api']
 
 function getLocale(request: any) {
   return 'sv'
