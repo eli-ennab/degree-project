@@ -1,12 +1,13 @@
-import Navigation from './Navigation'
-import Footer from './Footer'
- 
+import { Fragment } from 'react'
+import Navigation from './Navigation/Navigation'
+import Footer from './Footer/Footer'
+
 const Layout = ({ children }: any) => (
-  <div>
-    <Navigation/>
-      {children}
+  <Fragment>
+    <Navigation />
+    {children}
     <Footer />
-  </div>
+  </Fragment>
 )
- 
+
 export default Layout

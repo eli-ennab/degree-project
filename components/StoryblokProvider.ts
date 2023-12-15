@@ -1,13 +1,13 @@
 'use client'
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
- 
+
 import Feature from './Feature'
-import Footer from './Footer'
+import Footer from './Footer/Footer'
 import Grid from './Grid'
-import Navigation from './Navigation'
+import Navigation from './Navigation/Navigation'
 import Page from './Page'
-import Teaser from './Teaser'
- 
+import Teaser from './Teaser/Teaser'
+
 const components = {
   navigation: Navigation,
   footer: Footer,
@@ -16,13 +16,13 @@ const components = {
   teaser: Teaser,
   page: Page,
 }
- 
+
 storyblokInit({
   accessToken: process.env.storyblokApiToken,
   use: [apiPlugin],
-  components
+  components,
 })
- 
+
 export default function StoryblokProvider({ children }: any) {
   return children
 }

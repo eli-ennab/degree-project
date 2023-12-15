@@ -1,5 +1,5 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
- 
+
 const Page = ({ blok }: any) => (
   <main {...storyblokEditable(blok)}>
     {blok.body?.map((nestedBlok: any) => (
@@ -7,5 +7,5 @@ const Page = ({ blok }: any) => (
     ))}
   </main>
 )
- 
+
 export default Page
