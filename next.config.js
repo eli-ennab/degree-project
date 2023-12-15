@@ -1,9 +1,8 @@
-const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin')
-
-const withVanillaExtract = createVanillaExtractPlugin({
-  identifiers: ({ hash }) => `prefix_${hash}`,
-})
-
-module.exports = withVanillaExtract({
-  reactStrictMode: true,
-})
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+    env: {
+      storyblokApiToken: process.env.STORYBLOK_PREVIEW_TOKEN,
+    },
+  }
+  
+  module.exports = nextConfig

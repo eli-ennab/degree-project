@@ -27,7 +27,6 @@ yarn-error.log*
 
 # local env files
 .env*.local
-.env
 
 # vercel
 .vercel
@@ -39,3 +38,6 @@ next-env.d.ts
 # HTTPS Proxy certificates
 localhost.pem
 localhost-key.pem
+
+# env
+.env

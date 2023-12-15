@@ -6,15 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem",
-    "lint": "next lint"
+    "lint": "next lint",
+    "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
-    "@storyblok/react": "^2.4.7",
-    "@vanilla-extract/css": "^1.14.0",
-    "@vanilla-extract/recipes": "^0.5.1",
-    "@vercel/postgres": "^0.5.1",
-    "local-ssl-proxy": "^2.0.5",
+    "@storyblok/react": "^2.4.8",
     "next": "14.0.4",
     "react": "^18",
     "react-dom": "^18"
@@ -23,7 +19,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@vanilla-extract/next-plugin": "^2.3.2",
     "eslint": "^8",
     "eslint-config-next": "14.0.4",
     "typescript": "^5"
