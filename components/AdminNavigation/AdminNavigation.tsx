@@ -1,7 +1,7 @@
 'use client'
 import Link from 'next/link'
 import { useAuth } from '@/context/AuthContext'
-import { container } from './styles.css'
+import { container, link } from './styles.css'
 import { useRouter } from 'next/navigation'
 
 const AdminNavigation = () => {
@@ -16,12 +16,13 @@ const AdminNavigation = () => {
             router.push('/admin')
           }}
         >
-          Sign out
+          sign out
         </button>
       ) : (
         <>
-          <Link href={'/admin/signup'}>Signup</Link>
-          <Link href={'/admin/login'}>Login</Link>
+          <Link href={'/admin/login'} className={link}>
+            login
+          </Link>
         </>
       )}
     </div>

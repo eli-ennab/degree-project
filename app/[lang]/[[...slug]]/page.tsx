@@ -5,7 +5,7 @@ export const dynamicParams = true
 
 export default async function Page({ params }: any) {
   let lang = params.lang || 'sv'
-  let slug = params.slug ? params.slug.join('/') : 'hem'
+  let slug = params.slug ? params.slug.join('/') : 'home'
 
   const storyblokApi = getStoryblokApi()
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
@@ -33,7 +33,7 @@ export async function generateStaticParams({ params }: any) {
     }
     const slug = data.links[linkKey].slug
 
-    if (slug == 'hem') {
+    if (slug == 'home') {
       return
     }
 

@@ -1,21 +1,24 @@
+import { media, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 
 export const container = style({
   display: 'flex',
+  flexDirection: 'column',
   alignItems: 'center',
-  justifyContent: 'center',
-  width: '100vw',
-  height: '80vh',
 })
 
-export const headLine = recipe({
+export const image = style({
+  objectFit: 'cover',
+})
+
+export const text = recipe({
   base: {
-    fontSize: '36px',
+    fontSize: '16px',
   },
   variants: {
     textAlign: {
-      sv: { textAlign: 'left', textTransform: 'lowercase' },
+      sv: { textAlign: 'left' },
       fa: { textAlign: 'right' },
     },
   },

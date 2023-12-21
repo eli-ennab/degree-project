@@ -6,6 +6,7 @@ export const vars = createGlobalTheme(':root', {
     white: '#ffffff',
     black: '#1d1d1d',
     kleinBlue: '#002FA7',
+    lightKleinBlue: '#0f46d1',
   },
   font: {
     syne: 'var(--font-syne)',
@@ -13,48 +14,51 @@ export const vars = createGlobalTheme(':root', {
   },
 })
 
+export const media = {
+  mobile: '768px',
+  tablet: '992px',
+  desktop: '1920px',
+}
+
 globalStyle('body', {
-  backgroundImage: 'url("/background_1.png")',
+  backgroundImage: 'url("/background_3.png")',
   backgroundSize: 'cover',
   backgroundRepeat: 'repeat',
-  width: '100vw',
-  minHeight: '100%',
-  boxSizing: 'border-box',
+  overflowX: 'hidden',
   margin: 0,
   padding: 0,
 })
 
 globalStyle('h1', {
-  margin: 0,
-  color: vars.color.kleinBlue,
   fontFamily: vars.font.syne,
   textTransform: 'uppercase',
-  fontSize: '24px',
+  color: vars.color.kleinBlue,
+  fontSize: '12px',
+  '@media': {
+    [`screen and (min-width: ${media.mobile})`]: {
+      fontSize: '24px',
+    },
+  },
+})
+
+globalStyle('h2', {
+  fontFamily: vars.font.noto,
+  fontSize: '16px',
+  color: vars.color.kleinBlue,
 })
 
 globalStyle('li', {
-  color: vars.color.kleinBlue,
   fontFamily: vars.font.noto,
   fontSize: '16px',
+  color: vars.color.kleinBlue,
 })
 
 globalStyle('button', {
-  backgroundColor: vars.color.kleinBlue,
-  color: vars.color.white,
-  fontFamily: vars.font.syne,
-  textTransform: 'uppercase',
+  fontFamily: vars.font.noto,
+  textTransform: 'lowercase',
   fontSize: '12px',
+  color: vars.color.black,
+  cursor: 'pointer',
   border: 'none',
-  padding: '10px',
-})
-
-globalStyle('a', {
-  backgroundColor: vars.color.kleinBlue,
-  color: vars.color.white,
-  fontFamily: vars.font.syne,
-  textTransform: 'uppercase',
-  textDecoration: 'none',
-  fontSize: '12px',
-  border: 'none',
-  padding: '10px',
+  padding: '5px 30px',
 })

@@ -1,18 +1,20 @@
 'use client'
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 
-import Feature from './Feature'
+import BookItem from './BookItem/BookItem'
+import BookGrid from './BookGrid/BookGrid'
 import Footer from './Footer/Footer'
-import Grid from './Grid'
 import Navigation from './Navigation/Navigation'
 import Page from './Page'
 import Teaser from './Teaser/Teaser'
+import ImageText from './ImageText/ImageText'
 
 const components = {
-  navigation: Navigation,
+  bookItem: BookItem,
+  bookGrid: BookGrid,
   footer: Footer,
-  feature: Feature,
-  grid: Grid,
+  imageText: ImageText,
+  navigation: Navigation,
   teaser: Teaser,
   page: Page,
 }

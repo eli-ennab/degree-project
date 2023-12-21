@@ -1,29 +1,39 @@
 'use client'
-import { useLanguageContext } from '@/context/LanguageContext'
-import { container, languageSwitch, links } from './styles.css'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { useLanguageContext } from '@/context/LanguageContext'
+import { container, link, links, title } from './styles.css'
 
 const Navigation = () => {
-  const { language, setLanguage } = useLanguageContext()
   const router = useRouter()
+  const { language, setLanguage } = useLanguageContext()
 
   const handleLanguageSwitch = () => {
-    router.push(language === 'sv' ? 'fa-ir' : 'sv')
-    setLanguage(language === 'sv' ? 'fa-ir' : 'sv')
+    const newLanguage = language === 'sv' ? 'fa-ir' : 'sv'
+    setLanguage(newLanguage)
+    router.push(`/${newLanguage}`)
   }
 
   return (
     <header className={container}>
       <div>
-        <h1>Nioosha Shams</h1>
+        <h1 onClick={() => router.push(`/${language}`)} className={title}>
+          Nioosha Shams
+        </h1>
       </div>
 
       <ul className={links}>
-        <li>{language}</li>
+        <Link href={`/${language}/gastbok`} className={link}>
+          Gästbok
+        </Link>
+        <Link href={`/${language}/about`} className={link}>
+          Om
+        </Link>
+
+        <a onClick={handleLanguageSwitch} className={link}>
+          {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
+        </a>
       </ul>
-      <button onClick={handleLanguageSwitch} className={languageSwitch}>
-        {language === 'sv' ? 'byt till persiska' : 'byt till svenska'}
-      </button>
     </header>
   )
 }

@@ -3,7 +3,7 @@ import React from 'react'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/context/AuthContext'
-import { container } from '../styles.css'
+import { container, field, formWrapper } from '../styles.css'
 
 export default function Login() {
   const { user, login } = useAuth()
@@ -27,10 +27,7 @@ export default function Login() {
 
   return (
     <div className={container}>
-      <h2>Sign up</h2>
-
-      <form onSubmit={handleLogin}>
-        <label>Email address</label>
+      <form onSubmit={handleLogin} className={formWrapper}>
         <input
           type="email"
           placeholder="Enter email"
@@ -38,13 +35,13 @@ export default function Login() {
           onChange={(e: any) =>
             setData({
               ...data,
-              email: e.target.value,
+              email: e.target.value.trim(),
             })
           }
           value={data.email}
+          className={field}
         />
 
-        <label>Password</label>
         <input
           type="password"
           placeholder="Password"
@@ -52,13 +49,14 @@ export default function Login() {
           onChange={(e: any) =>
             setData({
               ...data,
-              password: e.target.value,
+              password: e.target.value.trim(),
             })
           }
           value={data.password}
+          className={field}
         />
 
-        <button type="submit">Login</button>
+        <button type="submit">enter</button>
       </form>
     </div>
   )

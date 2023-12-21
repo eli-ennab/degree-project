@@ -1,8 +1,6 @@
 'use client'
-import { useEffect, useState } from 'react'
 import {
   collection,
-  addDoc,
   deleteDoc,
   doc,
   query,
@@ -10,10 +8,9 @@ import {
   updateDoc,
 } from 'firebase/firestore'
 import { db } from '@/services/firebase'
+import { useEffect, useState } from 'react'
 import {
-  container,
-  guestbookForm,
-  guestbookInput,
+  grid,
   guestbookList,
   guestbookListItem,
   guestbookListItemContainer,
@@ -24,19 +21,6 @@ const AdminDashboard = () => {
   const [guestbookData, setGuestbookData] = useState<TGuestbookList | null>(
     null
   )
-  const [newMessage, setNewMessage] = useState({ name: '', message: '' })
-
-  const addMessage = async (e: any) => {
-    e.preventDefault()
-    if (newMessage.name !== '' && newMessage.message !== '') {
-      await addDoc(collection(db, 'messages'), {
-        name: newMessage.name.trim(),
-        message: newMessage.message.trim(),
-        approved: false,
-      })
-      setNewMessage({ name: '', message: '' })
-    }
-  }
 
   const approveMessage = async (item: TGuestbook) => {
     const messageRef = doc(db, 'messages', item.id)
@@ -62,43 +46,41 @@ const AdminDashboard = () => {
   }, [])
 
   return (
-    <div className={container}>
-      <form className={guestbookForm} onSubmit={addMessage}>
-        <input
-          className={guestbookInput}
-          type="text"
-          placeholder="name"
-          value={newMessage.name}
-          onChange={(e) =>
-            setNewMessage({ ...newMessage, name: e.target.value })
-          }
-        />
-        <input
-          className={guestbookInput}
-          type="text"
-          placeholder="message"
-          value={newMessage.message}
-          onChange={(e) =>
-            setNewMessage({ ...newMessage, message: e.target.value })
-          }
-        />
-        <button type="submit">skicka meddelande</button>
-      </form>
-      <ul className={guestbookList}>
-        {guestbookData?.map((item, id) => (
-          <li key={id} className={guestbookListItem}>
-            <div className={guestbookListItemContainer}>
-              <span>name: {item.name}</span>
-              <span>message: {item.message}</span>
-              <span>status: {item.approved ? 'approved' : 'pending'}</span>
-              <button onClick={() => approveMessage(item)}>
-                toggle approve
-              </button>
-              <button onClick={() => deleteMessage(item.id)}>delete</button>
-            </div>
-          </li>
+    <div>
+      <h2>admin dashboard</h2>
+
+      <div className={grid}>
+        {['approved', 'pending'].map((status) => (
+          <div key={status}>
+            <h3>{status}</h3>
+            <ul className={guestbookList}>
+              {guestbookData?.map((item, id) => {
+                const isApproved = status === 'approved' && item.approved
+                const isPending = status === 'pending' && !item.approved
+
+                if (isApproved || isPending) {
+                  return (
+                    <li key={id} className={guestbookListItem}>
+                      <div className={guestbookListItemContainer}>
+                        <span>name: {item.name}</span>
+                        <span>message: {item.message}</span>
+                        <button onClick={() => approveMessage(item)}>
+                          {item.approved ? 'set to pending' : 'publish'}
+                        </button>
+                        <button onClick={() => deleteMessage(item.id)}>
+                          Delete
+                        </button>
+                      </div>
+                    </li>
+                  )
+                }
+
+                return null
+              })}
+            </ul>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   )
 }

@@ -1,10 +1,12 @@
 'use client'
+import { useParams } from 'next/navigation'
 import { createContext, useContext, useState } from 'react'
 
 const LanguageContext = createContext<any>(undefined)
 
 export function LanguageWrapper({ children }: { children: React.ReactNode }) {
-  let [language, setLanguage] = useState('sv')
+  const params = useParams()
+  let [language, setLanguage] = useState(params.lang)
 
   return (
     <LanguageContext.Provider value={{ language, setLanguage }}>
