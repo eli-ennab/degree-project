@@ -2,7 +2,7 @@ import { storyblokEditable } from '@storyblok/react/rsc'
 import { useParams } from 'next/navigation'
 import { container, headLine } from './styles.css'
 
-const Teaser = ({ blok }: any) => {
+export default function Headline({ blok }: any) {
   const params = useParams()
 
   return (
@@ -18,5 +18,3 @@ const Teaser = ({ blok }: any) => {
     </div>
   )
 }
-
-export default Teaser

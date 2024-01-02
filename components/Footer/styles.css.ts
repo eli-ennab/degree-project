@@ -1,32 +1,47 @@
-import { vars } from '@/vanilla_extract/styles.css'
+import { ZIndex, media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({
-  backgroundColor: vars.color.white,
   width: '100vw',
-  height: '20px',
+  height: sizes.padding.l,
   position: 'fixed',
   bottom: '0px',
-  padding: '10px',
+  padding: sizes.padding.mobileFooter,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: sizes.padding.desktopFooter,
+    },
+  },
 })
 
 export const link = style({
+  backgroundColor: vars.color.white,
   position: 'fixed',
-  left: '10px',
-  zIndex: 99,
+  left: sizes.padding.l,
+  zIndex: ZIndex.high,
   fontFamily: vars.font.noto,
-  color: vars.color.kleinBlue,
-  padding: '2px',
-  fontSize: '12px',
+  color: vars.color.black,
+  fontSize: sizes.font.s,
   textDecoration: 'none',
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      left: sizes.padding.xxl,
+    },
+  },
 })
 
 export const arrow = style({
+  backgroundColor: vars.color.white,
   position: 'fixed',
   right: '10px',
-  zIndex: 99,
+  zIndex: ZIndex.high,
   cursor: 'pointer',
-  color: vars.color.kleinBlue,
-  fontSize: '12px',
-  padding: '2px',
+  color: vars.color.black,
+  fontSize: sizes.font.m,
+  padding: sizes.padding.s,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      right: sizes.padding.xxl,
+    },
+  },
 })

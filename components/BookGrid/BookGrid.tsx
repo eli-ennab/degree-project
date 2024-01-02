@@ -1,7 +1,7 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
 import { grid } from './styles.css'
 
-const BookGrid = ({ blok }: any) => {
+export default function BookGrid({ blok }: any) {
   return (
     <div {...storyblokEditable(blok)} className={grid}>
       {blok.columns.map((nestedBlok: any) => (
@@ -10,5 +10,3 @@ const BookGrid = ({ blok }: any) => {
     </div>
   )
 }
-
-export default BookGrid

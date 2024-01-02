@@ -1,4 +1,4 @@
-import { media, vars } from '@/vanilla_extract/styles.css'
+import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 
@@ -14,7 +14,8 @@ export const image = style({
 
 export const text = recipe({
   base: {
-    fontSize: '16px',
+    fontFamily: vars.font.noto,
+    fontSize: sizes.font.m,
   },
   variants: {
     textAlign: {

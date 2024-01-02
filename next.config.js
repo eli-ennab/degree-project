@@ -10,6 +10,12 @@ const nextConfig = {
   images: {
     domains: ['a.storyblok.com'],
     formats: ['image/avif', 'image/webp'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: '**',
+      },
+    ],
   },
 }
 

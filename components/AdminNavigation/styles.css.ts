@@ -1,5 +1,15 @@
-import { vars } from '@/vanilla_extract/styles.css'
+import { sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
+
+export const button = style({
+  cursor: 'pointer',
+  padding: '10px',
+  height: '40px',
+  borderRadius: '2px',
+  border: '1px solid black',
+  backgroundColor: vars.color.white,
+  fontFamily: vars.font.noto,
+})
 
 export const container = style({
   display: 'flex',
@@ -13,8 +23,8 @@ export const link = style({
   fontFamily: vars.font.noto,
   color: vars.color.kleinBlue,
   textDecoration: 'none',
-  fontSize: '12px',
+  fontSize: sizes.font.s,
   border: 'none',
-  padding: '10px',
+  padding: sizes.padding.m,
   display: 'flex',
 })

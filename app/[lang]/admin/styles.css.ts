@@ -1,18 +1,19 @@
 import { style } from '@vanilla-extract/css'
-import { media, vars } from '../../../vanilla_extract/styles.css'
+import { media, sizes, vars } from '../../../vanilla_extract/styles.css'
 
 export const container = style({
   display: 'flex',
   flexDirection: 'row',
   justifyContent: 'center',
   width: '100vw',
+  padding: '60px 90px',
 })
 
 export const field = style({
   fontFamily: vars.font.noto,
-  fontSize: '12px',
+  fontSize: sizes.font.s,
   textTransform: 'lowercase',
-  padding: '5px',
+  padding: sizes.padding.s,
   border: '1px solid lightgrey',
 })
 
@@ -23,6 +24,6 @@ export const formWrapper = style({
   width: '50vw',
   height: '200px',
   color: vars.color.white,
-  padding: '10px',
-  gap: '10px',
+  padding: sizes.padding.m,
+  gap: sizes.gap.m,
 })

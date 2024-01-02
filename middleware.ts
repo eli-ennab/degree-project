@@ -18,12 +18,10 @@ export function middleware(request: any) {
   return Response.redirect(request.nextUrl)
 }
 
-// // Background image working, but not language slugs.
 // export const config = {
-//   matcher: ['/((?!api|_next|.ico|).*)'],
+//   matcher: ['/((?!_next|.ico|).*)'],
 // }
 
-// Language slugs working, but not background image.
 export const config = {
   matcher: ['/((?!_next).*)'],
 }

@@ -1,4 +1,4 @@
-import { media, vars } from '@/vanilla_extract/styles.css'
+import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const grid = style({
@@ -7,11 +7,8 @@ export const grid = style({
   justifyContent: 'center',
   alignItems: 'center',
   minHeight: '80vh',
-  padding: '20px',
-  gap: '20px',
+  padding: sizes.padding.l,
   '@media': {
-    [`screen and (min-width: ${media.mobile})`]: {
-      flexDirection: 'row',
-    },
+    [`screen and (min-width: ${media.tablet})`]: {},
   },
 })

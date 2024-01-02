@@ -3,26 +3,24 @@ import { storyblokEditable } from '@storyblok/react/rsc'
 import { useState } from 'react'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
-import { image, text, title } from './styles.css'
+import { container, image, text, title } from './styles.css'
 
-const BookItem = ({ blok }: any) => {
+export default function BookItem({ blok }: any) {
   const params = useParams()
   const [frontImage, setFrontImage] = useState(true)
 
   const toggleImage = () => {
-    setTimeout(() => {
-      setFrontImage(!frontImage)
-    }, 100)
+    setFrontImage(!frontImage)
   }
 
   return (
-    <div {...storyblokEditable(blok)}>
+    <div {...storyblokEditable(blok)} className={container}>
       <div onClick={toggleImage} className={image}>
         <Image
           src={frontImage ? blok.imageFront.filename : blok.imageBack.filename}
           alt={frontImage ? blok.imageFront.alt : blok.imageBack.alt}
-          width={220}
-          height={350}
+          width={250}
+          height={400}
         />
       </div>
       <span
@@ -42,5 +40,3 @@ const BookItem = ({ blok }: any) => {
     </div>
   )
 }
-
-export default BookItem

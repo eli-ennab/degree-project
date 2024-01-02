@@ -1,17 +1,20 @@
 'use client'
 import Link from 'next/link'
-import { useRouter } from 'next/navigation'
+import { useRouter, usePathname } from 'next/navigation'
 import { useLanguageContext } from '@/context/LanguageContext'
 import { container, link, links, title } from './styles.css'
 
-const Navigation = () => {
+export default function Navigation() {
   const router = useRouter()
+  const pathname = usePathname()
   const { language, setLanguage } = useLanguageContext()
 
   const handleLanguageSwitch = () => {
     const newLanguage = language === 'sv' ? 'fa-ir' : 'sv'
     setLanguage(newLanguage)
-    router.push(`/${newLanguage}`)
+
+    const newPathname = pathname.replace(`/${language}`, `/${newLanguage}`)
+    router.push(newPathname)
   }
 
   return (
@@ -23,19 +26,27 @@ const Navigation = () => {
       </div>
 
       <ul className={links}>
-        <Link href={`/${language}/gastbok`} className={link}>
-          Gästbok
-        </Link>
-        <Link href={`/${language}/about`} className={link}>
-          Om
-        </Link>
-
-        <a onClick={handleLanguageSwitch} className={link}>
-          {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
-        </a>
+        <li>
+          <Link href={`/${language}/nioosha`} className={link}>
+            Nioosha
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${language}/written`} className={link}>
+            Sagt och skrivet
+          </Link>
+        </li>
+        <li>
+          <Link href={`/${language}/guestbook`} className={link}>
+            Gästbok
+          </Link>
+        </li>
+        <li>
+          <a onClick={handleLanguageSwitch} className={link}>
+            {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
+          </a>
+        </li>
       </ul>
     </header>
   )
 }
-
-export default Navigation

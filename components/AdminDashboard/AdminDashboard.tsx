@@ -9,15 +9,17 @@ import {
 } from 'firebase/firestore'
 import { db } from '@/services/firebase'
 import { useEffect, useState } from 'react'
+import { TGuestbook, TGuestbookList } from '@/types/Guestbook.types'
 import {
+  button,
+  container,
   grid,
   guestbookList,
   guestbookListItem,
   guestbookListItemContainer,
 } from './styles.css'
-import { TGuestbook, TGuestbookList } from '@/types/Guestbook'
 
-const AdminDashboard = () => {
+export default function AdminDashboard() {
   const [guestbookData, setGuestbookData] = useState<TGuestbookList | null>(
     null
   )
@@ -46,7 +48,7 @@ const AdminDashboard = () => {
   }, [])
 
   return (
-    <div>
+    <div className={container}>
       <h2>admin dashboard</h2>
 
       <div className={grid}>
@@ -64,11 +66,17 @@ const AdminDashboard = () => {
                       <div className={guestbookListItemContainer}>
                         <span>name: {item.name}</span>
                         <span>message: {item.message}</span>
-                        <button onClick={() => approveMessage(item)}>
-                          {item.approved ? 'set to pending' : 'publish'}
+                        <button
+                          onClick={() => approveMessage(item)}
+                          className={button}
+                        >
+                          {item.approved ? 'set to pending' : 'set to approved'}
                         </button>
-                        <button onClick={() => deleteMessage(item.id)}>
-                          Delete
+                        <button
+                          onClick={() => deleteMessage(item.id)}
+                          className={button}
+                        >
+                          delete
                         </button>
                       </div>
                     </li>
@@ -84,5 +92,3 @@ const AdminDashboard = () => {
     </div>
   )
 }
-
-export default AdminDashboard

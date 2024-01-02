@@ -1,26 +1,28 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from '../../vanilla_extract/styles.css'
+import { media, sizes, vars } from '../../vanilla_extract/styles.css'
 
 export const container = style({
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'baseline',
-  padding: '0px 10px',
+  alignItems: 'flex-end',
+  padding: sizes.padding.mobile,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: sizes.padding.desktop,
+    },
+  },
 })
 
 export const link = style({
   cursor: 'pointer',
-  color: vars.color.kleinBlue,
+  color: vars.color.black,
   textDecoration: 'none',
-  transition: 'transform 0.3s ease-out',
+  transition: 'transform 1s ease-out',
   ':hover': {
-    transform: 'scale(1.01)',
+    color: vars.color.orange,
   },
   ':active': {
-    transform: 'scale(0.99)',
-  },
-  ':visited': {
-    color: vars.color.lightKleinBlue,
+    transform: 'scale(0.8)',
   },
 })
 
@@ -29,18 +31,24 @@ export const links = style({
   display: 'flex',
   flexDirection: 'column',
   textAlign: 'right',
-  listStyleType: 'none',
   textDecoration: 'none',
   textTransform: 'lowercase',
+  fontSize: sizes.font.s,
+  margin: 0,
+  '@media': {
+    [`screen and (min-width: ${media.mobile})`]: {
+      fontSize: sizes.font.m,
+    },
+  },
 })
 
 export const title = style({
   cursor: 'pointer',
-  transition: 'transform 0.5s ease-in-out',
+  transition: 'transform 1s ease-out',
   ':hover': {
-    transform: 'scale(1.02)',
+    transform: 'scale(1.05)',
   },
   ':active': {
-    transform: 'scale(0.95)',
+    transform: 'scale(0.8)',
   },
 })

@@ -1,10 +1,10 @@
 'use client'
 import Link from 'next/link'
 import { useAuth } from '@/context/AuthContext'
-import { container, link } from './styles.css'
+import { button, container, link } from './styles.css'
 import { useRouter } from 'next/navigation'
 
-const AdminNavigation = () => {
+export default function AdminNavigation() {
   const { user, logout } = useAuth()
   const router = useRouter()
   return (
@@ -15,6 +15,7 @@ const AdminNavigation = () => {
             logout()
             router.push('/admin')
           }}
+          className={button}
         >
           sign out
         </button>
@@ -28,5 +29,3 @@ const AdminNavigation = () => {
     </div>
   )
 }
-
-export default AdminNavigation

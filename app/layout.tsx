@@ -1,10 +1,40 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Metadata } from 'next'
-import StoryblokProvider from '@/components/StoryblokProvider'
-import Navigation from '@/components/Navigation/Navigation'
+import {
+  Nanum_Myeongjo,
+  Noto_Kufi_Arabic,
+  Noto_Serif_Display,
+  Old_Standard_TT,
+  Syne,
+} from 'next/font/google'
 import { LanguageWrapper } from '@/context/LanguageContext'
 import Footer from '@/components/Footer/Footer'
-import { Noto_Serif_Display, Syne } from 'next/font/google'
+import Navigation from '@/components/Navigation/Navigation'
+import StoryblokProvider from '@/components/StoryblokProvider'
+
+const nanumMyeongjo = Nanum_Myeongjo({
+  variable: '--font-nanum-myengjo',
+  weight: ['700'],
+  subsets: ['latin'],
+})
+
+const noto = Noto_Serif_Display({
+  variable: '--font-noto-serif-display',
+  weight: ['600'],
+  subsets: ['latin'],
+})
+
+const notoArabic = Noto_Kufi_Arabic({
+  variable: '--font-noto-kufi-arabic',
+  weight: ['600'],
+  subsets: ['arabic'],
+})
+
+const oldStandard = Old_Standard_TT({
+  variable: '--font-old-standard-tt',
+  weight: ['400'],
+  subsets: ['latin'],
+})
 
 const syne = Syne({
   variable: '--font-syne',
@@ -12,15 +42,9 @@ const syne = Syne({
   subsets: ['latin'],
 })
 
-const noto = Noto_Serif_Display({
-  variable: '--font-noto',
-  weight: ['400'],
-  subsets: ['latin'],
-})
-
 export const metadata: Metadata = {
   title: {
-    default: 'Website - Nioosha Shams',
+    default: 'Nioosha Shams',
     template: '%s - Nioosha Shams',
   },
   description: 'A Digital Representation of Nioosha Shams',
@@ -39,7 +63,10 @@ export default function RootLayout({
   return (
     <StoryblokProvider>
       <LanguageWrapper>
-        <html className={`${syne.variable} ${noto.variable}`} lang={'sv'}>
+        <html
+          className={`${nanumMyeongjo.variable} ${notoArabic.variable} ${noto.variable} ${oldStandard.variable} ${syne.variable}`}
+          lang={'sv'}
+        >
           <body>
             <Navigation />
             {children}

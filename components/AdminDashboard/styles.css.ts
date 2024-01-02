@@ -1,9 +1,28 @@
 import { style } from '@vanilla-extract/css'
-import { media, vars } from '../../vanilla_extract/styles.css'
+import { media, sizes, vars } from '../../vanilla_extract/styles.css'
+
+export const button = style({
+  cursor: 'pointer',
+  padding: '10px',
+  height: '40px',
+  borderRadius: '2px',
+  border: '1px solid black',
+  backgroundColor: vars.color.white,
+  fontFamily: vars.font.noto,
+})
+
+export const container = style({
+  fontFamily: vars.font.noto,
+  fontSize: sizes.font.s,
+  padding: '10px 90px 10px 90px',
+  '@media': {
+    [`screen and (min-width: ${media.mobile})`]: {},
+  },
+})
 
 export const grid = style({
   display: 'grid',
-  gap: '20px',
+  gap: sizes.gap.m,
   gridTemplateColumns: '1fr',
   gridTemplateRows: '1fr 1fr',
   '@media': {
@@ -21,18 +40,17 @@ export const guestbookList = style({
 })
 
 export const guestbookListItem = style({
-  border: '1px solid lightgrey',
+  border: '1px solid black',
   color: vars.color.black,
-  listStyleType: 'none',
   width: '300px',
-  padding: '10px',
-  margin: '10px',
+  padding: sizes.padding.m,
+  margin: sizes.margin.s,
 })
 
 export const guestbookListItemContainer = style({
   display: 'flex',
   flexDirection: 'column',
   border: `1px solid ${vars.color.white}`,
-  padding: '10px',
-  gap: '5px',
+  padding: sizes.padding.m,
+  gap: sizes.gap.xs,
 })

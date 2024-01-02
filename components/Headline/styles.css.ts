@@ -1,3 +1,4 @@
+import { sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 
@@ -6,12 +7,13 @@ export const container = style({
   alignItems: 'center',
   justifyContent: 'center',
   width: '100vw',
-  height: '80vh',
+  height: '60vh',
 })
 
 export const headLine = recipe({
   base: {
-    fontSize: '36px',
+    fontSize: sizes.font.xl,
+    color: vars.color.white,
   },
   variants: {
     textAlign: {
