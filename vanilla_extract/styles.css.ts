@@ -40,9 +40,9 @@ export const sizes = {
     l: '18px',
     xl: '50px',
     xxl: '90px',
-    desktop: '60px 90px',
-    mobile: '12px 18px',
-    mobileFooter: '18px 18px',
+    desktop: '30px 45px',
+    mobile: '20px',
+    mobileFooter: '20px',
     desktopFooter: '30px 90px',
   },
   margin: {

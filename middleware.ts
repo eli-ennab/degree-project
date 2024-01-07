@@ -7,6 +7,10 @@ function getLocale(request: any) {
 export function middleware(request: any) {
   const { pathname } = request.nextUrl
 
+  if (pathname === '/favicon.ico') {
+    return
+  }
+
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
@@ -17,10 +21,6 @@ export function middleware(request: any) {
   request.nextUrl.pathname = `/${locale}${pathname}`
   return Response.redirect(request.nextUrl)
 }
-
-// export const config = {
-//   matcher: ['/((?!_next|.ico|).*)'],
-// }
 
 export const config = {
   matcher: ['/((?!_next).*)'],

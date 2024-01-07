@@ -31,14 +31,14 @@ export const link = style({
 })
 
 export const arrow = style({
-  backgroundColor: vars.color.white,
   position: 'fixed',
   right: '10px',
+  bottom: '10px',
   zIndex: ZIndex.high,
   cursor: 'pointer',
-  color: vars.color.black,
-  fontSize: sizes.font.m,
-  padding: sizes.padding.s,
+  color: vars.color.kleinBlue,
+  fontSize: sizes.font.l,
+  padding: sizes.padding.l,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       right: sizes.padding.xxl,
