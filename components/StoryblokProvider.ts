@@ -6,7 +6,7 @@ import BookGrid from './BookGrid/BookGrid'
 import Footer from './Footer/Footer'
 import Headline from './Headline/Headline'
 import Hero from './Hero/Hero'
-import InfoBlok from './infoBlok/InfoBlok'
+import InfoBlok from './InfoBlok/InfoBlok'
 import Navigation from './Navigation/Navigation'
 import Page from './Page'
 
