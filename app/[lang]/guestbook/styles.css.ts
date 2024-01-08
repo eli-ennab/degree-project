@@ -44,9 +44,6 @@ export const guestbookItem = style({
   alignItems: 'center',
   color: vars.color.white,
   fontSize: sizes.font.xl,
-  '@media': {
-    [`screen and (min-width: ${media.mobile})`]: {},
-  },
 })
 
 export const itemName = style({

@@ -36,7 +36,7 @@ export const arrow = style({
   bottom: '10px',
   zIndex: ZIndex.high,
   cursor: 'pointer',
-  color: vars.color.kleinBlue,
+  color: vars.color.black,
   fontSize: sizes.font.l,
   padding: sizes.padding.l,
   '@media': {

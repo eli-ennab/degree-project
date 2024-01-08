@@ -6,7 +6,7 @@ import BookGrid from './BookGrid/BookGrid'
 import Footer from './Footer/Footer'
 import Headline from './Headline/Headline'
 import Hero from './Hero/Hero'
-import ImageText from './ImageText/ImageText'
+import InfoBlok from './infoBlok/InfoBlok'
 import Navigation from './Navigation/Navigation'
 import Page from './Page'
 
@@ -16,7 +16,7 @@ const components = {
   footer: Footer,
   headline: Headline,
   hero: Hero,
-  imageText: ImageText,
+  infoBlok: InfoBlok,
   navigation: Navigation,
   page: Page,
 }
