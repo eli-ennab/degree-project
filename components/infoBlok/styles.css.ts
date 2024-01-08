@@ -1,8 +1,7 @@
 import { media, sizes, vars } from '@/vanilla_extract/styles.css'
-import { style } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 
-export const blokWrapper = recipe({
+export const wrapper = recipe({
   base: {
     display: 'flex',
     flexDirection: 'column',
