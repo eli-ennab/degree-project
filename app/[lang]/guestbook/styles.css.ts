@@ -15,18 +15,6 @@ export const divider = style({
   margin: '30px 0px',
 })
 
-export const link = style({
-  position: 'absolute',
-  fontSize: sizes.font.s,
-  textDecoration: 'none',
-  fontFamily: vars.font.noto,
-  color: vars.color.black,
-  paddingTop: '20px',
-  right: '90px',
-  bottom: '30px',
-  zIndex: ZIndex.high,
-})
-
 export const guestbookWrapper = style({
   backgroundColor: vars.color.kleinBlue,
   height: '450px',
@@ -48,7 +36,7 @@ export const guestbookItem = style({
 
 export const itemName = style({
   fontFamily: vars.font.syne,
-  fontSize: sizes.font.m,
+  fontSize: sizes.font.l,
   textTransform: 'uppercase',
   color: vars.color.white,
 })
@@ -56,6 +44,6 @@ export const itemName = style({
 export const itemMessage = style({
   fontFamily: vars.font.nanumMyengjo,
   textTransform: 'lowercase',
-  fontSize: sizes.font.m,
+  fontSize: sizes.font.l,
   overflow: 'hidden',
 })

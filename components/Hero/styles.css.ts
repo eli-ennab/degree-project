@@ -7,6 +7,7 @@ export const container = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  padding: '20px 0px',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       position: 'relative',
@@ -40,13 +41,13 @@ export const headLine = recipe({
 })
 
 export const image = style({
-  width: '100vw',
-  height: '80vh',
+  maxWidth: '100vw',
+  maxHeight: '80vh',
   objectFit: 'cover',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
-      height: '450px',
-      width: '1350px',
+      maxWidth: '100vw',
+      maxHeight: '70vh',
     },
   },
 })

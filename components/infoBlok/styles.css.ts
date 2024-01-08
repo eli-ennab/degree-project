@@ -13,6 +13,7 @@ export const blokWrapper = recipe({
         '@media': {
           [`screen and (min-width: ${media.tablet})`]: {
             alignItems: 'flex-start',
+            paddingLeft: '10vw',
           },
         },
       },
@@ -27,6 +28,7 @@ export const blokWrapper = recipe({
         '@media': {
           [`screen and (min-width: ${media.tablet})`]: {
             alignItems: 'flex-end',
+            paddingRight: '10vw',
           },
         },
       },
@@ -41,7 +43,7 @@ export const container = recipe({
     justifyContent: 'center',
     alignItems: 'center',
     maxWidth: '1350px',
-    margin: '20px',
+    margin: '10px',
     padding: '20px',
   },
   variants: {

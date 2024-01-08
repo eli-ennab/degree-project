@@ -18,8 +18,8 @@ export default function Hero({ blok }: any) {
       <Image
         src={blok.image.filename}
         alt={blok.image.alt}
-        height={450}
-        width={1350}
+        height={blok.height}
+        width={blok.width}
         className={image}
         priority={true}
       />

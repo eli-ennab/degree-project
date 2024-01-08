@@ -13,7 +13,6 @@ import {
   guestbookWrapper,
   itemName,
   itemMessage,
-  link,
 } from './styles.css'
 
 export default function Guestbook() {
@@ -52,9 +51,6 @@ export default function Guestbook() {
               )
           )}
       </div>
-      <a href={'guestbook/create'} className={link}>
-        skapa ett inlägg
-      </a>
     </div>
   )
 }
