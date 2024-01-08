@@ -41,7 +41,7 @@ export const arrow = style({
   padding: sizes.padding.l,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
-      right: sizes.padding.xxl,
+      right: sizes.padding.xl,
     },
   },
 })

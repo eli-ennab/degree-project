@@ -10,7 +10,7 @@ export const container = style({
 })
 
 export const divider = style({
-  border: `1px dotted ${vars.color.orange}`,
+  border: `1px solid ${vars.color.white}`,
   width: '50%',
   margin: '30px 0px',
 })
@@ -48,13 +48,14 @@ export const guestbookItem = style({
 
 export const itemName = style({
   fontFamily: vars.font.syne,
-  fontSize: sizes.font.s,
+  fontSize: sizes.font.m,
   textTransform: 'uppercase',
   color: vars.color.white,
 })
 
 export const itemMessage = style({
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.nanumMyengjo,
   textTransform: 'lowercase',
-  fontSize: sizes.font.xl,
+  fontSize: sizes.font.m,
+  overflow: 'hidden',
 })
