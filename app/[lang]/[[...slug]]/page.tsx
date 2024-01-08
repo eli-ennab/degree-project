@@ -9,7 +9,7 @@ export default async function Page({ params }: any) {
 
   const storyblokApi = getStoryblokApi()
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-    version: 'draft',
+    version: 'published',
     cv: Math.random(),
     language: lang,
   })
