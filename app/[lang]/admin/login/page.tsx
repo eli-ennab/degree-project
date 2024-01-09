@@ -1,10 +1,17 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/context/AuthContext'
-import Link from 'next/link'
-import { container, field, formWrapper, link } from './styles.css'
+import {
+  button,
+  container,
+  field,
+  formLabel,
+  formWrapper,
+  link,
+} from './styles.css'
 
 export default function Login() {
   const { login } = useAuth()
@@ -27,41 +34,46 @@ export default function Login() {
   }
 
   return (
-    <div className={container}>
-      <Link href={'/'} className={link}>
+    <>
+      <Link href={'/'} className={link} style={{ padding: '90px' }}>
         go back
       </Link>
-      <form onSubmit={handleLogin} className={formWrapper}>
-        <input
-          type="email"
-          placeholder="Enter email"
-          required
-          onChange={(e: any) =>
-            setData({
-              ...data,
-              email: e.target.value.trim(),
-            })
-          }
-          value={data.email}
-          className={field}
-        />
+      <div className={container}>
+        <form onSubmit={handleLogin} className={formWrapper}>
+          <label className={formLabel}>Admin login</label>
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            onChange={(e: any) =>
+              setData({
+                ...data,
+                email: e.target.value.trim(),
+              })
+            }
+            value={data.email}
+            className={field}
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          required
-          onChange={(e: any) =>
-            setData({
-              ...data,
-              password: e.target.value.trim(),
-            })
-          }
-          value={data.password}
-          className={field}
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            onChange={(e: any) =>
+              setData({
+                ...data,
+                password: e.target.value.trim(),
+              })
+            }
+            value={data.password}
+            className={field}
+          />
 
-        <button type="submit">enter</button>
-      </form>
-    </div>
+          <button type="submit" className={button}>
+            Enter
+          </button>
+        </form>
+      </div>
+    </>
   )
 }
