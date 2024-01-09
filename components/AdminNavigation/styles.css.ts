@@ -14,10 +14,21 @@ export const container = style({
   },
 })
 
-export const link = style({
+export const loginIcon = style({
+  color: vars.color.grey,
+  fontSize: sizes.font.l,
+})
+
+export const logoutButton = style({
+  cursor: 'pointer',
+  padding: 0,
+  margin: 0,
+  backgroundColor: 'transparent',
   border: 'none',
-  color: vars.color.black,
-  fontFamily: vars.font.noto,
-  fontSize: sizes.font.s,
-  textDecoration: 'none',
+})
+
+export const logoutIcon = style({
+  color: vars.color.grey,
+  fontSize: sizes.font.l,
+  transform: 'scaleX(-1)',
 })

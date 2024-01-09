@@ -14,6 +14,11 @@ export const container = style({
   },
 })
 
+export const key = style({
+  color: vars.color.grey,
+  fontSize: sizes.font.l,
+})
+
 export const link = style({
   backgroundColor: vars.color.white,
   color: vars.color.black,

@@ -2,8 +2,9 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { useParams, usePathname } from 'next/navigation'
+import { CgKey } from 'react-icons/cg'
 import { SlArrowUp } from 'react-icons/sl'
-import { arrow, container, link } from './styles.css'
+import { arrow, container, link, key } from './styles.css'
 
 export default function Footer() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -37,8 +38,8 @@ export default function Footer() {
     <footer className={container}>
       {!params.slug &&
         (pathname.endsWith('sv') || pathname.endsWith('fa-ir')) && (
-          <Link href={'/admin'} className={link}>
-            admin
+          <Link href={'/admin'} className={key}>
+            <CgKey />
           </Link>
         )}
 

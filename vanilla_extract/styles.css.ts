@@ -3,11 +3,12 @@ import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const vars = createGlobalTheme(':root', {
   color: {
-    white: '#ffffff',
+    white: '#fcfffb',
     black: '#222222',
     kleinBlue: '#002FA7',
     lightKleinBlue: '#0f46d1',
     orange: '#ef6513',
+    grey: '#979795',
   },
   font: {
     nanumMyengjo: 'var(--font-nanum-myengjo)',
