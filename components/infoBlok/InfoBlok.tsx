@@ -1,8 +1,9 @@
 import { storyblokEditable } from '@storyblok/react/rsc'
 import { useParams } from 'next/navigation'
 import { wrapper, container, text } from './styles.css'
+import { TInfoBlok } from '@/types/InfoBlok.types'
 
-export default function InfoBlok({ blok }: any) {
+export default function InfoBlok({ blok }: TInfoBlok) {
   const params = useParams()
 
   return (
