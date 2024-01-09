@@ -28,8 +28,8 @@ export default function AdminDashboard() {
   const [action, setAction] = useState<string | null>(null)
 
   const toggleConfirmModal = (id: string, action: string) => {
-    setAction(action)
     setConfirmId((prev) => (prev === id ? null : id))
+    setAction(action)
   }
 
   const toggleMessageStatus = async (item: TGuestbook) => {
@@ -86,19 +86,18 @@ export default function AdminDashboard() {
                         >
                           delete
                         </Button>
-
-                        {confirmId === item.id && (
-                          <ConfirmationBox
-                            action={action}
-                            show={true}
-                            onCancel={() => setConfirmId(null)}
-                            onConfirmDelete={() => deleteMessage(item.id)}
-                            onConfirmToggle={() => toggleMessageStatus(item)}
-                          >
-                            Are you sure?
-                          </ConfirmationBox>
-                        )}
                       </div>
+                      {confirmId === item.id && (
+                        <ConfirmationBox
+                          action={action}
+                          show={true}
+                          onCancel={() => setConfirmId(null)}
+                          onConfirmDelete={() => deleteMessage(item.id)}
+                          onConfirmToggle={() => toggleMessageStatus(item)}
+                        >
+                          Are you sure?
+                        </ConfirmationBox>
+                      )}
                     </li>
                   )
                 }

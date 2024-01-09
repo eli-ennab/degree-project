@@ -10,6 +10,12 @@ export const container = style({
   height: '50vh',
 })
 
+export const error = style({
+  color: 'red',
+  fontFamily: vars.font.noto,
+  fontSize: sizes.font.s,
+})
+
 export const field = style({
   backgroundColor: vars.color.white,
   border: `1px solid ${vars.color.black}`,

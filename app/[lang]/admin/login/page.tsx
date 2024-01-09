@@ -3,18 +3,26 @@ import React from 'react'
 import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { FirebaseError } from 'firebase/app'
 import { useAuth } from '@/context/AuthContext'
 import Button from '@/components/Button/Button'
-import { container, field, formLabel, formWrapper, link } from './styles.css'
+import {
+  container,
+  error,
+  field,
+  formLabel,
+  formWrapper,
+  link,
+} from './styles.css'
 
 export default function Login() {
   const { login } = useAuth()
   const router = useRouter()
-
   const [data, setData] = useState({
     email: '',
     password: '',
   })
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
 
   const handleLogin = async (e: any) => {
     e.preventDefault()
@@ -22,8 +30,13 @@ export default function Login() {
     try {
       await login(data.email, data.password)
       router.push('/admin/dashboard')
+      setErrorMessage(null)
     } catch (error) {
-      console.error(error)
+      if (error instanceof FirebaseError) {
+        setErrorMessage(error.message)
+      } else {
+        setErrorMessage('Something went wrong, try again.')
+      }
     }
   }
 
@@ -62,6 +75,7 @@ export default function Login() {
             value={data.password}
             className={field}
           />
+          {errorMessage && <span className={error}>{errorMessage}</span>}
 
           <Button type="submit">Enter</Button>
         </form>

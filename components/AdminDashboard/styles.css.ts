@@ -29,6 +29,11 @@ export const guestbookList = style({
   flexDirection: 'row',
   flexWrap: 'wrap',
   padding: 0,
+  '@media': {
+    [`screen and (min-width: ${media.mobile})`]: {
+      width: '48vw',
+    },
+  },
 })
 
 export const guestbookListItem = style({

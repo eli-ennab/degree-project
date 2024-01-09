@@ -19,6 +19,8 @@ import {
 
 export default function CreateGuestbookMessage() {
   const [newMessage, setNewMessage] = useState({ name: '', message: '' })
+  const inputMaxLength = 40
+  const textareaMaxLength = 460
 
   const addMessage = async (e: any) => {
     e.preventDefault()
@@ -50,8 +52,9 @@ export default function CreateGuestbookMessage() {
               setNewMessage({ ...newMessage, name: e.target.value })
             }
             className={nameField}
+            maxLength={inputMaxLength}
           />
-          <span className={inputInfo}>max 40 tecken</span>
+          <span className={inputInfo}>max {inputMaxLength} tecken</span>
           <textarea
             placeholder="message"
             value={newMessage.message}
@@ -59,8 +62,9 @@ export default function CreateGuestbookMessage() {
               setNewMessage({ ...newMessage, message: e.target.value })
             }
             className={textField}
+            maxLength={textareaMaxLength}
           />
-          <span className={inputInfo}>max 460 tecken</span>
+          <span className={inputInfo}>max {textareaMaxLength} tecken</span>
           <Button type="submit" className={button}>
             Skicka in meddelande
           </Button>

@@ -5,15 +5,16 @@ import { recipe } from '@vanilla-extract/recipes'
 export const container = style({
   alignItems: 'center',
   display: 'flex',
-  height: '60vh',
+  height: '10vh',
   justifyContent: 'center',
   width: '100vw',
 })
 
 export const headLine = recipe({
   base: {
-    color: vars.color.white,
-    fontSize: sizes.font.xl,
+    fontFamily: vars.font.noto,
+    color: vars.color.black,
+    fontSize: sizes.font.l,
   },
   variants: {
     textAlign: {
