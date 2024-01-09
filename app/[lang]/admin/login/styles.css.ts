@@ -1,17 +1,6 @@
 import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
-export const button = style({
-  backgroundColor: vars.color.white,
-  border: `1px solid ${vars.color.black}`,
-  borderRadius: '2px',
-  cursor: 'pointer',
-  fontFamily: vars.font.noto,
-  padding: '10px',
-  textTransform: 'lowercase',
-  width: '100px',
-})
-
 export const container = style({
   display: 'flex',
   flexDirection: 'column',

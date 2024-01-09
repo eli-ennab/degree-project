@@ -4,14 +4,8 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/context/AuthContext'
-import {
-  button,
-  container,
-  field,
-  formLabel,
-  formWrapper,
-  link,
-} from './styles.css'
+import Button from '@/components/Button/Button'
+import { container, field, formLabel, formWrapper, link } from './styles.css'
 
 export default function Login() {
   const { login } = useAuth()
@@ -69,9 +63,7 @@ export default function Login() {
             className={field}
           />
 
-          <button type="submit" className={button}>
-            Enter
-          </button>
+          <Button type="submit">Enter</Button>
         </form>
       </div>
     </>

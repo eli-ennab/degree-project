@@ -1,34 +1,25 @@
 import { style } from '@vanilla-extract/css'
 import { media, sizes, vars } from '../../vanilla_extract/styles.css'
 
-export const button = style({
-  backgroundColor: vars.color.white,
-  border: '1px solid black',
-  borderRadius: '2px',
-  cursor: 'pointer',
-  fontFamily: vars.font.noto,
-  height: '40px',
-  padding: '10px',
-})
-
 export const container = style({
   fontFamily: vars.font.noto,
   fontSize: sizes.font.s,
-  padding: '10px 90px 10px 90px',
+  padding: '10px',
+  margin: '10px',
   '@media': {
-    [`screen and (min-width: ${media.mobile})`]: {},
+    [`screen and (min-width: ${media.mobile})`]: {
+      margin: '40px',
+    },
   },
 })
 
 export const grid = style({
-  display: 'grid',
+  display: 'flex',
+  flexDirection: 'column',
   gap: sizes.gap.m,
-  gridTemplateColumns: '1fr',
-  gridTemplateRows: '1fr 1fr',
   '@media': {
     [`screen and (min-width: ${media.mobile})`]: {
-      gridTemplateColumns: '1fr',
-      gridTemplateRows: '1fr 1fr',
+      flexDirection: 'row',
     },
   },
 })
@@ -37,14 +28,21 @@ export const guestbookList = style({
   display: 'flex',
   flexDirection: 'row',
   flexWrap: 'wrap',
+  padding: 0,
 })
 
 export const guestbookListItem = style({
   border: '1px solid black',
   color: vars.color.black,
-  margin: sizes.margin.s,
-  padding: sizes.padding.m,
+  margin: sizes.margin.xs,
+  padding: sizes.padding.xs,
   width: '300px',
+  '@media': {
+    [`screen and (min-width: ${media.mobile})`]: {
+      margin: sizes.margin.s,
+      padding: sizes.padding.m,
+    },
+  },
 })
 
 export const guestbookListItemContainer = style({
@@ -52,5 +50,10 @@ export const guestbookListItemContainer = style({
   display: 'flex',
   flexDirection: 'column',
   gap: sizes.gap.xs,
-  padding: sizes.padding.m,
+  padding: sizes.padding.s,
+  '@media': {
+    [`screen and (min-width: ${media.mobile})`]: {
+      padding: sizes.padding.m,
+    },
+  },
 })
