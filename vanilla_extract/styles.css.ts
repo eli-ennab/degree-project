@@ -61,8 +61,9 @@ export const sizes = {
 
 export const ZIndex = {
   low: 0,
-  mid: 50,
-  high: 100,
+  mid: 49,
+  high: 99,
+  max: 999,
 }
 
 globalStyle('body', {

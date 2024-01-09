@@ -3,10 +3,11 @@ import React from 'react'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { useAuth } from '@/context/AuthContext'
-import { container, field, formWrapper } from '../styles.css'
+import Link from 'next/link'
+import { container, field, formWrapper, link } from './styles.css'
 
 export default function Login() {
-  const { user, login } = useAuth()
+  const { login } = useAuth()
   const router = useRouter()
 
   const [data, setData] = useState({
@@ -27,6 +28,9 @@ export default function Login() {
 
   return (
     <div className={container}>
+      <Link href={'/'} className={link}>
+        go back
+      </Link>
       <form onSubmit={handleLogin} className={formWrapper}>
         <input
           type="email"

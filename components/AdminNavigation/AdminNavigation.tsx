@@ -7,6 +7,7 @@ import { useRouter } from 'next/navigation'
 export default function AdminNavigation() {
   const { user, logout } = useAuth()
   const router = useRouter()
+
   return (
     <div className={container}>
       {user ? (

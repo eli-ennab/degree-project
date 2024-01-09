@@ -1,30 +1,32 @@
-import { sizes, vars } from '@/vanilla_extract/styles.css'
+import { ZIndex, media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const button = style({
   cursor: 'pointer',
-  padding: '10px',
-  height: '40px',
-  borderRadius: '2px',
-  border: '1px solid black',
   backgroundColor: vars.color.white,
+  border: 'none',
   fontFamily: vars.font.noto,
+  color: vars.color.black,
+  fontSize: sizes.font.s,
 })
 
 export const container = style({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '10vh',
-  width: '100vw',
+  height: sizes.padding.l,
+  position: 'fixed',
+  bottom: '0px',
+  padding: sizes.padding.mobileFooter,
+  zIndex: ZIndex.max,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: sizes.padding.desktopFooter,
+    },
+  },
 })
 
 export const link = style({
   fontFamily: vars.font.noto,
-  color: vars.color.kleinBlue,
+  color: vars.color.black,
   textDecoration: 'none',
   fontSize: sizes.font.s,
   border: 'none',
-  padding: sizes.padding.m,
-  display: 'flex',
 })
