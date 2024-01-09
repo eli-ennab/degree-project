@@ -2,14 +2,14 @@ import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const button = style({
-  cursor: 'pointer',
-  width: '100px',
-  padding: '10px',
-  borderRadius: '2px',
-  border: `1px solid ${vars.color.black}`,
   backgroundColor: vars.color.white,
+  border: `1px solid ${vars.color.black}`,
+  borderRadius: '2px',
+  cursor: 'pointer',
   fontFamily: vars.font.noto,
+  padding: '10px',
   textTransform: 'lowercase',
+  width: '100px',
 })
 
 export const container = style({
@@ -22,22 +22,22 @@ export const container = style({
 })
 
 export const field = style({
-  width: '300px',
-  padding: '10px',
-  borderRadius: '2px',
-  border: `1px solid ${vars.color.black}`,
   backgroundColor: vars.color.white,
-  marginBottom: '10px',
-  fontSize: sizes.font.s,
-  textTransform: 'lowercase',
+  border: `1px solid ${vars.color.black}`,
+  borderRadius: '2px',
   fontFamily: vars.font.noto,
+  fontSize: sizes.font.s,
+  marginBottom: '10px',
+  padding: '10px',
+  textTransform: 'lowercase',
+  width: '300px',
 })
 
 export const formLabel = style({
-  fontFamily: vars.font.syne,
-  textTransform: 'uppercase',
   color: vars.color.black,
+  fontFamily: vars.font.syne,
   fontSize: sizes.font.m,
+  textTransform: 'uppercase',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       fontSize: sizes.font.l,
@@ -46,20 +46,20 @@ export const formLabel = style({
 })
 
 export const formWrapper = style({
+  alignItems: 'center',
+  color: vars.color.white,
   display: 'flex',
   flexDirection: 'column',
-  alignItems: 'center',
-  width: '50vw',
-  height: '200px',
-  color: vars.color.white,
-  padding: sizes.padding.m,
   gap: sizes.gap.m,
+  height: '200px',
+  padding: sizes.padding.m,
+  width: '50vw',
 })
 
 export const link = style({
-  fontFamily: vars.font.noto,
   color: vars.color.black,
-  textDecoration: 'none',
-  fontSize: sizes.font.s,
   border: 'none',
+  fontFamily: vars.font.noto,
+  fontSize: sizes.font.s,
+  textDecoration: 'none',
 })

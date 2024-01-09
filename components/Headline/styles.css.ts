@@ -3,22 +3,22 @@ import { style } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 
 export const container = style({
-  display: 'flex',
   alignItems: 'center',
+  display: 'flex',
+  height: '60vh',
   justifyContent: 'center',
   width: '100vw',
-  height: '60vh',
 })
 
 export const headLine = recipe({
   base: {
-    fontSize: sizes.font.xl,
     color: vars.color.white,
+    fontSize: sizes.font.xl,
   },
   variants: {
     textAlign: {
-      sv: { textAlign: 'left', textTransform: 'lowercase' },
       fa: { textAlign: 'right' },
+      sv: { textAlign: 'left', textTransform: 'lowercase' },
     },
   },
 })

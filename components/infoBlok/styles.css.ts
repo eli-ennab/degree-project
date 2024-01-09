@@ -37,12 +37,12 @@ export const wrapper = recipe({
 
 export const container = recipe({
   base: {
+    alignItems: 'center',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    alignItems: 'center',
-    maxWidth: '1350px',
     margin: '10px',
+    maxWidth: '1350px',
     padding: '20px',
   },
   variants: {
@@ -121,8 +121,8 @@ export const text = recipe({
   },
   variants: {
     textAlign: {
-      sv: { textAlign: 'left' },
       fa: { textAlign: 'right' },
+      sv: { textAlign: 'left' },
     },
   },
 })

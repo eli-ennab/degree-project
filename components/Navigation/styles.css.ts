@@ -2,9 +2,9 @@ import { style } from '@vanilla-extract/css'
 import { media, sizes, vars } from '../../vanilla_extract/styles.css'
 
 export const container = style({
+  alignItems: 'flex-end',
   display: 'flex',
   justifyContent: 'space-between',
-  alignItems: 'flex-end',
   padding: sizes.padding.mobile,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
@@ -27,13 +27,13 @@ export const link = style({
 })
 
 export const links = style({
-  fontFamily: vars.font.noto,
   display: 'flex',
+  fontFamily: vars.font.noto,
   flexDirection: 'column',
+  fontSize: sizes.font.s,
   textAlign: 'right',
   textDecoration: 'none',
   textTransform: 'lowercase',
-  fontSize: sizes.font.s,
   margin: 0,
   '@media': {
     [`screen and (min-width: ${media.mobile})`]: {

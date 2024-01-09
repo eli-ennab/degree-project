@@ -2,13 +2,13 @@ import { style } from '@vanilla-extract/css'
 import { media, sizes, vars } from '../../vanilla_extract/styles.css'
 
 export const button = style({
-  cursor: 'pointer',
-  padding: '10px',
-  height: '40px',
-  borderRadius: '2px',
-  border: '1px solid black',
   backgroundColor: vars.color.white,
+  border: '1px solid black',
+  borderRadius: '2px',
+  cursor: 'pointer',
   fontFamily: vars.font.noto,
+  height: '40px',
+  padding: '10px',
 })
 
 export const container = style({
@@ -42,15 +42,15 @@ export const guestbookList = style({
 export const guestbookListItem = style({
   border: '1px solid black',
   color: vars.color.black,
-  width: '300px',
-  padding: sizes.padding.m,
   margin: sizes.margin.s,
+  padding: sizes.padding.m,
+  width: '300px',
 })
 
 export const guestbookListItemContainer = style({
+  border: `1px solid ${vars.color.white}`,
   display: 'flex',
   flexDirection: 'column',
-  border: `1px solid ${vars.color.white}`,
-  padding: sizes.padding.m,
   gap: sizes.gap.xs,
+  padding: sizes.padding.m,
 })

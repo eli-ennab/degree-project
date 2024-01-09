@@ -39,25 +39,25 @@ export const form = style({
 })
 
 export const formLabel = style({
+  color: vars.color.white,
   fontFamily: vars.font.noto,
   fontSize: sizes.font.l,
-  color: vars.color.white,
   marginBottom: '20px',
 })
 
 export const info = style({
+  color: vars.color.white,
   fontFamily: vars.font.noto,
   fontSize: sizes.font.s,
-  color: vars.color.white,
   marginBottom: '40px',
 })
 
 export const formWrapper = style({
-  display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
   backgroundColor: vars.color.orange,
+  display: 'flex',
   height: '450px',
+  justifyContent: 'center',
   width: '100vw',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
