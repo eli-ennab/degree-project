@@ -4,8 +4,9 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import { container, image, text, title } from './styles.css'
+import { TItem } from '@/types/Item.types'
 
-export default function BookItem({ blok }: any) {
+export default function BookItem({ blok }: TItem) {
   const params = useParams()
   const [frontImage, setFrontImage] = useState(true)
 
