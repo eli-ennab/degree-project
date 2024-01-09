@@ -2,14 +2,14 @@ import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const button = style({
-  cursor: 'pointer',
-  padding: '10px',
-  width: '300px',
-  height: '40px',
-  borderRadius: '2px',
-  border: 'none',
   backgroundColor: vars.color.white,
+  border: 'none',
+  borderRadius: '2px',
+  cursor: 'pointer',
   fontFamily: vars.font.noto,
+  height: '40px',
+  padding: '10px',
+  textTransform: 'lowercase',
 })
 
 export const container = style({
@@ -20,15 +20,33 @@ export const container = style({
   width: '100vw',
 })
 
-export const field = style({
+export const nameField = style({
   width: '300px',
   padding: '10px',
   borderRadius: '2px',
   border: 'none',
   backgroundColor: vars.color.white,
-  marginBottom: '20px',
   fontFamily: vars.font.noto,
   fontSize: sizes.font.s,
+})
+
+export const textField = style({
+  width: '300px',
+  height: '100px',
+  padding: '10px',
+  borderRadius: '2px',
+  border: 'none',
+  backgroundColor: vars.color.white,
+  fontFamily: vars.font.noto,
+  fontSize: sizes.font.s,
+  resize: 'none',
+})
+
+export const inputInfo = style({
+  color: vars.color.white,
+  fontFamily: vars.font.noto,
+  fontSize: sizes.font.s,
+  marginBottom: '20px',
 })
 
 export const form = style({
@@ -42,7 +60,7 @@ export const formLabel = style({
   color: vars.color.white,
   fontFamily: vars.font.noto,
   fontSize: sizes.font.l,
-  marginBottom: '20px',
+  marginBottom: '10px',
 })
 
 export const info = style({

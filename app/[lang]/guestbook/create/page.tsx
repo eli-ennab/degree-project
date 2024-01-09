@@ -1,17 +1,20 @@
 'use client'
 import React from 'react'
-import { addDoc, collection, onSnapshot, query } from 'firebase/firestore'
+import { addDoc, collection } from 'firebase/firestore'
 import { useState } from 'react'
 import { db } from '@/services/firebase'
+import Button from '@/components/Button/Button'
 import 'keen-slider/keen-slider.min.css'
 import {
   button,
   container,
-  field,
   form,
   formLabel,
   formWrapper,
   info,
+  inputInfo,
+  nameField,
+  textField,
 } from './styles.css'
 
 export default function CreateGuestbookMessage() {
@@ -38,6 +41,7 @@ export default function CreateGuestbookMessage() {
             Här kan du lämna ett meddelande till Niooshas gästbok. Har du tur så
             dyker ditt meddelande upp i gästboken inom kort!
           </span>
+
           <input
             type="text"
             placeholder="name"
@@ -45,19 +49,21 @@ export default function CreateGuestbookMessage() {
             onChange={(e) =>
               setNewMessage({ ...newMessage, name: e.target.value })
             }
-            className={field}
+            className={nameField}
           />
+          <span className={inputInfo}>max 40 tecken</span>
           <textarea
             placeholder="message"
             value={newMessage.message}
             onChange={(e) =>
               setNewMessage({ ...newMessage, message: e.target.value })
             }
-            className={field}
+            className={textField}
           />
-          <button type="submit" className={button}>
-            skicka in meddelande
-          </button>
+          <span className={inputInfo}>max 460 tecken</span>
+          <Button type="submit" className={button}>
+            Skicka in meddelande
+          </Button>
         </form>
       </div>
     </div>
