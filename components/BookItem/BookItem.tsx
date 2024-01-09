@@ -2,10 +2,10 @@
 import { storyblokEditable } from '@storyblok/react/rsc'
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { container, image, link, text, title } from './styles.css'
 import { TItem } from '@/types/Item.types'
-import Link from 'next/link'
 
 export default function BookItem({ blok }: TItem) {
   const params = useParams()
