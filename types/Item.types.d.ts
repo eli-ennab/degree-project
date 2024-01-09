@@ -14,6 +14,8 @@ export type TItem = {
     title: string
     component: string
     description: string
+    link: TLink
+    linkText: string
     imageFront: TImage
     imageBack: TImage
   }
@@ -25,4 +27,10 @@ export type TImage = {
   id: number
   filename: string
   alt: string
+}
+
+export type TLink = {
+  id: number
+  url: string
+  linktype: string
 }

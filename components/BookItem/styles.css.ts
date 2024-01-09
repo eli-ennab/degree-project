@@ -36,6 +36,20 @@ export const image = style({
   },
 })
 
+export const link = style({
+  cursor: 'pointer',
+  color: vars.color.grey,
+  padding: `${sizes.padding.m} ${sizes.padding.l}`,
+  transition: 'transform 1s ease-out',
+  textDecoration: 'none',
+  ':hover': {
+    color: vars.color.orange,
+  },
+  ':active': {
+    transform: 'scale(0.8)',
+  },
+})
+
 export const text = recipe({
   base: {
     fontFamily: vars.font.nanumMyengjo,

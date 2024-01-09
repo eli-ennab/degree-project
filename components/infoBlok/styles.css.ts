@@ -38,6 +38,7 @@ export const wrapper = recipe({
 export const container = recipe({
   base: {
     alignItems: 'center',
+    borderRadius: '2px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
@@ -59,6 +60,9 @@ export const container = recipe({
       white: {
         backgroundColor: vars.color.white,
       },
+      gray: {
+        backgroundColor: vars.color.gray,
+      },
     },
     color: {
       orange: {
@@ -72,6 +76,9 @@ export const container = recipe({
       },
       white: {
         color: vars.color.white,
+      },
+      gray: {
+        color: vars.color.gray,
       },
     },
     width: {

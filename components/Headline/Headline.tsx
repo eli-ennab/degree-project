@@ -9,9 +9,11 @@ export default function Headline({ blok }: any) {
     <div className={container}>
       <h2
         {...storyblokEditable(blok)}
-        className={headLine(
-          params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
-        )}
+        className={headLine({
+          backgroundColor: blok.backgroundColor,
+          color: blok.color,
+          textAlign: params.lang === 'sv' ? 'sv' : 'fa',
+        })}
       >
         {blok.headline}
       </h2>
