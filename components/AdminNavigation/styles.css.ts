@@ -15,7 +15,7 @@ export const container = style({
 })
 
 export const loginIcon = style({
-  color: vars.color.grey,
+  color: vars.color.gray,
   fontSize: sizes.font.l,
 })
 
@@ -28,7 +28,7 @@ export const logoutButton = style({
 })
 
 export const logoutIcon = style({
-  color: vars.color.grey,
+  color: vars.color.gray,
   fontSize: sizes.font.l,
   transform: 'scaleX(-1)',
 })

@@ -15,7 +15,7 @@ export const container = style({
 })
 
 export const key = style({
-  color: vars.color.grey,
+  color: vars.color.gray,
   fontSize: sizes.font.l,
 })
 

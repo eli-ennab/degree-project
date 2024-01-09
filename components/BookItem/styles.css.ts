@@ -38,7 +38,7 @@ export const image = style({
 
 export const link = style({
   cursor: 'pointer',
-  color: vars.color.grey,
+  color: vars.color.gray,
   padding: `${sizes.padding.m} ${sizes.padding.l}`,
   transition: 'transform 1s ease-out',
   textDecoration: 'none',

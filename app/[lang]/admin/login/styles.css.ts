@@ -29,7 +29,7 @@ export const field = style({
 })
 
 export const formLabel = style({
-  color: vars.color.grey,
+  color: vars.color.gray,
   fontFamily: vars.font.syne,
   fontSize: sizes.font.m,
   textTransform: 'uppercase',
@@ -52,7 +52,7 @@ export const formWrapper = style({
 })
 
 export const link = style({
-  color: vars.color.grey,
+  color: vars.color.gray,
   border: 'none',
   fontFamily: vars.font.noto,
   fontSize: sizes.font.s,
