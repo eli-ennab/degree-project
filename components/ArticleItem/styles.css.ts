@@ -4,12 +4,12 @@ import { recipe } from '@vanilla-extract/recipes'
 
 export const container = style({
   color: vars.color.black,
-  margin: '20px 0px',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       display: 'flex',
       flexDirection: 'row',
       height: '450px',
+      margin: '20px 0px',
       top: '50px',
       width: '1350px',
     },
@@ -40,7 +40,7 @@ export const image = style({
 export const link = style({
   cursor: 'pointer',
   color: vars.color.gray,
-  padding: `${sizes.padding.m} ${sizes.padding.l}`,
+  padding: `${sizes.padding.s} 0px`,
   transition: 'transform 1s ease-out',
   textDecoration: 'none',
   ':hover': {
@@ -49,15 +49,22 @@ export const link = style({
   ':active': {
     transform: 'scale(0.8)',
   },
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: `${sizes.padding.s} ${sizes.padding.m}`,
+    },
+  },
 })
 
 export const text = recipe({
   base: {
     fontFamily: vars.font.nanumMyengjo,
     fontSize: sizes.font.m,
-    padding: `${sizes.padding.m} ${sizes.padding.l}`,
+    padding: `${sizes.padding.s} 0px`,
     '@media': {
-      [`screen and (min-width: ${media.tablet})`]: {},
+      [`screen and (min-width: ${media.tablet})`]: {
+        padding: `${sizes.padding.s} ${sizes.padding.m}`,
+      },
     },
   },
   variants: {
@@ -71,5 +78,9 @@ export const text = recipe({
 export const title = style({
   fontFamily: vars.font.nanumMyengjo,
   fontSize: sizes.font.l,
-  padding: `${sizes.padding.m} ${sizes.padding.l}`,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: `${sizes.padding.s} ${sizes.padding.m}`,
+    },
+  },
 })

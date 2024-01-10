@@ -42,7 +42,7 @@ export const sizes = {
     xl: '50px',
     xxl: '90px',
     desktop: '30px 45px',
-    mobile: '20px',
+    mobile: '10px',
     mobileFooter: '20px',
     desktopFooter: '30px 90px',
   },
