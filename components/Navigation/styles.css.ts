@@ -1,5 +1,13 @@
 import { style } from '@vanilla-extract/css'
 import { media, sizes, vars } from '../../vanilla_extract/styles.css'
+import { recipe } from '@vanilla-extract/recipes'
+
+export const button = style({
+  background: 'none',
+  border: 'none',
+  padding: '20px',
+  zIndex: 2222,
+})
 
 export const container = style({
   alignItems: 'flex-end',
@@ -44,14 +52,45 @@ export const links = style({
   display: 'flex',
   fontFamily: vars.font.noto,
   flexDirection: 'column',
-  fontSize: sizes.font.s,
   textAlign: 'right',
   textDecoration: 'none',
   textTransform: 'lowercase',
   margin: 0,
+  fontSize: sizes.font.l,
   '@media': {
     [`screen and (min-width: ${media.mobile})`]: {
       fontSize: sizes.font.m,
+    },
+  },
+})
+
+export const navigation = recipe({
+  base: {
+    opacity: 1,
+  },
+  variants: {
+    screen: {
+      mobile: {
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        height: '100vh',
+        width: '100vw',
+        backgroundColor: 'rgba(255, 255, 255, 0.8)',
+        zIndex: 1111,
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+      desktop: {},
+    },
+    state: {
+      open: {
+        transform: 'opacity 1s ease-in-out',
+      },
+      closed: {
+        transform: 'opacity 1s ease-in-out',
+      },
     },
   },
 })

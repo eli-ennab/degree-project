@@ -2,14 +2,28 @@
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
+import { useMediaQuery } from 'react-responsive'
 import { SlArrowLeft } from 'react-icons/sl'
+import { TfiClose } from 'react-icons/tfi'
+import { SlMenu } from 'react-icons/sl'
 import { useLanguageContext } from '@/context/LanguageContext'
-import { container, icon, link, links, title } from './styles.css'
+import {
+  button,
+  container,
+  icon,
+  link,
+  links,
+  navigation,
+  title,
+} from './styles.css'
+import { useState } from 'react'
 
 export default function Navigation({ blok }: any) {
   const router = useRouter()
   const pathname = usePathname()
   const { language, setLanguage } = useLanguageContext()
+  const [open, setOpen] = useState(false)
+  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
 
   const handleLanguageSwitch = () => {
     const newLanguage = language === 'sv' ? 'fa-ir' : 'sv'
@@ -35,29 +49,45 @@ export default function Navigation({ blok }: any) {
           Nioosha Shams
         </h1>
       </div>
-      <div {...storyblokEditable(blok)}>
-        <ul className={links}>
-          {blokLinkData?.map((linkData: any, index: number) => (
-            <li key={index}>
-              <Link href={`/${language}/${linkData.href}`} className={link}>
-                {linkData.name}
-              </Link>
-            </li>
-          ))}
 
-          {pathname.startsWith(`/${language}/guestbook`) ? (
-            <Link href={`/${language}`} className={icon}>
-              <SlArrowLeft />
-            </Link>
-          ) : (
-            <li>
-              <a onClick={handleLanguageSwitch} className={link}>
-                {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
-              </a>
-            </li>
+      {isTabletOrMobile && (
+        <button onClick={() => setOpen(!open)} className={button}>
+          {open ? <TfiClose /> : <SlMenu />}
+        </button>
+      )}
+
+      {(isTabletOrMobile && open) || !isTabletOrMobile ? (
+        <div
+          {...storyblokEditable(blok)}
+          className={navigation(
+            isTabletOrMobile && open
+              ? { screen: 'mobile', state: 'open' }
+              : { screen: 'desktop' }
           )}
-        </ul>
-      </div>
+        >
+          <ul className={links}>
+            {blokLinkData?.map((linkData: any, index: number) => (
+              <li key={index}>
+                <Link href={`/${language}/${linkData.href}`} className={link}>
+                  {linkData.name}
+                </Link>
+              </li>
+            ))}
+
+            {pathname.startsWith(`/${language}/guestbook`) ? (
+              <Link href={`/${language}`} className={icon}>
+                <SlArrowLeft />
+              </Link>
+            ) : (
+              <li>
+                <a onClick={handleLanguageSwitch} className={link}>
+                  {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
+                </a>
+              </li>
+            )}
+          </ul>
+        </div>
+      ) : null}
     </header>
   )
 }
