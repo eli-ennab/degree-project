@@ -34,23 +34,25 @@ export default function Guestbook() {
   }, [])
 
   return (
-    <div className={container}>
-      <div ref={slider} className={`${guestbookWrapper} keen-slider`}>
-        {data &&
-          data?.map(
-            (item) =>
-              item.approved && (
-                <div
-                  key={item.id}
-                  className={`${guestbookItem} keen-slider__slide`}
-                >
-                  <q className={itemMessage}>{item.message}</q>
-                  <div className={divider} />
-                  <span className={itemName}>{item.name}</span>
-                </div>
-              )
-          )}
+    <>
+      <div className={container}>
+        <div ref={slider} className={`${guestbookWrapper} keen-slider`}>
+          {data &&
+            data?.map(
+              (item) =>
+                item.approved && (
+                  <div
+                    key={item.id}
+                    className={`${guestbookItem} keen-slider__slide`}
+                  >
+                    <q className={itemMessage}>{item.message}</q>
+                    <div className={divider} />
+                    <span className={itemName}>{item.name}</span>
+                  </div>
+                )
+            )}
+        </div>
       </div>
-    </div>
+    </>
   )
 }

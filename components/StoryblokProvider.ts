@@ -7,7 +7,9 @@ import Footer from './Footer/Footer'
 import Headline from './Headline/Headline'
 import Hero from './Hero/Hero'
 import InfoBlok from './infoBlok/InfoBlok'
-import Navigation from './Navigation/Navigation'
+import LinkGrid from './LinkGrid/LinkGrid'
+import Links from './Links/Links'
+import Nav from './Nav/Nav'
 import Page from './Page'
 
 const components = {
@@ -17,7 +19,9 @@ const components = {
   headline: Headline,
   hero: Hero,
   infoBlok: InfoBlok,
-  navigation: Navigation,
+  linkGrid: LinkGrid,
+  links: Links,
+  nav: Nav,
   page: Page,
 }
 

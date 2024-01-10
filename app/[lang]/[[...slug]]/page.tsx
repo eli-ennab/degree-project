@@ -12,6 +12,7 @@ export default async function Page({ params }: any) {
     version: 'draft',
     cv: Math.random(),
     language: lang,
+    resolve_links: 'url',
   })
 
   return (
@@ -25,6 +26,7 @@ export async function generateStaticParams({ params }: any) {
   const storyblokApi = getStoryblokApi()
   let { data } = await storyblokApi.get('cdn/links/', {
     version: 'draft',
+    resolve_links: 'url',
   })
   let paths: { slug: any; lang: any }[] = []
   Object.keys(data.links).forEach((linkKey) => {

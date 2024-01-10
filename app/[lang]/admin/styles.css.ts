@@ -1,4 +1,4 @@
-import { sizes, vars } from '@/vanilla_extract/styles.css'
+import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({
@@ -7,7 +7,23 @@ export const container = style({
   justifyContent: 'center',
   alignItems: 'center',
   width: '100vw',
-  height: '60vh',
+  height: '90vh',
+})
+
+export const link = style({
+  position: 'relative',
+  top: '20px',
+  color: vars.color.gray,
+  border: 'none',
+  fontFamily: vars.font.noto,
+  fontSize: sizes.font.s,
+  textDecoration: 'none',
+  padding: sizes.padding.mobileFooter,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: sizes.padding.desktopFooter,
+    },
+  },
 })
 
 export const lock = style({

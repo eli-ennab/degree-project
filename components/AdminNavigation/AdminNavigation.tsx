@@ -13,6 +13,8 @@ export default function AdminNavigation() {
   const pathname = usePathname()
   const { language } = useLanguageContext()
 
+  console.log(pathname)
+
   return (
     <div className={container}>
       {user ? (
@@ -31,7 +33,7 @@ export default function AdminNavigation() {
             {pathname === `/${language}/admin` ? (
               <RiLoginCircleLine className={loginIcon} />
             ) : (
-              ''
+              'no login'
             )}
           </Link>
         </>
