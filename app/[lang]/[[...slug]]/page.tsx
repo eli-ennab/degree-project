@@ -25,8 +25,8 @@ export default async function Page({ params }: any) {
 export async function generateStaticParams({ params }: any) {
   const storyblokApi = getStoryblokApi()
   let { data } = await storyblokApi.get('cdn/links/', {
-    version: 'published',
-    // version: 'draft',
+    // version: 'published',
+    version: 'draft',
     resolve_links: 'url',
   })
   let paths: { slug: any; lang: any }[] = []
