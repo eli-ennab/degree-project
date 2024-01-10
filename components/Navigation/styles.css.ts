@@ -6,9 +6,23 @@ export const container = style({
   display: 'flex',
   justifyContent: 'space-between',
   padding: sizes.padding.mobile,
+  minHeight: '110px',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       padding: sizes.padding.desktop,
+      minHeight: '110px',
+    },
+  },
+})
+
+export const icon = style({
+  color: vars.color.gray,
+  fontSize: sizes.font.s,
+  padding: '0px 0px 8px 0px',
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      fontSize: sizes.font.m,
+      padding: '0px 60px 20px 0px',
     },
   },
 })

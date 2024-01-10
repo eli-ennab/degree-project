@@ -4,7 +4,7 @@ import { addDoc, collection } from 'firebase/firestore'
 import { useState } from 'react'
 import { db } from '@/services/firebase'
 import Button from '@/components/Button/Button'
-import Nav from '@/components/Nav/Nav'
+import Navigation from '@/components/Navigation/Navigation'
 import 'keen-slider/keen-slider.min.css'
 import {
   button,
@@ -37,7 +37,7 @@ export default function CreateGuestbookMessage() {
 
   return (
     <>
-      <Nav />
+      <Navigation />
       <div className={container}>
         <div className={formWrapper}>
           <form onSubmit={addMessage} className={form}>

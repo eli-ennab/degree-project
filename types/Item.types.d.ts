@@ -1,16 +1,16 @@
 export type TItemGrid = {
   blok: {
-    columns: TItemList
-    component: string
     _editable: string
     _uid: string
+    columns: TItemList
+    component: string
   }
 }
 
 export type TItem = {
   blok: {
-    _uid: string
     _editable: string
+    _uid: string
     title: string
     component: string
     description: string

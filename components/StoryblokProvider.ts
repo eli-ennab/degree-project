@@ -9,7 +9,7 @@ import Hero from './Hero/Hero'
 import InfoBlok from './infoBlok/InfoBlok'
 import LinkGrid from './LinkGrid/LinkGrid'
 import Links from './Links/Links'
-import Nav from './Nav/Nav'
+import Navigation from './Navigation/Navigation'
 import Page from './Page'
 
 const components = {
@@ -21,7 +21,7 @@ const components = {
   infoBlok: InfoBlok,
   linkGrid: LinkGrid,
   links: Links,
-  nav: Nav,
+  navigation: Navigation,
   page: Page,
 }
 

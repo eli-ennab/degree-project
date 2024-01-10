@@ -3,7 +3,7 @@ import React from 'react'
 import { collection, onSnapshot, query } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { db } from '@/services/firebase'
-import Nav from '@/components/Nav/Nav'
+import Navigation from '@/components/Navigation/Navigation'
 import { useSlider } from '@/hooks/useSlider'
 import { TGuestbookList } from '@/types/Guestbook.types'
 import 'keen-slider/keen-slider.min.css'
@@ -36,7 +36,7 @@ export default function Guestbook() {
 
   return (
     <>
-      <Nav />
+      <Navigation />
       <div className={container}>
         <div ref={slider} className={`${guestbookWrapper} keen-slider`}>
           {data &&

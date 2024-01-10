@@ -1,16 +1,13 @@
 'use client'
+import { storyblokEditable } from '@storyblok/react/rsc'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
+import { SlArrowLeft } from 'react-icons/sl'
 import { useLanguageContext } from '@/context/LanguageContext'
-import { container, link, links, title } from './styles.css'
+import { TNavigation } from '@/types/Navigation.types'
+import { container, icon, link, links, title } from './styles.css'
 
-const navigation = [
-  { name: 'Nioosha', href: '/nioosha' },
-  { name: 'Said and written', href: '/written' },
-  { name: 'Guestbook', href: '/guestbook' },
-]
-
-export default function Navigation() {
+export default function Navigation({ blok }: TNavigation) {
   const router = useRouter()
   const pathname = usePathname()
   const { language, setLanguage } = useLanguageContext()
@@ -23,6 +20,15 @@ export default function Navigation() {
     router.push(newPathname)
   }
 
+  const blokLinkData = blok?.links
+    .map((linkGrid: any) =>
+      linkGrid.links.map((linkItem: any) => ({
+        name: linkItem.name,
+        href: linkItem.href,
+      }))
+    )
+    .flat()
+
   return (
     <header className={container}>
       <div>
@@ -30,22 +36,29 @@ export default function Navigation() {
           Nioosha Shams
         </h1>
       </div>
+      <div {...storyblokEditable(blok)}>
+        <ul className={links}>
+          {blokLinkData?.map((linkData: any, index: number) => (
+            <li key={index}>
+              <Link href={`/${language}/${linkData.href}`} className={link}>
+                {linkData.name}
+              </Link>
+            </li>
+          ))}
 
-      <ul className={links}>
-        {navigation.map((nav) => (
-          <li key={nav.name}>
-            <Link href={`/${language}${nav.href}`} className={link}>
-              {nav.name}
+          {pathname.startsWith(`/${language}/guestbook`) ? (
+            <Link href={`/${language}`} className={icon}>
+              <SlArrowLeft />
             </Link>
-          </li>
-        ))}
-
-        <li>
-          <a onClick={handleLanguageSwitch} className={link}>
-            {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
-          </a>
-        </li>
-      </ul>
+          ) : (
+            <li>
+              <a onClick={handleLanguageSwitch} className={link}>
+                {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
+              </a>
+            </li>
+          )}
+        </ul>
+      </div>
     </header>
   )
 }
