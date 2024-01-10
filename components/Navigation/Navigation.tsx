@@ -4,10 +4,9 @@ import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import { SlArrowLeft } from 'react-icons/sl'
 import { useLanguageContext } from '@/context/LanguageContext'
-import { TNavigation } from '@/types/Navigation.types'
 import { container, icon, link, links, title } from './styles.css'
 
-export default function Navigation({ blok }: TNavigation) {
+export default function Navigation({ blok }: any) {
   const router = useRouter()
   const pathname = usePathname()
   const { language, setLanguage } = useLanguageContext()
