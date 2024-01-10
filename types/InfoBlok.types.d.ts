@@ -12,7 +12,7 @@ export type TInfoBlok = {
       | 'blue'
       | 'white'
       | 'gray'
-      | 'lightgray'
+      | 'lightGray'
       | undefined
     component: string
     text: TRichText
@@ -22,7 +22,7 @@ export type TInfoBlok = {
       | 'blue'
       | 'white'
       | 'gray'
-      | 'lightgray'
+      | 'lightGray'
       | undefined
     width: 'narrow' | 'regular' | 'extended' | 'wide' | 'full' | undefined
   }

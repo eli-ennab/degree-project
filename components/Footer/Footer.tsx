@@ -4,7 +4,8 @@ import { useEffect, useState } from 'react'
 import { useParams, usePathname } from 'next/navigation'
 import { CgKey } from 'react-icons/cg'
 import { SlArrowUp } from 'react-icons/sl'
-import { arrow, container, link, key } from './styles.css'
+import { SlEnvolope } from 'react-icons/sl'
+import { arrow, container, envelope, key } from './styles.css'
 import { useLanguageContext } from '@/context/LanguageContext'
 
 export default function Footer() {
@@ -46,8 +47,8 @@ export default function Footer() {
         )}
 
       {pathname.endsWith('guestbook') && (
-        <Link href={'guestbook/create'} className={link}>
-          skriv ett meddelande i gästboken
+        <Link href={'guestbook/create'} className={envelope}>
+          <SlEnvolope />
         </Link>
       )}
 

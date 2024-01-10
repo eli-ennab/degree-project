@@ -14,6 +14,11 @@ export const container = style({
   },
 })
 
+export const envelope = style({
+  color: vars.color.gray,
+  fontSize: sizes.font.m,
+})
+
 export const key = style({
   color: vars.color.gray,
   fontSize: sizes.font.l,

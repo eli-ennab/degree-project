@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
-import { CiLink } from 'react-icons/ci'
+import { SlLink } from 'react-icons/sl'
 import { container, image, link, text, title } from './styles.css'
 import { TItem } from '@/types/Item.types'
 
@@ -55,7 +55,7 @@ export default function ArticleItem({ blok }: TItem) {
         </p>
         {blok.link && (
           <Link href={blok.link.url} target="_blank" className={link}>
-            <CiLink /> {blok.linkText}
+            <SlLink /> {blok.linkText}
           </Link>
         )}
       </span>
