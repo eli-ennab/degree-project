@@ -22,14 +22,14 @@ export default function AdminNavigation() {
           className={logoutButton}
           onClick={() => {
             logout()
-            router.push('/admin')
+            router.push(`/${language}/admin`)
           }}
         >
           <RiLoginCircleLine className={logoutIcon} />
         </Button>
       ) : (
         <>
-          <Link href={'/admin/login'}>
+          <Link href={`/${language}/admin/login`}>
             {pathname === `/${language}/admin` ? (
               <RiLoginCircleLine className={loginIcon} />
             ) : (

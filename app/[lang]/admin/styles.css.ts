@@ -16,7 +16,7 @@ export const link = style({
   color: vars.color.gray,
   border: 'none',
   fontFamily: vars.font.noto,
-  fontSize: sizes.font.s,
+  fontSize: sizes.font.m,
   textDecoration: 'none',
   padding: sizes.padding.mobileFooter,
   '@media': {

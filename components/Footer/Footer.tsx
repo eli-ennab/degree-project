@@ -5,11 +5,13 @@ import { useParams, usePathname } from 'next/navigation'
 import { CgKey } from 'react-icons/cg'
 import { SlArrowUp } from 'react-icons/sl'
 import { arrow, container, link, key } from './styles.css'
+import { useLanguageContext } from '@/context/LanguageContext'
 
 export default function Footer() {
   const [isScrolled, setIsScrolled] = useState(false)
   const params = useParams()
   const pathname = usePathname()
+  const { language } = useLanguageContext()
 
   const isBrowser = () => typeof window !== 'undefined'
 
@@ -38,7 +40,7 @@ export default function Footer() {
     <footer className={container}>
       {!params.slug &&
         (pathname.endsWith('sv') || pathname.endsWith('fa-ir')) && (
-          <Link href={'/admin'} className={key}>
+          <Link href={`/${language}/admin`} className={key}>
             <CgKey />
           </Link>
         )}

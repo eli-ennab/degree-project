@@ -52,9 +52,17 @@ export const formWrapper = style({
 })
 
 export const link = style({
+  position: 'relative',
+  top: '20px',
   color: vars.color.gray,
   border: 'none',
   fontFamily: vars.font.noto,
-  fontSize: sizes.font.s,
+  fontSize: sizes.font.m,
   textDecoration: 'none',
+  padding: sizes.padding.mobileFooter,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: sizes.padding.desktopFooter,
+    },
+  },
 })

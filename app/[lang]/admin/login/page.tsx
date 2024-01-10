@@ -1,11 +1,13 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import { FirebaseError } from 'firebase/app'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { FirebaseError } from 'firebase/app'
-import { useAuth } from '@/context/AuthContext'
+import { SlArrowLeft } from 'react-icons/sl'
 import Button from '@/components/Button/Button'
+import { useAuth } from '@/context/AuthContext'
+import { useLanguageContext } from '@/context/LanguageContext'
 import {
   container,
   error,
@@ -23,13 +25,14 @@ export default function Login() {
     password: '',
   })
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const { language } = useLanguageContext()
 
   const handleLogin = async (e: any) => {
     e.preventDefault()
 
     try {
       await login(data.email, data.password)
-      router.push('/admin/dashboard')
+      router.push(`/${language}/admin/dashboard`)
       setErrorMessage(null)
     } catch (error) {
       if (error instanceof FirebaseError) {
@@ -42,8 +45,8 @@ export default function Login() {
 
   return (
     <>
-      <Link href={'/'} className={link} style={{ padding: '90px' }}>
-        go back
+      <Link href={`/${language}`} className={link}>
+        <SlArrowLeft />
       </Link>
       <div className={container}>
         <form onSubmit={handleLogin} className={formWrapper}>
