@@ -13,6 +13,7 @@ export const container = style({
       alignItems: 'center',
       display: 'flex',
       justifyContent: 'center',
+      padding: '20px',
       position: 'relative',
     },
   },

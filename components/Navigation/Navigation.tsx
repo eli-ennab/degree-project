@@ -1,4 +1,5 @@
 'use client'
+import { useEffect, useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
@@ -17,14 +18,17 @@ import {
   navigation,
   title,
 } from './styles.css'
-import { useState } from 'react'
+import { media } from '@/vanilla_extract/styles.css'
 
 export default function Navigation({ blok }: any) {
   const router = useRouter()
   const pathname = usePathname()
   const { language, setLanguage } = useLanguageContext()
   const [open, setOpen] = useState(false)
-  const isTabletOrMobile = useMediaQuery({ query: '(max-width: 1224px)' })
+
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width: ${media.tablet})`,
+  })
 
   const handleLanguageSwitch = () => {
     const newLanguage = language === 'sv' ? 'fa-ir' : 'sv'
@@ -51,7 +55,7 @@ export default function Navigation({ blok }: any) {
         </h1>
       </div>
 
-      {isTabletOrMobile && (
+      {isTabletOrMobile && !pathname.startsWith(`/${language}/guestbook`) && (
         <button onClick={() => setOpen(!open)} className={button}>
           {open ? (
             <TfiClose className={menuIcon} />
@@ -59,6 +63,12 @@ export default function Navigation({ blok }: any) {
             <SlMenu className={menuIcon} />
           )}
         </button>
+      )}
+
+      {isTabletOrMobile && pathname.startsWith(`/${language}/guestbook`) && (
+        <Link href={`/${language}`} className={button}>
+          <SlArrowLeft className={menuIcon} />
+        </Link>
       )}
 
       {(isTabletOrMobile && open) || !isTabletOrMobile ? (

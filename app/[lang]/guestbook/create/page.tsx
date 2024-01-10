@@ -3,7 +3,6 @@ import React from 'react'
 import { addDoc, collection } from 'firebase/firestore'
 import { useState } from 'react'
 import { db } from '@/services/firebase'
-import Button from '@/components/Button/Button'
 import Navigation from '@/components/Navigation/Navigation'
 import 'keen-slider/keen-slider.min.css'
 import {
@@ -68,9 +67,9 @@ export default function CreateGuestbookMessage() {
               maxLength={textareaMaxLength}
             />
             <span className={inputInfo}>max {textareaMaxLength} tecken</span>
-            <Button type="submit" className={button}>
+            <button type="submit" className={button}>
               Skicka in meddelande
-            </Button>
+            </button>
           </form>
         </div>
       </div>

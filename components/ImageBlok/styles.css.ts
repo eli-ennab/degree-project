@@ -23,7 +23,7 @@ export const text = style({
   color: vars.color.gray,
   fontFamily: vars.font.nanumMyengjo,
   fontSize: sizes.font.s,
-  padding: sizes.padding.s,
+  padding: sizes.padding.m,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {},
   },
