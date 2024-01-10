@@ -65,6 +65,7 @@ export const ZIndex = {
   mid: 49,
   high: 99,
   max: 999,
+  top: 1000,
 }
 
 globalStyle('body', {
@@ -78,7 +79,7 @@ globalStyle('h1', {
   fontFamily: vars.font.syne,
   textTransform: 'uppercase',
   color: vars.color.kleinBlue,
-  fontSize: sizes.font.s,
+  fontSize: sizes.font.m,
   '@media': {
     [`screen and (min-width: ${media.mobile})`]: {
       fontSize: sizes.font.xl,

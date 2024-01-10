@@ -43,9 +43,12 @@ export const textField = style({
 })
 
 export const inputInfo = style({
+  display: 'flex',
+  justifyContent: 'flex-end',
   color: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
+  width: '320px',
   marginBottom: '20px',
 })
 
@@ -67,12 +70,13 @@ export const info = style({
   color: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
-  marginBottom: '40px',
+  padding: '0px 20px',
+  marginBottom: '30px',
 })
 
 export const formWrapper = style({
   alignItems: 'center',
-  backgroundColor: vars.color.orange,
+  backgroundColor: vars.color.gray,
   display: 'flex',
   height: '450px',
   justifyContent: 'center',
