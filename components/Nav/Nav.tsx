@@ -3,7 +3,8 @@ import { storyblokEditable } from '@storyblok/react/rsc'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import { useLanguageContext } from '@/context/LanguageContext'
-import { container, link, links, title } from './styles.css'
+import { SlArrowLeft } from 'react-icons/sl'
+import { container, icon, link, links, title } from './styles.css'
 
 export default function Nav({ blok }: any) {
   const router = useRouter()
@@ -43,11 +44,18 @@ export default function Nav({ blok }: any) {
               </Link>
             </li>
           ))}
-          <li>
-            <a onClick={handleLanguageSwitch} className={link}>
-              {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
-            </a>
-          </li>
+
+          {pathname.startsWith(`/${language}/guestbook`) ? (
+            <Link href={`/${language}`} className={icon}>
+              <SlArrowLeft />
+            </Link>
+          ) : (
+            <li>
+              <a onClick={handleLanguageSwitch} className={link}>
+                {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
+              </a>
+            </li>
+          )}
         </ul>
       </div>
     </header>

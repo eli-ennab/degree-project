@@ -4,6 +4,7 @@ import { addDoc, collection } from 'firebase/firestore'
 import { useState } from 'react'
 import { db } from '@/services/firebase'
 import Button from '@/components/Button/Button'
+import Nav from '@/components/Nav/Nav'
 import 'keen-slider/keen-slider.min.css'
 import {
   button,
@@ -35,41 +36,44 @@ export default function CreateGuestbookMessage() {
   }
 
   return (
-    <div className={container}>
-      <div className={formWrapper}>
-        <form onSubmit={addMessage} className={form}>
-          <label className={formLabel}>Lämna ett meddelande</label>
-          <span className={info}>
-            Här kan du lämna ett meddelande till Niooshas gästbok. Har du tur så
-            dyker ditt meddelande upp i gästboken inom kort!
-          </span>
+    <>
+      <Nav />
+      <div className={container}>
+        <div className={formWrapper}>
+          <form onSubmit={addMessage} className={form}>
+            <label className={formLabel}>Lämna ett meddelande</label>
+            <span className={info}>
+              Här kan du lämna ett meddelande till Niooshas gästbok. Har du tur
+              så dyker ditt meddelande upp i gästboken inom kort!
+            </span>
 
-          <input
-            type="text"
-            placeholder="name"
-            value={newMessage.name}
-            onChange={(e) =>
-              setNewMessage({ ...newMessage, name: e.target.value })
-            }
-            className={nameField}
-            maxLength={inputMaxLength}
-          />
-          <span className={inputInfo}>max {inputMaxLength} tecken</span>
-          <textarea
-            placeholder="message"
-            value={newMessage.message}
-            onChange={(e) =>
-              setNewMessage({ ...newMessage, message: e.target.value })
-            }
-            className={textField}
-            maxLength={textareaMaxLength}
-          />
-          <span className={inputInfo}>max {textareaMaxLength} tecken</span>
-          <Button type="submit" className={button}>
-            Skicka in meddelande
-          </Button>
-        </form>
+            <input
+              type="text"
+              placeholder="name"
+              value={newMessage.name}
+              onChange={(e) =>
+                setNewMessage({ ...newMessage, name: e.target.value })
+              }
+              className={nameField}
+              maxLength={inputMaxLength}
+            />
+            <span className={inputInfo}>max {inputMaxLength} tecken</span>
+            <textarea
+              placeholder="message"
+              value={newMessage.message}
+              onChange={(e) =>
+                setNewMessage({ ...newMessage, message: e.target.value })
+              }
+              className={textField}
+              maxLength={textareaMaxLength}
+            />
+            <span className={inputInfo}>max {textareaMaxLength} tecken</span>
+            <Button type="submit" className={button}>
+              Skicka in meddelande
+            </Button>
+          </form>
+        </div>
       </div>
-    </div>
+    </>
   )
 }

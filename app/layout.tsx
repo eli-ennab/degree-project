@@ -9,9 +9,7 @@ import {
 } from 'next/font/google'
 import { LanguageWrapper } from '@/context/LanguageContext'
 import Footer from '@/components/Footer/Footer'
-import Navigation from '@/components/Navigation/Navigation'
 import StoryblokProvider from '@/components/StoryblokProvider'
-import Nav from '@/components/Nav/Nav'
 
 const nanumMyeongjo = Nanum_Myeongjo({
   variable: '--font-nanum-myengjo',

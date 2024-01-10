@@ -27,7 +27,7 @@ export const media = {
 
 export const sizes = {
   font: {
-    xs: '8px',
+    xs: '10px',
     s: '12px',
     m: '16px',
     l: '24px',

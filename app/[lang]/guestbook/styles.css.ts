@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { ZIndex, media, sizes, vars } from '../../../vanilla_extract/styles.css'
+import { media, sizes, vars } from '../../../vanilla_extract/styles.css'
 
 export const container = style({
   alignItems: 'center',

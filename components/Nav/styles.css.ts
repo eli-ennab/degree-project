@@ -13,6 +13,17 @@ export const container = style({
   },
 })
 
+export const icon = style({
+  color: vars.color.gray,
+  fontSize: sizes.font.l,
+  padding: sizes.padding.mobile,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: sizes.padding.desktop,
+    },
+  },
+})
+
 export const link = style({
   cursor: 'pointer',
   color: vars.color.black,
