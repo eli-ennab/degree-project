@@ -1,13 +1,25 @@
 import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
+export const button = style({
+  backgroundColor: vars.color.white,
+  border: `1px solid ${vars.color.black}`,
+  borderRadius: '2px',
+  color: vars.color.black,
+  cursor: 'pointer',
+  fontFamily: vars.font.playfair,
+  height: '40px',
+  padding: '10px',
+  textTransform: 'lowercase',
+})
+
 export const container = style({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
   width: '100vw',
-  height: '50vh',
+  height: '90vh',
 })
 
 export const error = style({

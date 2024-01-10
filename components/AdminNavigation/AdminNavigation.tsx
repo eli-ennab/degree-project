@@ -33,7 +33,7 @@ export default function AdminNavigation() {
             {pathname === `/${language}/admin` ? (
               <RiLoginCircleLine className={loginIcon} />
             ) : (
-              'no login'
+              ''
             )}
           </Link>
         </>
