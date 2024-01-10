@@ -6,10 +6,24 @@ export type TInfoBlok = {
     _uid: string
     _editable: string
     alignment: 'left' | 'right' | 'center' | undefined
-    backgroundColor: 'black' | 'orange' | 'blue' | 'white' | 'gray' | undefined
+    backgroundColor:
+      | 'black'
+      | 'orange'
+      | 'blue'
+      | 'white'
+      | 'gray'
+      | 'lightgray'
+      | undefined
     component: string
     text: TRichText
-    textColor: 'black' | 'orange' | 'blue' | 'white' | 'gray' | undefined
+    textColor:
+      | 'black'
+      | 'orange'
+      | 'blue'
+      | 'white'
+      | 'gray'
+      | 'lightgray'
+      | undefined
     width: 'narrow' | 'regular' | 'extended' | 'wide' | 'full' | undefined
   }
 }

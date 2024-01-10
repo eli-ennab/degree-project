@@ -11,13 +11,17 @@ import LinkGrid from './LinkGrid/LinkGrid'
 import Links from './Links/Links'
 import Navigation from './Navigation/Navigation'
 import Page from './Page'
+import ImageBlok from './ImageBlok/ImageBlok'
+import Divider from './Divider/Divider'
 
 const components = {
   articleItem: ArticleItem,
   articleGrid: ArticleGrid,
+  divider: Divider,
   footer: Footer,
   headline: Headline,
   hero: Hero,
+  imageBlok: ImageBlok,
   infoBlok: InfoBlok,
   linkGrid: LinkGrid,
   links: Links,

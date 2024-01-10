@@ -30,9 +30,9 @@ export const headLine = recipe({
   },
   variants: {
     textAlign: {
-      fa: { textAlign: 'right', fontFamily: vars.font.noto },
+      fa: { textAlign: 'right' },
       sv: {
-        fontFamily: vars.font.noto,
+        fontFamily: vars.font.playfair,
         textAlign: 'left',
         textTransform: 'lowercase',
       },

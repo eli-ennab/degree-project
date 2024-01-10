@@ -6,7 +6,7 @@ export const button = style({
   border: 'none',
   borderRadius: '2px',
   cursor: 'pointer',
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   height: '40px',
   padding: '10px',
   textTransform: 'lowercase',
@@ -26,7 +26,7 @@ export const nameField = style({
   borderRadius: '2px',
   border: 'none',
   backgroundColor: vars.color.white,
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
 })
 
@@ -37,14 +37,14 @@ export const textField = style({
   borderRadius: '2px',
   border: 'none',
   backgroundColor: vars.color.white,
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   resize: 'none',
 })
 
 export const inputInfo = style({
   color: vars.color.white,
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   marginBottom: '20px',
 })
@@ -58,14 +58,14 @@ export const form = style({
 
 export const formLabel = style({
   color: vars.color.white,
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.l,
   marginBottom: '10px',
 })
 
 export const info = style({
   color: vars.color.white,
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   marginBottom: '40px',
 })

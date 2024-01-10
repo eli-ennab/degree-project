@@ -9,13 +9,14 @@ export const container = style({
   height: '10vh',
   justifyContent: 'center',
   width: '100vw',
+  padding: '20px 0px',
 })
 
 export const headLine = recipe({
   base: {
-    fontFamily: vars.font.noto,
+    fontFamily: vars.font.syne,
     fontSize: sizes.font.l,
-    padding: '0px 10px',
+    textTransform: 'uppercase',
   },
   variants: {
     textAlign: {
@@ -38,6 +39,9 @@ export const headLine = recipe({
       gray: {
         backgroundColor: vars.color.gray,
       },
+      lightGray: {
+        backgroundColor: vars.color.lightGray,
+      },
     },
     color: {
       orange: {
@@ -54,6 +58,9 @@ export const headLine = recipe({
       },
       gray: {
         color: vars.color.gray,
+      },
+      lightGray: {
+        backgroundColor: vars.color.lightGray,
       },
     },
   },

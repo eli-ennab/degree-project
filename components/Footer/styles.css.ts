@@ -22,7 +22,7 @@ export const key = style({
 export const link = style({
   backgroundColor: vars.color.white,
   color: vars.color.black,
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   left: sizes.padding.l,
   position: 'fixed',

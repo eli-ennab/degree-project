@@ -63,6 +63,9 @@ export const container = recipe({
       gray: {
         backgroundColor: vars.color.gray,
       },
+      lightGray: {
+        backgroundColor: vars.color.lightGray,
+      },
     },
     color: {
       orange: {
@@ -79,6 +82,9 @@ export const container = recipe({
       },
       gray: {
         color: vars.color.gray,
+      },
+      lightGray: {
+        backgroundColor: vars.color.lightGray,
       },
     },
     width: {
@@ -123,7 +129,7 @@ export const container = recipe({
 
 export const text = recipe({
   base: {
-    fontFamily: vars.font.noto,
+    fontFamily: vars.font.playfair,
     fontSize: sizes.font.m,
   },
   variants: {

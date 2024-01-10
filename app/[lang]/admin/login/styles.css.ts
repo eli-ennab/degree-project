@@ -12,7 +12,7 @@ export const container = style({
 
 export const error = style({
   color: 'red',
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
 })
 
@@ -20,7 +20,7 @@ export const field = style({
   backgroundColor: vars.color.white,
   border: `1px solid ${vars.color.black}`,
   borderRadius: '2px',
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   marginBottom: '10px',
   padding: '10px',
@@ -56,7 +56,7 @@ export const link = style({
   top: '20px',
   color: vars.color.gray,
   border: 'none',
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.m,
   textDecoration: 'none',
   padding: sizes.padding.mobileFooter,

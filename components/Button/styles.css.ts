@@ -6,7 +6,7 @@ export const button = style({
   border: `1px solid ${vars.color.black}`,
   borderRadius: '2px',
   cursor: 'pointer',
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   height: '40px',
   padding: '10px',
   textTransform: 'lowercase',

@@ -12,6 +12,6 @@ export const loader = style({
 
 export const text = style({
   color: vars.color.black,
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
 })

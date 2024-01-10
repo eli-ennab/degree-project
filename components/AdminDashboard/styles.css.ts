@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css'
 import { media, sizes, vars } from '../../vanilla_extract/styles.css'
 
 export const container = style({
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   padding: '10px',
   margin: '10px',

@@ -8,12 +8,13 @@ export const vars = createGlobalTheme(':root', {
     kleinBlue: '#022CA1',
     orange: '#ef6513',
     gray: '#979795',
+    lightGray: '#DCDCDC',
   },
   font: {
     nanumMyengjo: 'var(--font-nanum-myengjo)',
     noto: 'var(--font-noto-serif-display)',
     notoArabic: 'var(--font-noto-kufi-arabic)',
-    oldStandard: 'var(--font-old-standard-tt)',
+    playfair: 'var(--font-playfair-display)',
     syne: 'var(--font-syne)',
   },
 })

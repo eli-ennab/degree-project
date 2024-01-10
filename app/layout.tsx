@@ -4,7 +4,7 @@ import {
   Nanum_Myeongjo,
   Noto_Kufi_Arabic,
   Noto_Serif_Display,
-  Old_Standard_TT,
+  Playfair_Display,
   Syne,
 } from 'next/font/google'
 import { LanguageWrapper } from '@/context/LanguageContext'
@@ -29,8 +29,8 @@ const notoArabic = Noto_Kufi_Arabic({
   subsets: ['arabic'],
 })
 
-const oldStandard = Old_Standard_TT({
-  variable: '--font-old-standard-tt',
+const playfair = Playfair_Display({
+  variable: '--font-playfair-display',
   weight: ['400'],
   subsets: ['latin'],
 })
@@ -63,7 +63,7 @@ export default function RootLayout({
     <StoryblokProvider>
       <LanguageWrapper>
         <html
-          className={`${nanumMyeongjo.variable} ${notoArabic.variable} ${noto.variable} ${oldStandard.variable} ${syne.variable}`}
+          className={`${nanumMyeongjo.variable} ${notoArabic.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
           lang={'sv'}
         >
           <body>
