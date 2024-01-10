@@ -1,30 +1,34 @@
-import { sizes, vars } from '@/vanilla_extract/styles.css'
+import { ZIndex, media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
-export const button = style({
-  cursor: 'pointer',
-  padding: '10px',
-  height: '40px',
-  borderRadius: '2px',
-  border: '1px solid black',
-  backgroundColor: vars.color.white,
-  fontFamily: vars.font.noto,
-})
-
 export const container = style({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  height: '10vh',
-  width: '100vw',
+  bottom: '0px',
+  height: sizes.padding.l,
+  padding: sizes.padding.mobileFooter,
+  position: 'fixed',
+  zIndex: ZIndex.max,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: sizes.padding.desktopFooter,
+    },
+  },
 })
 
-export const link = style({
-  fontFamily: vars.font.noto,
-  color: vars.color.kleinBlue,
-  textDecoration: 'none',
-  fontSize: sizes.font.s,
+export const loginIcon = style({
+  color: vars.color.gray,
+  fontSize: sizes.font.l,
+})
+
+export const logoutButton = style({
+  cursor: 'pointer',
+  padding: 0,
+  margin: 0,
+  backgroundColor: 'transparent',
   border: 'none',
-  padding: sizes.padding.m,
-  display: 'flex',
+})
+
+export const logoutIcon = style({
+  color: vars.color.gray,
+  fontSize: sizes.font.l,
+  transform: 'scaleX(-1)',
 })

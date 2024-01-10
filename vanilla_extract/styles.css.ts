@@ -3,11 +3,12 @@ import { createGlobalTheme } from '@vanilla-extract/css'
 
 export const vars = createGlobalTheme(':root', {
   color: {
-    white: '#ffffff',
+    white: '#fcfffb',
     black: '#222222',
     kleinBlue: '#002FA7',
     lightKleinBlue: '#0f46d1',
     orange: '#ef6513',
+    gray: '#979795',
   },
   font: {
     nanumMyengjo: 'var(--font-nanum-myengjo)',
@@ -26,7 +27,7 @@ export const media = {
 
 export const sizes = {
   font: {
-    xs: '8px',
+    xs: '10px',
     s: '12px',
     m: '16px',
     l: '24px',
@@ -61,8 +62,9 @@ export const sizes = {
 
 export const ZIndex = {
   low: 0,
-  mid: 50,
-  high: 100,
+  mid: 49,
+  high: 99,
+  max: 999,
 }
 
 globalStyle('body', {

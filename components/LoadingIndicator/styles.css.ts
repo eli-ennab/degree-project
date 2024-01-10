@@ -1,11 +1,17 @@
 import { style } from '@vanilla-extract/css'
-import { vars } from '@/vanilla_extract/styles.css'
+import { sizes, vars } from '@/vanilla_extract/styles.css'
 
 export const loader = style({
+  alignItems: 'center',
+  display: 'flex',
+  height: '100vh',
+  justifyContent: 'center',
   position: 'fixed',
-  top: '50%',
-  left: '48%',
+  width: '100vw',
+})
+
+export const text = style({
+  color: vars.color.black,
   fontFamily: vars.font.noto,
-  transition: 'transform 1s ease-in-out',
-  transform: 'scale(1.05)',
+  fontSize: sizes.font.s,
 })

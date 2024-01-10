@@ -1,63 +1,88 @@
 'use client'
 import React from 'react'
 import { useState } from 'react'
+import { FirebaseError } from 'firebase/app'
+import Link from 'next/link'
 import { useRouter } from 'next/navigation'
+import { SlArrowLeft } from 'react-icons/sl'
+import Button from '@/components/Button/Button'
 import { useAuth } from '@/context/AuthContext'
-import { container, field, formWrapper } from '../styles.css'
+import { useLanguageContext } from '@/context/LanguageContext'
+import {
+  container,
+  error,
+  field,
+  formLabel,
+  formWrapper,
+  link,
+} from './styles.css'
 
 export default function Login() {
-  const { user, login } = useAuth()
+  const { login } = useAuth()
   const router = useRouter()
-
   const [data, setData] = useState({
     email: '',
     password: '',
   })
+  const [errorMessage, setErrorMessage] = useState<string | null>(null)
+  const { language } = useLanguageContext()
 
   const handleLogin = async (e: any) => {
     e.preventDefault()
 
     try {
       await login(data.email, data.password)
-      router.push('/admin/dashboard')
+      router.push(`/${language}/admin/dashboard`)
+      setErrorMessage(null)
     } catch (error) {
-      console.error(error)
+      if (error instanceof FirebaseError) {
+        setErrorMessage(error.message)
+      } else {
+        setErrorMessage('Something went wrong, try again.')
+      }
     }
   }
 
   return (
-    <div className={container}>
-      <form onSubmit={handleLogin} className={formWrapper}>
-        <input
-          type="email"
-          placeholder="Enter email"
-          required
-          onChange={(e: any) =>
-            setData({
-              ...data,
-              email: e.target.value.trim(),
-            })
-          }
-          value={data.email}
-          className={field}
-        />
+    <>
+      <Link href={`/${language}`} className={link}>
+        <SlArrowLeft />
+      </Link>
+      <div className={container}>
+        <form onSubmit={handleLogin} className={formWrapper}>
+          <label className={formLabel}>Admin login</label>
+          <input
+            type="email"
+            placeholder="Email"
+            required
+            onChange={(e: any) =>
+              setData({
+                ...data,
+                email: e.target.value.trim(),
+              })
+            }
+            value={data.email}
+            className={field}
+          />
 
-        <input
-          type="password"
-          placeholder="Password"
-          required
-          onChange={(e: any) =>
-            setData({
-              ...data,
-              password: e.target.value.trim(),
-            })
-          }
-          value={data.password}
-          className={field}
-        />
+          <input
+            type="password"
+            placeholder="Password"
+            required
+            onChange={(e: any) =>
+              setData({
+                ...data,
+                password: e.target.value.trim(),
+              })
+            }
+            value={data.password}
+            className={field}
+          />
+          {errorMessage && <span className={error}>{errorMessage}</span>}
 
-        <button type="submit">enter</button>
-      </form>
-    </div>
+          <Button type="submit">Enter</Button>
+        </form>
+      </div>
+    </>
   )
 }

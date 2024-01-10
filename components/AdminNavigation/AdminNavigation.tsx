@@ -1,28 +1,40 @@
 'use client'
 import Link from 'next/link'
+import { useRouter, usePathname } from 'next/navigation'
+import { RiLoginCircleLine } from 'react-icons/ri'
 import { useAuth } from '@/context/AuthContext'
-import { button, container, link } from './styles.css'
-import { useRouter } from 'next/navigation'
+import { useLanguageContext } from '@/context/LanguageContext'
+import Button from '../Button/Button'
+import { container, loginIcon, logoutButton, logoutIcon } from './styles.css'
 
 export default function AdminNavigation() {
   const { user, logout } = useAuth()
   const router = useRouter()
+  const pathname = usePathname()
+  const { language } = useLanguageContext()
+
+  console.log(pathname)
+
   return (
     <div className={container}>
       {user ? (
-        <button
+        <Button
+          className={logoutButton}
           onClick={() => {
             logout()
-            router.push('/admin')
+            router.push(`/${language}/admin`)
           }}
-          className={button}
         >
-          sign out
-        </button>
+          <RiLoginCircleLine className={logoutIcon} />
+        </Button>
       ) : (
         <>
-          <Link href={'/admin/login'} className={link}>
-            login
+          <Link href={`/${language}/admin/login`}>
+            {pathname === `/${language}/admin` ? (
+              <RiLoginCircleLine className={loginIcon} />
+            ) : (
+              'no login'
+            )}
           </Link>
         </>
       )}

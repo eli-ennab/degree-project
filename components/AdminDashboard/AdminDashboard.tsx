@@ -7,11 +7,12 @@ import {
   onSnapshot,
   updateDoc,
 } from 'firebase/firestore'
-import { db } from '@/services/firebase'
 import { useEffect, useState } from 'react'
+import { db } from '@/services/firebase'
 import { TGuestbook, TGuestbookList } from '@/types/Guestbook.types'
+import Button from '../Button/Button'
+import ConfirmationBox from '../ConfirmationBox/ConfirmationBox'
 import {
-  button,
   container,
   grid,
   guestbookList,
@@ -23,14 +24,23 @@ export default function AdminDashboard() {
   const [guestbookData, setGuestbookData] = useState<TGuestbookList | null>(
     null
   )
+  const [confirmId, setConfirmId] = useState<string | null>(null)
+  const [action, setAction] = useState<string | null>(null)
 
-  const approveMessage = async (item: TGuestbook) => {
+  const toggleConfirmModal = (id: string, action: string) => {
+    setConfirmId((prev) => (prev === id ? null : id))
+    setAction(action)
+  }
+
+  const toggleMessageStatus = async (item: TGuestbook) => {
     const messageRef = doc(db, 'messages', item.id)
     await updateDoc(messageRef, { approved: !item.approved })
+    setConfirmId(null)
   }
 
   const deleteMessage = async (id: string) => {
     await deleteDoc(doc(db, 'messages', id))
+    setConfirmId(null)
   }
 
   useEffect(() => {
@@ -66,19 +76,28 @@ export default function AdminDashboard() {
                       <div className={guestbookListItemContainer}>
                         <span>name: {item.name}</span>
                         <span>message: {item.message}</span>
-                        <button
-                          onClick={() => approveMessage(item)}
-                          className={button}
+                        <Button
+                          onClick={() => toggleConfirmModal(item.id, 'toggle')}
                         >
                           {item.approved ? 'set to pending' : 'set to approved'}
-                        </button>
-                        <button
-                          onClick={() => deleteMessage(item.id)}
-                          className={button}
+                        </Button>
+                        <Button
+                          onClick={() => toggleConfirmModal(item.id, 'delete')}
                         >
                           delete
-                        </button>
+                        </Button>
                       </div>
+                      {confirmId === item.id && (
+                        <ConfirmationBox
+                          action={action}
+                          show={true}
+                          onCancel={() => setConfirmId(null)}
+                          onConfirmDelete={() => deleteMessage(item.id)}
+                          onConfirmToggle={() => toggleMessageStatus(item)}
+                        >
+                          Are you sure?
+                        </ConfirmationBox>
+                      )}
                     </li>
                   )
                 }

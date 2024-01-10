@@ -9,7 +9,6 @@ import {
 } from 'next/font/google'
 import { LanguageWrapper } from '@/context/LanguageContext'
 import Footer from '@/components/Footer/Footer'
-import Navigation from '@/components/Navigation/Navigation'
 import StoryblokProvider from '@/components/StoryblokProvider'
 
 const nanumMyeongjo = Nanum_Myeongjo({
@@ -68,7 +67,6 @@ export default function RootLayout({
           lang={'sv'}
         >
           <body>
-            <Navigation />
             {children}
             <Footer />
           </body>

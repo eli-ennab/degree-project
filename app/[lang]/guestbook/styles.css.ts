@@ -1,30 +1,18 @@
 import { style } from '@vanilla-extract/css'
-import { ZIndex, media, sizes, vars } from '../../../vanilla_extract/styles.css'
+import { media, sizes, vars } from '../../../vanilla_extract/styles.css'
 
 export const container = style({
-  display: 'flex',
-  justifyContent: 'center',
   alignItems: 'center',
+  display: 'flex',
   flexDirection: 'column',
+  justifyContent: 'center',
   width: '100vw',
 })
 
 export const divider = style({
-  border: `1px dotted ${vars.color.orange}`,
+  border: `1px solid ${vars.color.white}`,
+  margin: '20px',
   width: '50%',
-  margin: '30px 0px',
-})
-
-export const link = style({
-  position: 'absolute',
-  fontSize: sizes.font.s,
-  textDecoration: 'none',
-  fontFamily: vars.font.noto,
-  color: vars.color.black,
-  paddingTop: '20px',
-  right: '90px',
-  bottom: '30px',
-  zIndex: ZIndex.high,
 })
 
 export const guestbookWrapper = style({
@@ -38,26 +26,38 @@ export const guestbookWrapper = style({
 })
 
 export const guestbookItem = style({
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center',
   alignItems: 'center',
   color: vars.color.white,
+  display: 'flex',
+  flexDirection: 'column',
   fontSize: sizes.font.xl,
-  '@media': {
-    [`screen and (min-width: ${media.mobile})`]: {},
-  },
+  justifyContent: 'center',
 })
 
 export const itemName = style({
-  fontFamily: vars.font.syne,
-  fontSize: sizes.font.s,
-  textTransform: 'uppercase',
   color: vars.color.white,
+  fontFamily: vars.font.syne,
+  fontSize: sizes.font.m,
+  textTransform: 'uppercase',
+  padding: '20px',
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      fontSize: sizes.font.l,
+      padding: '60px',
+    },
+  },
 })
 
 export const itemMessage = style({
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.nanumMyengjo,
+  fontSize: sizes.font.s,
   textTransform: 'lowercase',
-  fontSize: sizes.font.xl,
+  overflow: 'hidden',
+  padding: '20px',
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      fontSize: sizes.font.l,
+      padding: '60px',
+    },
+  },
 })

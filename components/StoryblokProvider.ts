@@ -1,22 +1,26 @@
 'use client'
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 
-import BookItem from './BookItem/BookItem'
-import BookGrid from './BookGrid/BookGrid'
+import ArticleItem from './ArticleItem/ArticleItem'
+import ArticleGrid from './ArticleGrid/ArticleGrid'
 import Footer from './Footer/Footer'
 import Headline from './Headline/Headline'
 import Hero from './Hero/Hero'
-import ImageText from './ImageText/ImageText'
+import InfoBlok from './infoBlok/InfoBlok'
+import LinkGrid from './LinkGrid/LinkGrid'
+import Links from './Links/Links'
 import Navigation from './Navigation/Navigation'
 import Page from './Page'
 
 const components = {
-  bookItem: BookItem,
-  bookGrid: BookGrid,
+  articleItem: ArticleItem,
+  articleGrid: ArticleGrid,
   footer: Footer,
   headline: Headline,
   hero: Hero,
-  imageText: ImageText,
+  infoBlok: InfoBlok,
+  linkGrid: LinkGrid,
+  links: Links,
   navigation: Navigation,
   page: Page,
 }
