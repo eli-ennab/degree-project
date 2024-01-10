@@ -1,13 +1,26 @@
+'use client'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import { useParams } from 'next/navigation'
 import { wrapper, container, text } from './styles.css'
 import { TInfoBlok } from '@/types/InfoBlok.types'
+import { useEffect, useState } from 'react'
 
 export default function InfoBlok({ blok }: TInfoBlok) {
   const params = useParams()
+  const [showSmooth, setShowSmooth] = useState(false)
+
+  useEffect(() => {
+    setShowSmooth(true)
+  }, [])
 
   return (
-    <div className={wrapper({ alignment: blok.alignment })}>
+    <div
+      className={wrapper({ alignment: blok.alignment })}
+      style={{
+        opacity: showSmooth ? 1 : 0,
+        transition: 'opacity .9s ease-in-out',
+      }}
+    >
       <div
         {...storyblokEditable(blok)}
         className={container({

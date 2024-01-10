@@ -18,7 +18,12 @@ import {
 
 export default function Guestbook() {
   const [data, setData] = useState<TGuestbookList | null>(null)
+  const [showSmooth, setShowSmooth] = useState(false)
   const slider = useSlider(data)
+
+  useEffect(() => {
+    setShowSmooth(true)
+  }, [])
 
   useEffect(() => {
     const q = query(collection(db, 'messages'))
@@ -35,7 +40,12 @@ export default function Guestbook() {
   }, [])
 
   return (
-    <>
+    <div
+      style={{
+        opacity: showSmooth ? 1 : 0,
+        transition: 'opacity .9s ease-in-out',
+      }}
+    >
       <Navigation />
       <div className={container}>
         <div ref={slider} className={`${guestbookWrapper} keen-slider`}>
@@ -55,6 +65,6 @@ export default function Guestbook() {
             )}
         </div>
       </div>
-    </>
+    </div>
   )
 }

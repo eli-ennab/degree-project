@@ -1,14 +1,28 @@
+'use client'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import { container, headLine, image } from './styles.css'
 import { THero } from '@/types/Hero.types'
+import { useEffect, useState } from 'react'
 
 export default function Hero({ blok }: THero) {
   const params = useParams()
+  const [showSmooth, setShowSmooth] = useState(false)
+
+  useEffect(() => {
+    setShowSmooth(true)
+  }, [])
 
   return (
-    <div {...storyblokEditable(blok)} className={container}>
+    <div
+      {...storyblokEditable(blok)}
+      className={container}
+      style={{
+        opacity: showSmooth ? 1 : 0,
+        transition: 'opacity .9s ease-in-out',
+      }}
+    >
       <h2
         className={headLine(
           params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
