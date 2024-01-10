@@ -5,6 +5,7 @@ export const button = style({
   backgroundColor: vars.color.white,
   border: 'none',
   borderRadius: '2px',
+  color: vars.color.black,
   cursor: 'pointer',
   fontFamily: vars.font.playfair,
   height: '40px',

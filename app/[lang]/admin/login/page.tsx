@@ -5,10 +5,10 @@ import { FirebaseError } from 'firebase/app'
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
 import { SlArrowLeft } from 'react-icons/sl'
-import Button from '@/components/Button/Button'
 import { useAuth } from '@/context/AuthContext'
 import { useLanguageContext } from '@/context/LanguageContext'
 import {
+  button,
   container,
   error,
   field,
@@ -80,7 +80,9 @@ export default function Login() {
           />
           {errorMessage && <span className={error}>{errorMessage}</span>}
 
-          <Button type="submit">Enter</Button>
+          <button type="submit" className={button}>
+            Enter
+          </button>
         </form>
       </div>
     </>
