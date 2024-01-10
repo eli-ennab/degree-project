@@ -13,6 +13,7 @@ import {
   icon,
   link,
   links,
+  menuIcon,
   navigation,
   title,
 } from './styles.css'
@@ -52,7 +53,11 @@ export default function Navigation({ blok }: any) {
 
       {isTabletOrMobile && (
         <button onClick={() => setOpen(!open)} className={button}>
-          {open ? <TfiClose /> : <SlMenu />}
+          {open ? (
+            <TfiClose className={menuIcon} />
+          ) : (
+            <SlMenu className={menuIcon} />
+          )}
         </button>
       )}
 

@@ -1,12 +1,17 @@
 import { style } from '@vanilla-extract/css'
-import { media, sizes, vars } from '../../vanilla_extract/styles.css'
+import { ZIndex, media, sizes, vars } from '../../vanilla_extract/styles.css'
 import { recipe } from '@vanilla-extract/recipes'
 
 export const button = style({
   background: 'none',
   border: 'none',
-  padding: '20px',
-  zIndex: 2222,
+  padding: '12px',
+  zIndex: ZIndex.top,
+})
+
+export const menuIcon = style({
+  color: vars.color.black,
+  fontSize: sizes.font.m,
 })
 
 export const container = style({
@@ -14,7 +19,7 @@ export const container = style({
   display: 'flex',
   justifyContent: 'space-between',
   padding: sizes.padding.mobile,
-  minHeight: '110px',
+  minHeight: '80px',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       padding: sizes.padding.desktop,
@@ -25,8 +30,9 @@ export const container = style({
 
 export const icon = style({
   color: vars.color.gray,
-  fontSize: sizes.font.s,
+  fontSize: sizes.font.m,
   padding: '0px 0px 8px 0px',
+  zIndex: ZIndex.top,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       fontSize: sizes.font.m,
@@ -65,9 +71,7 @@ export const links = style({
 })
 
 export const navigation = recipe({
-  base: {
-    opacity: 1,
-  },
+  base: {},
   variants: {
     screen: {
       mobile: {
@@ -77,7 +81,7 @@ export const navigation = recipe({
         height: '100vh',
         width: '100vw',
         backgroundColor: 'rgba(255, 255, 255, 0.8)',
-        zIndex: 1111,
+        zIndex: ZIndex.max,
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -85,12 +89,8 @@ export const navigation = recipe({
       desktop: {},
     },
     state: {
-      open: {
-        transform: 'opacity 1s ease-in-out',
-      },
-      closed: {
-        transform: 'opacity 1s ease-in-out',
-      },
+      open: {},
+      closed: {},
     },
   },
 })
