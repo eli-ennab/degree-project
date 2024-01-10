@@ -18,7 +18,8 @@ export default function InfoBlok({ blok }: TInfoBlok) {
       className={wrapper({ alignment: blok.alignment })}
       style={{
         opacity: showSmooth ? 1 : 0,
-        transition: 'opacity .9s ease-in-out',
+        transform: showSmooth ? 'translateY(0)' : 'translateY(10px)',
+        transition: 'opacity 0.7s ease-in-out, transform 0.7s ease-in-out',
       }}
     >
       <div
