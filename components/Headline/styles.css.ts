@@ -20,7 +20,7 @@ export const headLine = recipe({
   variants: {
     textAlign: {
       fa: { textAlign: 'right' },
-      sv: { textAlign: 'left', textTransform: 'lowercase' },
+      sv: { textAlign: 'left' },
     },
     backgroundColor: {
       orange: {

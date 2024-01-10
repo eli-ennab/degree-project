@@ -5,8 +5,7 @@ export const vars = createGlobalTheme(':root', {
   color: {
     white: '#fcfffb',
     black: '#222222',
-    kleinBlue: '#002FA7',
-    lightKleinBlue: '#0f46d1',
+    kleinBlue: '#022CA1',
     orange: '#ef6513',
     gray: '#979795',
   },
@@ -87,10 +86,6 @@ globalStyle('h1', {
   },
 })
 
-globalStyle('h2', {})
-
 globalStyle('li', {
   listStyleType: 'none',
 })
-
-globalStyle('button', {})
