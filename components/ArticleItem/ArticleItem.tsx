@@ -7,7 +7,7 @@ import { useParams } from 'next/navigation'
 import { container, image, link, text, title } from './styles.css'
 import { TItem } from '@/types/Item.types'
 
-export default function BookItem({ blok }: TItem) {
+export default function ArticleItem({ blok }: TItem) {
   const params = useParams()
   const [frontImage, setFrontImage] = useState(true)
 

@@ -4,6 +4,12 @@ import { useRouter, usePathname } from 'next/navigation'
 import { useLanguageContext } from '@/context/LanguageContext'
 import { container, link, links, title } from './styles.css'
 
+const navigation = [
+  { name: 'Nioosha', href: '/nioosha' },
+  { name: 'Said and written', href: '/written' },
+  { name: 'Guestbook', href: '/guestbook' },
+]
+
 export default function Navigation() {
   const router = useRouter()
   const pathname = usePathname()
@@ -26,21 +32,14 @@ export default function Navigation() {
       </div>
 
       <ul className={links}>
-        <li>
-          <Link href={`/${language}/nioosha`} className={link}>
-            Nioosha
-          </Link>
-        </li>
-        <li>
-          <Link href={`/${language}/written`} className={link}>
-            Sagt och skrivet
-          </Link>
-        </li>
-        <li>
-          <Link href={`/${language}/guestbook`} className={link}>
-            Gästbok
-          </Link>
-        </li>
+        {navigation.map((nav) => (
+          <li key={nav.name}>
+            <Link href={`/${language}${nav.href}`} className={link}>
+              {nav.name}
+            </Link>
+          </li>
+        ))}
+
         <li>
           <a onClick={handleLanguageSwitch} className={link}>
             {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}

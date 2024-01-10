@@ -8,7 +8,6 @@ const nextConfig = {
     storyblokApiToken: process.env.STORYBLOK_PREVIEW_TOKEN,
   },
   images: {
-    domains: ['a.storyblok.com'],
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [
       {
