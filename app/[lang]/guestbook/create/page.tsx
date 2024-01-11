@@ -84,7 +84,7 @@ export default function CreateGuestbookMessage() {
               className={nameField}
               maxLength={inputMaxLength}
             />
-            <span className={inputInfo}>max {inputMaxLength} tecken</span>
+            <span className={inputInfo}>max {inputMaxLength} characters</span>
             <textarea
               placeholder="message"
               value={newMessage.message}
@@ -94,9 +94,11 @@ export default function CreateGuestbookMessage() {
               className={textField}
               maxLength={textareaMaxLength}
             />
-            <span className={inputInfo}>max {textareaMaxLength} tecken</span>
+            <span className={inputInfo}>
+              max {textareaMaxLength} characters
+            </span>
             <button type="submit" className={button}>
-              Skicka in meddelande
+              Send
             </button>
             <p className={responseMessage}>{response}</p>
           </form>
