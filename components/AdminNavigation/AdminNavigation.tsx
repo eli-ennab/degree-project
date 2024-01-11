@@ -13,8 +13,6 @@ export default function AdminNavigation() {
   const pathname = usePathname()
   const { language } = useLanguageContext()
 
-  console.log(pathname)
-
   return (
     <div className={container}>
       {user ? (
