@@ -10,7 +10,11 @@ export default function Admin() {
 
   return (
     <>
-      <Link href={`/${language}`} className={link}>
+      <Link
+        href={`/${language}`}
+        className={link}
+        aria-label={'Link to go back'}
+      >
         <SlArrowLeft />
       </Link>
       <div className={container}>

@@ -8,7 +8,7 @@ export const vars = createGlobalTheme(':root', {
     kleinBlue: '#022CA1',
     orange: '#ef6513',
     gray: '#979795',
-    lightGray: '#DCDCDC',
+    lightGray: '#dcdcdc',
   },
   font: {
     nanumMyengjo: 'var(--font-nanum-myengjo)',

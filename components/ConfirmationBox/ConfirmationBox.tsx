@@ -25,13 +25,19 @@ const ConfirmationBox: React.FC<IProps> = ({
 
       <div className={wrapper}>
         {action === 'delete' && (
-          <Button onClick={onConfirmDelete}>Confirm delete</Button>
+          <Button id="text" onClick={onConfirmDelete}>
+            Confirm delete
+          </Button>
         )}
 
         {action === 'toggle' && (
-          <Button onClick={onConfirmToggle}>Confirm toggle</Button>
+          <Button id="text" onClick={onConfirmToggle}>
+            Confirm toggle
+          </Button>
         )}
-        <Button onClick={onCancel}>Cancel</Button>
+        <Button id="text" onClick={onCancel}>
+          Cancel
+        </Button>
       </div>
     </div>
   ) : null

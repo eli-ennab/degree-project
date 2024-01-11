@@ -54,7 +54,12 @@ export default function ArticleItem({ blok }: TItem) {
           {blok.description}
         </p>
         {blok.link && (
-          <Link href={blok.link.url} target="_blank" className={link}>
+          <Link
+            href={blok.link.url}
+            target="_blank"
+            className={link}
+            aria-label={`Link to ${blok.linkText}`}
+          >
             <SlLink /> {blok.linkText}
           </Link>
         )}

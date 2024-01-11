@@ -17,6 +17,7 @@ export default function AdminNavigation() {
     <div className={container}>
       {user ? (
         <Button
+          id="login-icon"
           className={logoutButton}
           onClick={() => {
             logout()
@@ -27,7 +28,10 @@ export default function AdminNavigation() {
         </Button>
       ) : (
         <>
-          <Link href={`/${language}/admin/login`}>
+          <Link
+            href={`/${language}/admin/login`}
+            aria-label={'Link to go to the loginpage for admin'}
+          >
             {pathname === `/${language}/admin` ? (
               <RiLoginCircleLine className={loginIcon} />
             ) : (

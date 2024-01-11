@@ -97,7 +97,7 @@ export default function CreateGuestbookMessage() {
             <span className={inputInfo}>
               max {textareaMaxLength} characters
             </span>
-            <button type="submit" className={button}>
+            <button id="text" type="submit" className={button}>
               Send
             </button>
             <p className={responseMessage}>{response}</p>

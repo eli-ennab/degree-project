@@ -66,7 +66,7 @@ export default function Navigation({ blok }: any) {
       </div>
 
       {isTabletOrMobile && !pathname.startsWith(`/${language}/guestbook`) && (
-        <button onClick={() => setOpen(!open)} className={button}>
+        <button onClick={() => setOpen(!open)} className={button} id="text">
           {open ? (
             <TfiClose className={menuIcon} />
           ) : (
@@ -76,7 +76,11 @@ export default function Navigation({ blok }: any) {
       )}
 
       {isTabletOrMobile && pathname.startsWith(`/${language}/guestbook`) && (
-        <Link href={`/${language}`} className={button}>
+        <Link
+          href={`/${language}`}
+          className={button}
+          aria-label={'Link to go back to homepage'}
+        >
           <SlArrowLeft className={menuIcon} />
         </Link>
       )}
@@ -93,19 +97,33 @@ export default function Navigation({ blok }: any) {
           <ul className={links}>
             {blokLinkData?.map((linkData: any, index: number) => (
               <li key={index}>
-                <Link href={`/${language}/${linkData.href}`} className={link}>
+                <Link
+                  href={`/${language}/${linkData.href}`}
+                  className={link}
+                  aria-label={`Link to go to ${linkData.name}`}
+                >
                   {linkData.name}
                 </Link>
               </li>
             ))}
 
             {pathname.startsWith(`/${language}/guestbook`) ? (
-              <Link href={`/${language}`} className={icon}>
+              <Link
+                href={`/${language}`}
+                className={icon}
+                aria-label={'Link to go back to homepage'}
+              >
                 <SlArrowLeft />
               </Link>
             ) : (
               <li>
-                <a onClick={handleLanguageSwitch} className={link}>
+                <a
+                  onClick={handleLanguageSwitch}
+                  className={link}
+                  aria-label={
+                    'Link to switch between swedish and persian language content'
+                  }
+                >
                   {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
                 </a>
               </li>

@@ -33,6 +33,9 @@ export const divider = recipe({
       gray: {
         backgroundColor: vars.color.gray,
       },
+      lightGray: {
+        backgroundColor: vars.color.lightGray,
+      },
     },
   },
 })

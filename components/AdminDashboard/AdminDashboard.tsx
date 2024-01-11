@@ -77,11 +77,13 @@ export default function AdminDashboard() {
                         <span>name: {item.name}</span>
                         <span>message: {item.message}</span>
                         <Button
+                          id="text"
                           onClick={() => toggleConfirmModal(item.id, 'toggle')}
                         >
                           {item.approved ? 'set to pending' : 'set to approved'}
                         </Button>
                         <Button
+                          id="text"
                           onClick={() => toggleConfirmModal(item.id, 'delete')}
                         >
                           delete

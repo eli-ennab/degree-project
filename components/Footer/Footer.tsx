@@ -41,13 +41,21 @@ export default function Footer() {
     <footer className={container}>
       {!params.slug &&
         (pathname.endsWith('sv') || pathname.endsWith('fa-ir')) && (
-          <Link href={`/${language}/admin`} className={key}>
+          <Link
+            href={`/${language}/admin`}
+            className={key}
+            aria-label={'Link to go admin page'}
+          >
             <CgKey />
           </Link>
         )}
 
       {pathname.endsWith('guestbook') && (
-        <Link href={'guestbook/create'} className={envelope}>
+        <Link
+          href={'guestbook/create'}
+          className={envelope}
+          aria-label={'Link to guestbook form'}
+        >
           <SlEnvolope />
         </Link>
       )}

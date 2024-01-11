@@ -45,7 +45,11 @@ export default function Login() {
 
   return (
     <>
-      <Link href={`/${language}`} className={link}>
+      <Link
+        href={`/${language}`}
+        className={link}
+        aria-label={'Link to go to homepage'}
+      >
         <SlArrowLeft />
       </Link>
       <div className={container}>
@@ -80,7 +84,7 @@ export default function Login() {
           />
           {errorMessage && <span className={error}>{errorMessage}</span>}
 
-          <button type="submit" className={button}>
+          <button id="text" type="submit" className={button}>
             Enter
           </button>
         </form>
