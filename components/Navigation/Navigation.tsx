@@ -6,7 +6,6 @@ import { useRouter, usePathname } from 'next/navigation'
 import { useMediaQuery } from 'react-responsive'
 import { SlArrowLeft } from 'react-icons/sl'
 import { TfiClose } from 'react-icons/tfi'
-import { TfiLayoutLineSolid } from 'react-icons/tfi'
 import { LiaGripLinesSolid } from 'react-icons/lia'
 import { useLanguageContext } from '@/context/LanguageContext'
 import {
