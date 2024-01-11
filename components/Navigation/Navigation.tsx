@@ -57,7 +57,7 @@ export default function Navigation({ blok }: any) {
     return null
   }
 
-  return (
+  return isLoaded ? (
     <header className={container}>
       <div>
         <h1 onClick={() => router.push(`/${language}`)} className={title}>
@@ -132,5 +132,5 @@ export default function Navigation({ blok }: any) {
         </div>
       ) : null}
     </header>
-  )
+  ) : null
 }
