@@ -22,17 +22,21 @@ export const container = style({
 })
 
 export const nameField = style({
-  width: '300px',
   padding: '10px',
   borderRadius: '2px',
   border: 'none',
   backgroundColor: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
+  minWidth: '250px',
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      width: '400px',
+    },
+  },
 })
 
 export const textField = style({
-  width: '300px',
   height: '100px',
   padding: '10px',
   borderRadius: '2px',
@@ -41,6 +45,12 @@ export const textField = style({
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   resize: 'none',
+  minWidth: '250px',
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      width: '400px',
+    },
+  },
 })
 
 export const inputInfo = style({
@@ -49,22 +59,27 @@ export const inputInfo = style({
   color: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
-  width: '320px',
-  marginBottom: '20px',
+  minWidth: '250px',
+  padding: '10px',
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      width: '400px',
+    },
+  },
 })
 
 export const form = style({
+  alignItems: 'center',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'center',
-  alignItems: 'center',
 })
 
 export const formLabel = style({
   color: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.l,
-  marginBottom: '10px',
+  margin: '15px 0px',
 })
 
 export const info = style({
@@ -72,19 +87,28 @@ export const info = style({
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   padding: '0px 20px',
-  marginBottom: '30px',
+  marginBottom: '10px',
+  maxWidth: '400px',
+  textAlign: 'center',
 })
 
 export const formWrapper = style({
   alignItems: 'center',
   backgroundColor: vars.color.gray,
   display: 'flex',
-  height: '450px',
+  maxHeight: '600px',
   justifyContent: 'center',
   width: '100vw',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
-      width: '1350px',
+      maxWidth: '1350px',
     },
   },
+})
+
+export const responseMessage = style({
+  color: vars.color.white,
+  fontFamily: vars.font.playfair,
+  fontSize: sizes.font.s,
+  height: '10px',
 })

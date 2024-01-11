@@ -37,7 +37,7 @@ export const guestbookItem = style({
 export const itemName = style({
   color: vars.color.white,
   fontFamily: vars.font.syne,
-  fontSize: sizes.font.m,
+  fontSize: sizes.font.s,
   textTransform: 'uppercase',
   padding: '20px',
   '@media': {
