@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
@@ -26,6 +26,7 @@ export default function Navigation({ blok }: any) {
   const pathname = usePathname()
   const { language, setLanguage } = useLanguageContext()
   const [open, setOpen] = useState(false)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   const isTabletOrMobile = useMediaQuery({
     query: `(max-width: ${media.tablet})`,
@@ -47,6 +48,14 @@ export default function Navigation({ blok }: any) {
       }))
     )
     .flat()
+
+  useEffect(() => {
+    setIsLoaded(true)
+  }, [])
+
+  if (!isLoaded) {
+    return null
+  }
 
   return (
     <header className={container}>
