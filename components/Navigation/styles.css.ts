@@ -9,11 +9,6 @@ export const button = style({
   zIndex: ZIndex.top,
 })
 
-export const menuIcon = style({
-  color: vars.color.black,
-  fontSize: sizes.font.m,
-})
-
 export const container = style({
   alignItems: 'flex-end',
   display: 'flex',
@@ -68,6 +63,11 @@ export const links = style({
       fontSize: sizes.font.m,
     },
   },
+})
+
+export const menuIcon = style({
+  color: vars.color.black,
+  fontSize: sizes.font.l,
 })
 
 export const navigation = recipe({

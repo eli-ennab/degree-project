@@ -1,12 +1,13 @@
 'use client'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Link from 'next/link'
 import { useRouter, usePathname } from 'next/navigation'
 import { useMediaQuery } from 'react-responsive'
 import { SlArrowLeft } from 'react-icons/sl'
 import { TfiClose } from 'react-icons/tfi'
-import { SlMenu } from 'react-icons/sl'
+import { TfiLayoutLineSolid } from 'react-icons/tfi'
+import { LiaGripLinesSolid } from 'react-icons/lia'
 import { useLanguageContext } from '@/context/LanguageContext'
 import {
   button,
@@ -60,7 +61,7 @@ export default function Navigation({ blok }: any) {
           {open ? (
             <TfiClose className={menuIcon} />
           ) : (
-            <SlMenu className={menuIcon} />
+            <LiaGripLinesSolid className={menuIcon} />
           )}
         </button>
       )}
