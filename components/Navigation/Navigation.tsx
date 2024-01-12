@@ -8,6 +8,7 @@ import { SlArrowLeft } from 'react-icons/sl'
 import { TfiClose } from 'react-icons/tfi'
 import { LiaGripLinesSolid } from 'react-icons/lia'
 import { useLanguageContext } from '@/context/LanguageContext'
+import { TLink } from '@/types/Storyblok.types'
 import {
   button,
   container,
@@ -18,7 +19,6 @@ import {
   navigation,
   title,
 } from './styles.css'
-import { TLink } from '@/types/Storyblok.types'
 import { media } from '@/vanilla_extract/styles.css'
 
 export default function Navigation({ blok }: any) {

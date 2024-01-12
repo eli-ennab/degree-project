@@ -17,11 +17,17 @@ export type TItem = {
     title: string
     component: string
     description: string
-    link: TLink
+    link: TItemLink
     linkText: string
     imageFront: TImage
     imageBack: TImage
   }
+}
+
+export type TItemLink = {
+  id: number
+  url: string
+  linktype: string
 }
 
 export type TItemList = TItem[]
