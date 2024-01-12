@@ -1,8 +1,9 @@
 import { storyblokEditable } from '@storyblok/react/rsc'
 import { useParams } from 'next/navigation'
+import { THeadline } from '@/types/Storyblok.types'
 import { container, headLine } from './styles.css'
 
-export default function Headline({ blok }: any) {
+export default function Headline({ blok }: THeadline) {
   const params = useParams()
 
   return (

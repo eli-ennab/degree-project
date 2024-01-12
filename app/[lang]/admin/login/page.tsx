@@ -27,7 +27,7 @@ export default function Login() {
   const [errorMessage, setErrorMessage] = useState<string | null>(null)
   const { language } = useLanguageContext()
 
-  const handleLogin = async (e: any) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {
@@ -59,7 +59,7 @@ export default function Login() {
             type="email"
             placeholder="Email"
             required
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setData({
                 ...data,
                 email: e.target.value.trim(),
@@ -73,7 +73,7 @@ export default function Login() {
             type="password"
             placeholder="Password"
             required
-            onChange={(e: any) =>
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
               setData({
                 ...data,
                 password: e.target.value.trim(),

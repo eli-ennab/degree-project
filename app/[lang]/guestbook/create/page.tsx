@@ -26,7 +26,7 @@ export default function CreateGuestbookMessage() {
   const inputMaxLength = 40
   const textareaMaxLength = 460
 
-  const addMessage = async (e: any) => {
+  const addMessage = async (e: React.FormEvent) => {
     e.preventDefault()
 
     try {

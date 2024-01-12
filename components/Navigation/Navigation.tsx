@@ -18,6 +18,7 @@ import {
   navigation,
   title,
 } from './styles.css'
+import { TLink } from '@/types/Storyblok.types'
 import { media } from '@/vanilla_extract/styles.css'
 
 export default function Navigation({ blok }: any) {
@@ -41,7 +42,7 @@ export default function Navigation({ blok }: any) {
 
   const blokLinkData = blok?.links
     .map((linkGrid: any) =>
-      linkGrid.links.map((linkItem: any) => ({
+      linkGrid.links.map((linkItem: TLink) => ({
         name: linkItem.name,
         href: linkItem.href,
       }))

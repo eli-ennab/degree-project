@@ -6,7 +6,7 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { SlLink } from 'react-icons/sl'
 import { container, image, link, text, title } from './styles.css'
-import { TItem } from '@/types/Item.types'
+import { TItem } from '@/types/Storyblok.types'
 
 export default function ArticleItem({ blok }: TItem) {
   const params = useParams()

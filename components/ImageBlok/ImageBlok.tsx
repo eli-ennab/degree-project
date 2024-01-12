@@ -1,10 +1,11 @@
 'use client'
+import { useEffect, useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { TImageBlok } from '@/types/Storyblok.types'
 import { container, image, text } from './styles.css'
 
-export default function ImageBlok({ blok }: any) {
+export default function ImageBlok({ blok }: TImageBlok) {
   const [showSmooth, setShowSmooth] = useState(false)
 
   useEffect(() => {
