@@ -38,8 +38,8 @@ export const wrapper = style({
   flexDirection: 'column',
   backgroundColor: 'rgba(151, 151, 149, 0.8)',
   width: '100vw',
-  height: '100vh',
-  position: 'absolute',
+  height: '100%',
+  position: 'fixed',
   top: '0px',
   left: '0px',
 })

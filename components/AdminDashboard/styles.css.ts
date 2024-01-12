@@ -16,6 +16,7 @@ export const container = style({
 export const confirmationText = style({
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.l,
+  textAlign: 'center',
   '@media': {
     [`screen and (min-width: ${media.mobile})`]: {
       fontSize: sizes.font.xl,
