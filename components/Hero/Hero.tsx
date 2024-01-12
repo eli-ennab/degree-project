@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
 import { container, headLine, image } from './styles.css'
-import { THero } from '@/types/Hero.types'
+import { THero } from '@/types/Storyblok.types'
 import { useEffect, useState } from 'react'
 
 export default function Hero({ blok }: THero) {

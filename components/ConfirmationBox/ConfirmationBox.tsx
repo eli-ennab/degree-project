@@ -1,6 +1,6 @@
 import React from 'react'
-import Button from '../Button/Button'
-import { wrapper } from './styles.css'
+import { TfiClose } from 'react-icons/tfi'
+import { cancelButton, confirmButton, menuIcon, wrapper } from './styles.css'
 
 interface IProps {
   action: string | null
@@ -20,24 +20,23 @@ const ConfirmationBox: React.FC<IProps> = ({
   show,
 }) => {
   return show ? (
-    <div>
+    <div className={wrapper}>
+      <TfiClose className={menuIcon} onClick={onCancel} />
       <h2>{children}</h2>
 
-      <div className={wrapper}>
-        {action === 'delete' && (
-          <Button id="text" onClick={onConfirmDelete}>
-            Confirm delete
-          </Button>
+      <div>
+        {action && (
+          <button
+            id="text"
+            onClick={action === 'delete' ? onConfirmDelete : onConfirmToggle}
+            className={confirmButton}
+          >
+            yes, {action}
+          </button>
         )}
-
-        {action === 'toggle' && (
-          <Button id="text" onClick={onConfirmToggle}>
-            Confirm toggle
-          </Button>
-        )}
-        <Button id="text" onClick={onCancel}>
+        <button id="text" onClick={onCancel} className={cancelButton}>
           Cancel
-        </Button>
+        </button>
       </div>
     </div>
   ) : null

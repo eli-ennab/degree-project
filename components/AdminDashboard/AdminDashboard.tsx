@@ -13,6 +13,7 @@ import { TGuestbook, TGuestbookList } from '@/types/Guestbook.types'
 import Button from '../Button/Button'
 import ConfirmationBox from '../ConfirmationBox/ConfirmationBox'
 import {
+  confirmationText,
   container,
   grid,
   guestbookList,
@@ -97,7 +98,9 @@ export default function AdminDashboard() {
                           onConfirmDelete={() => deleteMessage(item.id)}
                           onConfirmToggle={() => toggleMessageStatus(item)}
                         >
-                          Are you sure?
+                          <h3 className={confirmationText}>
+                            Are you sure that you want to {action}?
+                          </h3>
                         </ConfirmationBox>
                       )}
                     </li>

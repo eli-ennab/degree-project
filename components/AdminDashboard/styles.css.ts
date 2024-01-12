@@ -13,6 +13,16 @@ export const container = style({
   },
 })
 
+export const confirmationText = style({
+  fontFamily: vars.font.playfair,
+  fontSize: sizes.font.l,
+  '@media': {
+    [`screen and (min-width: ${media.mobile})`]: {
+      fontSize: sizes.font.xl,
+    },
+  },
+})
+
 export const grid = style({
   display: 'flex',
   flexDirection: 'column',
