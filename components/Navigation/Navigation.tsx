@@ -124,7 +124,7 @@ export default function Navigation({ blok }: any) {
                     'Link to switch between swedish and persian language content'
                   }
                 >
-                  {language === 'sv' ? 'تغییر به فارسی' : 'Byt till svenska'}
+                  {language === 'sv' ? 'فارسی' : 'Svenska'}
                 </a>
               </li>
             )}

@@ -55,7 +55,6 @@ export const links = style({
   flexDirection: 'column',
   textAlign: 'right',
   textDecoration: 'none',
-  textTransform: 'lowercase',
   margin: 0,
   fontSize: sizes.font.l,
   '@media': {
