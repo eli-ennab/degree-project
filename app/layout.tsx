@@ -23,12 +23,6 @@ const noto = Noto_Serif_Display({
   subsets: ['latin'],
 })
 
-const notoArabic = Noto_Kufi_Arabic({
-  variable: '--font-noto-kufi-arabic',
-  weight: ['600'],
-  subsets: ['arabic'],
-})
-
 const playfair = Playfair_Display({
   variable: '--font-playfair-display',
   weight: ['400'],
@@ -63,7 +57,7 @@ export default function RootLayout({
     <StoryblokProvider>
       <LanguageWrapper>
         <html
-          className={`${nanumMyeongjo.variable} ${notoArabic.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
+          className={`${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
           lang={'sv'}
         >
           <body>

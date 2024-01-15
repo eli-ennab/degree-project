@@ -13,7 +13,6 @@ export const vars = createGlobalTheme(':root', {
   font: {
     nanumMyengjo: 'var(--font-nanum-myengjo)',
     noto: 'var(--font-noto-serif-display)',
-    notoArabic: 'var(--font-noto-kufi-arabic)',
     playfair: 'var(--font-playfair-display)',
     syne: 'var(--font-syne)',
   },
