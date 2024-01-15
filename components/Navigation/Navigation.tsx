@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Link from 'next/link'
-import { useRouter, usePathname } from 'next/navigation'
+import { useRouter, usePathname, useParams } from 'next/navigation'
 import { useMediaQuery } from 'react-responsive'
 import { SlArrowLeft } from 'react-icons/sl'
 import { TfiClose } from 'react-icons/tfi'
@@ -15,15 +15,16 @@ import {
   icon,
   link,
   links,
+  logo,
   menuIcon,
   navigation,
-  title,
 } from './styles.css'
 import { media } from '@/vanilla_extract/styles.css'
 
 export default function Navigation({ blok }: any) {
   const router = useRouter()
   const pathname = usePathname()
+  const params = useParams()
   const { language, setLanguage } = useLanguageContext()
   const [open, setOpen] = useState(false)
   const [isLoaded, setIsLoaded] = useState(false)
@@ -60,8 +61,13 @@ export default function Navigation({ blok }: any) {
   return isLoaded ? (
     <header className={container}>
       <div>
-        <h1 onClick={() => router.push(`/${language}`)} className={title}>
-          Nioosha Shams
+        <h1
+          onClick={() => router.push(`/${language}`)}
+          className={logo({
+            fontSize: params.lang === 'sv' ? 'sv' : 'fa',
+          })}
+        >
+          {blok?.links[0]?.logo ? blok.links[0].logo : 'Nioosha Shams'}
         </h1>
       </div>
 

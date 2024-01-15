@@ -75,19 +75,6 @@ globalStyle('body', {
   lineHeight: 1.8,
 })
 
-globalStyle('h1', {
-  fontFamily: vars.font.syne,
-  textTransform: 'uppercase',
-  color: vars.color.kleinBlue,
-  fontSize: sizes.font.m,
-  '@media': {
-    [`screen and (min-width: ${media.mobile})`]: {
-      fontSize: sizes.font.xl,
-      margin: 0,
-    },
-  },
-})
-
 globalStyle('li', {
   listStyleType: 'none',
 })

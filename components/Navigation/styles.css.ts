@@ -94,13 +94,41 @@ export const navigation = recipe({
   },
 })
 
-export const title = style({
-  cursor: 'pointer',
-  transition: 'transform 1s ease-out',
-  ':hover': {
-    transform: 'scale(1.05)',
+export const logo = recipe({
+  base: {
+    cursor: 'pointer',
+    fontFamily: vars.font.syne,
+    textTransform: 'uppercase',
+    color: vars.color.kleinBlue,
+    fontSize: sizes.font.m,
+    margin: 0,
+    padding: '12px',
+    transition: 'transform 1s ease-out',
+    ':hover': {
+      transform: 'scale(1.05)',
+    },
+    ':active': {
+      transform: 'scale(0.8)',
+    },
   },
-  ':active': {
-    transform: 'scale(0.8)',
+  variants: {
+    fontSize: {
+      fa: {
+        fontSize: sizes.font.l,
+        '@media': {
+          [`screen and (min-width: ${media.mobile})`]: {
+            fontSize: sizes.font.xl,
+          },
+        },
+      },
+      sv: {
+        fontSize: sizes.font.s,
+        '@media': {
+          [`screen and (min-width: ${media.mobile})`]: {
+            fontSize: sizes.font.xl,
+          },
+        },
+      },
+    },
   },
 })
