@@ -7,7 +7,7 @@ function getLocale(request: any) {
 export function middleware(request: any) {
   const { pathname } = request.nextUrl
 
-  if (pathname === '/favicon.ico' || pathname === '/robots.txt') {
+  if (pathname === '/favicon.ico') {
     return
   }
 
