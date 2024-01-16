@@ -2,7 +2,7 @@
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
 import { useParams } from 'next/navigation'
-import { container, headLine, image } from './styles.css'
+import { container, headLine, image, imageWrapper, text } from './styles.css'
 import { THero } from '@/types/Storyblok.types'
 import { useEffect, useState } from 'react'
 
@@ -31,14 +31,17 @@ export default function Hero({ blok }: THero) {
       >
         {blok.headline}
       </h2>
-      <Image
-        src={blok.image.filename}
-        alt={blok.image.alt}
-        height={Number(blok.height)}
-        width={Number(blok.width)}
-        className={image}
-        priority={true}
-      />
+      <div className={imageWrapper}>
+        <Image
+          src={blok.image.filename}
+          alt={blok.image.alt}
+          height={Number(blok.height)}
+          width={Number(blok.width)}
+          className={image}
+          priority={true}
+        />
+        <span className={text}>{blok.text}</span>
+      </div>
     </div>
   )
 }

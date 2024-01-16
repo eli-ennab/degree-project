@@ -123,11 +123,12 @@ export type THero = {
   blok: {
     _uid: string
     _editable: string
-    headline: string
     component: string
     image: TImage
-    width: string
+    headline: string
     height: string
+    text: string
+    width: string
   }
 }
 

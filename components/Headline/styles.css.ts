@@ -14,9 +14,8 @@ export const container = style({
 
 export const headLine = recipe({
   base: {
-    fontFamily: vars.font.syne,
+    fontFamily: vars.font.libreBaskerville,
     fontSize: sizes.font.l,
-    textTransform: 'uppercase',
   },
   variants: {
     textAlign: {

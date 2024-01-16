@@ -1,6 +1,7 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Metadata } from 'next'
 import {
+  Libre_Baskerville,
   Nanum_Myeongjo,
   Noto_Serif_Display,
   Playfair_Display,
@@ -9,6 +10,12 @@ import {
 import { LanguageWrapper } from '@/context/LanguageContext'
 import Footer from '@/components/Footer/Footer'
 import StoryblokProvider from '@/components/StoryblokProvider'
+
+const libreBaskerville = Libre_Baskerville({
+  variable: '--font-libre-baskerville',
+  weight: ['400'],
+  subsets: ['latin'],
+})
 
 const nanumMyeongjo = Nanum_Myeongjo({
   variable: '--font-nanum-myengjo',
@@ -56,7 +63,7 @@ export default function RootLayout({
     <StoryblokProvider>
       <LanguageWrapper>
         <html
-          className={`${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
+          className={`${libreBaskerville.variable} ${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
           lang={'sv'}
         >
           <body>

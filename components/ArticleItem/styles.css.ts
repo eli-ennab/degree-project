@@ -98,9 +98,8 @@ export const text = recipe({
 })
 
 export const title = style({
-  textTransform: 'uppercase',
-  fontFamily: vars.font.syne,
-  fontSize: sizes.font.m,
+  fontFamily: vars.font.libreBaskerville,
+  fontSize: sizes.font.l,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       padding: `${sizes.padding.s} ${sizes.padding.m}`,

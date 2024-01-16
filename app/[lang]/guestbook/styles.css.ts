@@ -41,9 +41,8 @@ export const guestbookItem = style({
 
 export const itemName = style({
   color: vars.color.white,
-  fontFamily: vars.font.syne,
+  fontFamily: vars.font.libreBaskerville,
   fontSize: sizes.font.s,
-  textTransform: 'uppercase',
   padding: sizes.padding.l,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
@@ -54,14 +53,13 @@ export const itemName = style({
 })
 
 export const itemMessage = style({
-  fontFamily: vars.font.nanumMyengjo,
+  fontFamily: vars.font.libreBaskerville,
   fontSize: sizes.font.s,
-  textTransform: 'lowercase',
   overflow: 'hidden',
   padding: sizes.padding.l,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
-      fontSize: sizes.font.l,
+      fontSize: sizes.font.m,
       padding: '60px',
     },
   },

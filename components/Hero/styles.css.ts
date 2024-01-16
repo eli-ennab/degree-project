@@ -50,3 +50,17 @@ export const image = style({
     },
   },
 })
+
+export const imageWrapper = style({
+  alignItems: 'flex-end',
+  display: 'flex',
+  flexDirection: 'column',
+  maxHeight: '70vh',
+})
+
+export const text = style({
+  color: vars.color.gray,
+  fontFamily: vars.font.nanumMyengjo,
+  fontSize: sizes.font.xs,
+  padding: `${sizes.padding.s} 0px`,
+})
