@@ -1,4 +1,4 @@
-import { sizes, vars } from '@/vanilla_extract/styles.css'
+import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({
@@ -23,5 +23,10 @@ export const text = style({
   color: vars.color.gray,
   fontFamily: vars.font.nanumMyengjo,
   fontSize: sizes.font.xs,
-  padding: `${sizes.padding.s} 0px`,
+  padding: `0px ${sizes.padding.s} 0px 0px`,
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      padding: `${sizes.padding.s} 0px`,
+    },
+  },
 })
