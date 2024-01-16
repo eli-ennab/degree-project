@@ -20,23 +20,41 @@ export const image = style({
   objectFit: 'cover',
 })
 
-export const imageContainer = style({
-  display: 'flex',
-  justifyContent: 'center',
-  margin: '25px',
-  transition: 'opacity 3s ease-in-out',
-  '@media': {
-    [`screen and (min-width: ${media.tablet})`]: {
-      cursor: 'pointer',
-      transition: 'transform 0.5s ease-in-out',
-      ':hover': {
-        opacity: 0.95,
-        transform: 'scale(1.02)',
+export const imageContainer = recipe({
+  base: {
+    display: 'flex',
+    justifyContent: 'center',
+    margin: '25px',
+    transition: 'opacity 3s ease-in-out',
+    '@media': {
+      [`screen and (min-width: ${media.tablet})`]: {
+        cursor: 'pointer',
+        transition: 'transform 0.5s ease-in-out',
+        ':hover': {
+          opacity: 0.95,
+          transform: 'scale(1.02)',
+        },
+        ':active': {
+          opacity: 0.95,
+          transform: 'scale(0.95)',
+        },
       },
-      ':active': {
-        opacity: 0.95,
-        transform: 'scale(0.95)',
-      },
+    },
+  },
+  variants: {
+    order: {
+      fa: { order: 2 },
+      sv: { order: 1 },
+    },
+  },
+})
+
+export const textContainer = recipe({
+  base: {},
+  variants: {
+    order: {
+      fa: { order: 1 },
+      sv: { order: 2 },
     },
   },
 })
