@@ -20,6 +20,7 @@ export const image = style({
   display: 'flex',
   justifyContent: 'center',
   margin: '25px',
+  objectFit: 'cover',
   transition: 'opacity 3s ease-in-out',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
