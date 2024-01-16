@@ -7,9 +7,20 @@ export const cancelButton = style({
   color: vars.color.white,
   cursor: 'pointer',
   fontFamily: vars.font.playfair,
-  margin: '10px',
-  padding: '10px',
+  margin: sizes.margin.s,
+  padding: sizes.padding.m,
   textTransform: 'lowercase',
+})
+
+export const close = style({
+  cursor: 'pointer',
+  fontSize: sizes.font.l,
+  position: 'fixed',
+  top: '30px',
+  right: '30px',
+  ':hover': {
+    color: vars.color.black,
+  },
 })
 
 export const confirmButton = style({
@@ -18,17 +29,9 @@ export const confirmButton = style({
   color: vars.color.white,
   cursor: 'pointer',
   fontFamily: vars.font.playfair,
-  margin: '10px',
-  padding: '10px',
+  margin: sizes.margin.s,
+  padding: sizes.padding.m,
   textTransform: 'lowercase',
-})
-
-export const menuIcon = style({
-  cursor: 'pointer',
-  fontSize: sizes.font.l,
-  position: 'fixed',
-  top: '30px',
-  right: '30px',
 })
 
 export const wrapper = style({

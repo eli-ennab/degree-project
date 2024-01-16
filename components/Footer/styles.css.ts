@@ -16,12 +16,18 @@ export const container = style({
 
 export const envelope = style({
   color: vars.color.gray,
-  fontSize: sizes.font.l,
+  fontSize: sizes.font.m,
+  ':hover': {
+    color: vars.color.black,
+  },
 })
 
 export const key = style({
   color: vars.color.gray,
   fontSize: sizes.font.l,
+  ':hover': {
+    color: vars.color.black,
+  },
 })
 
 export const link = style({
@@ -41,13 +47,13 @@ export const link = style({
 })
 
 export const arrow = style({
-  bottom: '10px',
+  bottom: sizes.padding.m,
   color: vars.color.black,
   cursor: 'pointer',
   fontSize: sizes.font.l,
   padding: sizes.padding.l,
   position: 'fixed',
-  right: '10px',
+  right: sizes.padding.m,
   zIndex: ZIndex.high,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {

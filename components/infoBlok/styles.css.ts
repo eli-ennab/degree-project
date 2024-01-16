@@ -38,13 +38,13 @@ export const wrapper = recipe({
 export const container = recipe({
   base: {
     alignItems: 'center',
-    borderRadius: '2px',
+    borderRadius: sizes.padding.xs,
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',
-    margin: '10px',
+    margin: sizes.margin.s,
     maxWidth: '1350px',
-    padding: '20px',
+    padding: sizes.padding.l,
   },
   variants: {
     backgroundColor: {

@@ -4,12 +4,12 @@ import { recipe } from '@vanilla-extract/recipes'
 
 export const container = style({
   alignItems: 'center',
-  borderRadius: '2px',
+  borderRadius: sizes.padding.xs,
   display: 'flex',
   height: '10vh',
   justifyContent: 'center',
   width: '100vw',
-  padding: '20px 0px',
+  padding: `${sizes.padding.l} 0px`,
 })
 
 export const headLine = recipe({

@@ -4,11 +4,11 @@ import { media, sizes, vars } from '../../vanilla_extract/styles.css'
 export const container = style({
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
-  padding: '10px',
-  margin: '10px',
+  padding: sizes.padding.m,
+  margin: sizes.margin.s,
   '@media': {
     [`screen and (min-width: ${media.mobile})`]: {
-      margin: '40px',
+      margin: sizes.margin.xl,
     },
   },
 })
@@ -48,7 +48,7 @@ export const guestbookList = style({
 })
 
 export const guestbookListItem = style({
-  border: '1px solid black',
+  border: `${sizes.padding.xxs} solid black`,
   color: vars.color.black,
   margin: sizes.margin.xs,
   padding: sizes.padding.xs,
@@ -62,7 +62,7 @@ export const guestbookListItem = style({
 })
 
 export const guestbookListItemContainer = style({
-  border: `1px solid ${vars.color.white}`,
+  border: `${sizes.padding.xxs} solid ${vars.color.white}`,
   display: 'flex',
   flexDirection: 'column',
   gap: sizes.gap.xs,

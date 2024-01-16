@@ -3,13 +3,13 @@ import { style } from '@vanilla-extract/css'
 
 export const button = style({
   backgroundColor: vars.color.white,
-  border: `1px solid ${vars.color.black}`,
-  borderRadius: '2px',
+  border: `${sizes.padding.xxs} solid ${vars.color.black}`,
+  borderRadius: sizes.padding.xs,
   color: vars.color.black,
   cursor: 'pointer',
   fontFamily: vars.font.playfair,
   height: '40px',
-  padding: '10px',
+  padding: sizes.padding.m,
   textTransform: 'lowercase',
 })
 
@@ -30,12 +30,12 @@ export const error = style({
 
 export const field = style({
   backgroundColor: vars.color.white,
-  border: `1px solid ${vars.color.black}`,
-  borderRadius: '2px',
+  border: `${sizes.padding.xxs} solid ${vars.color.black}`,
+  borderRadius: sizes.padding.xs,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
-  marginBottom: '10px',
-  padding: '10px',
+  marginBottom: sizes.margin.s,
+  padding: sizes.padding.m,
   textTransform: 'lowercase',
   width: '300px',
 })
@@ -65,7 +65,7 @@ export const formWrapper = style({
 
 export const link = style({
   position: 'relative',
-  top: '20px',
+  top: sizes.margin.l,
   color: vars.color.gray,
   border: 'none',
   fontFamily: vars.font.playfair,

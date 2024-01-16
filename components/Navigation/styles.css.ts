@@ -5,7 +5,7 @@ import { recipe } from '@vanilla-extract/recipes'
 export const button = style({
   background: 'none',
   border: 'none',
-  padding: '12px',
+  padding: sizes.padding.m,
   zIndex: ZIndex.top,
 })
 
@@ -26,12 +26,15 @@ export const container = style({
 export const icon = style({
   color: vars.color.gray,
   fontSize: sizes.font.m,
-  padding: '0px 0px 8px 0px',
+  padding: `0px 0px ${sizes.padding.m} 0px`,
   zIndex: ZIndex.top,
+  ':hover': {
+    color: vars.color.black,
+  },
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       fontSize: sizes.font.m,
-      padding: '0px 60px 20px 0px',
+      padding: `0px 60px ${sizes.padding.l} 0px`,
     },
   },
 })
@@ -67,6 +70,9 @@ export const links = style({
 export const menuIcon = style({
   color: vars.color.black,
   fontSize: sizes.font.m,
+  ':hover': {
+    color: vars.color.black,
+  },
 })
 
 export const navigation = recipe({
@@ -102,7 +108,7 @@ export const logo = recipe({
     color: vars.color.kleinBlue,
     fontSize: sizes.font.m,
     margin: 0,
-    padding: '12px',
+    padding: sizes.padding.m,
     transition: 'transform 1s ease-out',
     ':hover': {
       transform: 'scale(1.05)',

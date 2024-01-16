@@ -34,6 +34,7 @@ export const sizes = {
     xxl: '48px',
   },
   padding: {
+    xxs: '1px',
     xs: '2px',
     s: '5px',
     m: '10px',
@@ -50,6 +51,7 @@ export const sizes = {
     s: '10px',
     m: '15px',
     l: '20px',
+    xl: '40px',
   },
   gap: {
     xs: '5px',

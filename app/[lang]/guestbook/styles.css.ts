@@ -10,14 +10,14 @@ export const container = style({
 })
 
 export const divider = style({
-  border: `1px solid ${vars.color.white}`,
-  margin: '20px',
+  border: `${sizes.padding.xxs} solid ${vars.color.white}`,
+  margin: sizes.margin.l,
   width: '50%',
 })
 
 export const guestbookWrapper = style({
   backgroundColor: vars.color.kleinBlue,
-  height: '75vh',
+  height: '70vh',
   maxWidth: '1350px',
   cursor: 'grab',
   ':active': {
@@ -44,7 +44,7 @@ export const itemName = style({
   fontFamily: vars.font.syne,
   fontSize: sizes.font.s,
   textTransform: 'uppercase',
-  padding: '20px',
+  padding: sizes.padding.l,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       fontSize: sizes.font.l,
@@ -58,7 +58,7 @@ export const itemMessage = style({
   fontSize: sizes.font.s,
   textTransform: 'lowercase',
   overflow: 'hidden',
-  padding: '20px',
+  padding: sizes.padding.l,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       fontSize: sizes.font.l,

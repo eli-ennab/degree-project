@@ -9,7 +9,7 @@ export const container = style({
       display: 'flex',
       flexDirection: 'row',
       height: '450px',
-      margin: '20px 0px',
+      margin: `${sizes.margin.l} 0px`,
       top: '50px',
       width: '1350px',
     },
@@ -24,7 +24,7 @@ export const imageContainer = recipe({
   base: {
     display: 'flex',
     justifyContent: 'center',
-    margin: '25px',
+    margin: sizes.margin.l,
     transition: 'opacity 3s ease-in-out',
     '@media': {
       [`screen and (min-width: ${media.tablet})`]: {

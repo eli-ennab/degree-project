@@ -4,12 +4,12 @@ import { style } from '@vanilla-extract/css'
 export const button = style({
   backgroundColor: vars.color.white,
   border: 'none',
-  borderRadius: '2px',
+  borderRadius: sizes.padding.xs,
   color: vars.color.black,
   cursor: 'pointer',
   fontFamily: vars.font.playfair,
   height: '40px',
-  padding: '10px',
+  padding: sizes.padding.m,
   textTransform: 'lowercase',
 })
 
@@ -22,8 +22,8 @@ export const container = style({
 })
 
 export const nameField = style({
-  padding: '10px',
-  borderRadius: '2px',
+  padding: sizes.padding.m,
+  borderRadius: sizes.padding.xs,
   border: 'none',
   backgroundColor: vars.color.white,
   fontFamily: vars.font.playfair,
@@ -38,8 +38,8 @@ export const nameField = style({
 
 export const textField = style({
   height: '100px',
-  padding: '10px',
-  borderRadius: '2px',
+  padding: sizes.padding.m,
+  borderRadius: sizes.padding.xs,
   border: 'none',
   backgroundColor: vars.color.white,
   fontFamily: vars.font.playfair,
@@ -60,7 +60,7 @@ export const inputInfo = style({
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
   minWidth: '250px',
-  padding: '10px',
+  padding: ` 0px 0px ${sizes.padding.m} 0px`,
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       width: '400px',
@@ -79,22 +79,22 @@ export const formLabel = style({
   color: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.l,
-  margin: '15px 0px',
+  margin: `${sizes.margin.m} 0px`,
 })
 
 export const info = style({
   color: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
-  padding: '0px 20px',
-  marginBottom: '10px',
+  padding: `0px ${sizes.padding.l} `,
+  marginBottom: sizes.margin.s,
   maxWidth: '400px',
   textAlign: 'center',
 })
 
 export const formWrapper = style({
   alignItems: 'center',
-  backgroundColor: vars.color.gray,
+  backgroundColor: vars.color.kleinBlue,
   display: 'flex',
   height: '75vh',
   justifyContent: 'center',

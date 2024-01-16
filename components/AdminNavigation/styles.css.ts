@@ -17,6 +17,9 @@ export const container = style({
 export const loginIcon = style({
   color: vars.color.gray,
   fontSize: sizes.font.l,
+  ':hover': {
+    color: vars.color.black,
+  },
 })
 
 export const logoutButton = style({
@@ -31,4 +34,7 @@ export const logoutIcon = style({
   color: vars.color.gray,
   fontSize: sizes.font.l,
   transform: 'scaleX(-1)',
+  ':hover': {
+    color: vars.color.black,
+  },
 })

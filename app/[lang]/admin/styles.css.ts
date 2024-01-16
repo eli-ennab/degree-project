@@ -12,13 +12,16 @@ export const container = style({
 
 export const link = style({
   position: 'relative',
-  top: '20px',
+  top: sizes.padding.l,
   color: vars.color.gray,
   border: 'none',
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.m,
   textDecoration: 'none',
   padding: sizes.padding.mobileFooter,
+  ':hover': {
+    color: vars.color.black,
+  },
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       padding: sizes.padding.desktopFooter,

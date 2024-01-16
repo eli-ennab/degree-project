@@ -72,7 +72,7 @@ export default function Navigation({ blok }: any) {
       </div>
 
       {isTabletOrMobile && !pathname.startsWith(`/${language}/guestbook`) && (
-        <button onClick={() => setOpen(!open)} className={button} id="text">
+        <button onClick={() => setOpen(!open)} className={button} id="icon">
           {open ? (
             <TfiClose className={menuIcon} />
           ) : (
