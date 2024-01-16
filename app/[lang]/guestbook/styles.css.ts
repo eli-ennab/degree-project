@@ -17,7 +17,7 @@ export const divider = style({
 
 export const guestbookWrapper = style({
   backgroundColor: vars.color.kleinBlue,
-  height: '70vh',
+  height: '65vh',
   maxWidth: '1350px',
   cursor: 'grab',
   ':active': {

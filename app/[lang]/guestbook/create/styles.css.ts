@@ -96,7 +96,7 @@ export const formWrapper = style({
   alignItems: 'center',
   backgroundColor: vars.color.kleinBlue,
   display: 'flex',
-  height: '75vh',
+  height: '65vh',
   justifyContent: 'center',
   width: '100vw',
   '@media': {
