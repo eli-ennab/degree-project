@@ -6,7 +6,14 @@ import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { SlLink } from 'react-icons/sl'
 import { TItem } from '@/types/Storyblok.types'
-import { container, image, link, text, title } from './styles.css'
+import {
+  container,
+  image,
+  imageContainer,
+  link,
+  text,
+  title,
+} from './styles.css'
 
 export default function ArticleItem({ blok }: TItem) {
   const params = useParams()
@@ -31,13 +38,13 @@ export default function ArticleItem({ blok }: TItem) {
         transition: 'opacity 0.7s ease-in-out, transform 0.7s ease-in-out',
       }}
     >
-      <div onClick={toggleImage} className={image}>
+      <div onClick={toggleImage} className={imageContainer}>
         <Image
           src={frontImage ? blok.imageFront.filename : blok.imageBack.filename}
           alt={frontImage ? blok.imageFront.alt : blok.imageBack.alt}
           width={250}
           height={400}
-          loading={'lazy'}
+          className={image}
         />
       </div>
       <span
