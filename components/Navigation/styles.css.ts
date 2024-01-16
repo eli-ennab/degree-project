@@ -69,10 +69,7 @@ export const links = style({
 
 export const menuIcon = style({
   color: vars.color.black,
-  fontSize: sizes.font.m,
-  ':hover': {
-    color: vars.color.black,
-  },
+  fontSize: sizes.font.l,
 })
 
 export const navigation = recipe({
