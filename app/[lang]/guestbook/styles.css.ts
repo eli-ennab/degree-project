@@ -17,11 +17,16 @@ export const divider = style({
 
 export const guestbookWrapper = style({
   backgroundColor: vars.color.kleinBlue,
-  height: '450px',
+  height: '75vh',
   maxWidth: '1350px',
   cursor: 'grab',
   ':active': {
     cursor: 'grabbing',
+  },
+  '@media': {
+    [`screen and (min-width: ${media.tablet})`]: {
+      maxHeight: '65vh',
+    },
   },
 })
 

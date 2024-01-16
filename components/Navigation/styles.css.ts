@@ -58,7 +58,7 @@ export const links = style({
   margin: 0,
   fontSize: sizes.font.l,
   '@media': {
-    [`screen and (min-width: ${media.mobile})`]: {
+    [`screen and (min-width: ${media.tablet})`]: {
       fontSize: sizes.font.m,
     },
   },
@@ -66,7 +66,7 @@ export const links = style({
 
 export const menuIcon = style({
   color: vars.color.black,
-  fontSize: sizes.font.l,
+  fontSize: sizes.font.m,
 })
 
 export const navigation = recipe({
@@ -116,7 +116,7 @@ export const logo = recipe({
       fa: {
         fontSize: sizes.font.l,
         '@media': {
-          [`screen and (min-width: ${media.mobile})`]: {
+          [`screen and (min-width: ${media.tablet})`]: {
             fontSize: sizes.font.xl,
           },
         },
@@ -124,7 +124,7 @@ export const logo = recipe({
       sv: {
         fontSize: sizes.font.s,
         '@media': {
-          [`screen and (min-width: ${media.mobile})`]: {
+          [`screen and (min-width: ${media.tablet})`]: {
             fontSize: sizes.font.xl,
           },
         },

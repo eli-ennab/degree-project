@@ -96,12 +96,13 @@ export const formWrapper = style({
   alignItems: 'center',
   backgroundColor: vars.color.gray,
   display: 'flex',
-  maxHeight: '600px',
+  height: '75vh',
   justifyContent: 'center',
   width: '100vw',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       maxWidth: '1350px',
+      maxHeight: '65vh',
     },
   },
 })
@@ -110,5 +111,4 @@ export const responseMessage = style({
   color: vars.color.white,
   fontFamily: vars.font.playfair,
   fontSize: sizes.font.s,
-  height: '10px',
 })
