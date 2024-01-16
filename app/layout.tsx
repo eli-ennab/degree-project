@@ -2,7 +2,6 @@ import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Metadata } from 'next'
 import {
   Nanum_Myeongjo,
-  Noto_Kufi_Arabic,
   Noto_Serif_Display,
   Playfair_Display,
   Syne,
