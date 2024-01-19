@@ -40,7 +40,7 @@ export const headLine = recipe({
 })
 
 export const image = style({
-  maxHeight: '80vh',
+  maxHeight: '75vh',
   maxWidth: '100vw',
   objectFit: 'cover',
   '@media': {
