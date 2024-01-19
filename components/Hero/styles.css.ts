@@ -42,11 +42,12 @@ export const headLine = recipe({
 export const image = style({
   maxHeight: '80vh',
   maxWidth: '100vw',
-  objectFit: 'contain',
+  objectFit: 'cover',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       maxHeight: '70vh',
       maxWidth: '100vw',
+      objectFit: 'contain',
     },
   },
 })
@@ -55,7 +56,7 @@ export const imageWrapper = style({
   alignItems: 'flex-end',
   display: 'flex',
   flexDirection: 'column',
-  maxHeight: '70vh',
+  maxHeight: '80vh',
 })
 
 export const text = style({
