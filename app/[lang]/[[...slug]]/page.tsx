@@ -3,13 +3,15 @@ import StoryblokStory from '@storyblok/react/story'
 
 export const dynamicParams = true
 
-export default async function Page({ params }: any) {
+export default async function Page({ params, preview }: any) {
   let lang = params.lang || 'sv'
   let slug = params.slug ? params.slug.join('/') : 'home'
 
+  const version = preview ? 'draft' : 'published'
+
   const storyblokApi = getStoryblokApi()
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-    version: 'draft',
+    version: version,
     cv: Math.random(),
     language: lang,
     resolve_links: 'url',
@@ -22,11 +24,13 @@ export default async function Page({ params }: any) {
   )
 }
 
-export async function generateStaticParams({ params }: any) {
+export async function generateStaticParams({ params, preview }: any) {
   const storyblokApi = getStoryblokApi()
+
+  const version = preview ? 'draft' : 'published'
+
   let { data } = await storyblokApi.get('cdn/links/', {
-    version: 'published',
-    // version: 'draft',
+    version: version,
     resolve_links: 'url',
   })
   let paths: { slug: any; lang: any }[] = []
