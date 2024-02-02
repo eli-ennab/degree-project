@@ -1,13 +1,11 @@
 'use client'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
-import { useParams } from 'next/navigation'
-import { container, headLine, image, imageWrapper, text } from './styles.css'
+import { container, image, imageWrapper, text } from './styles.css'
 import { THero } from '@/types/Storyblok.types'
 import { useEffect, useState } from 'react'
 
 export default function Hero({ blok }: THero) {
-  const params = useParams()
   const [showSmooth, setShowSmooth] = useState(false)
 
   useEffect(() => {
@@ -24,13 +22,6 @@ export default function Hero({ blok }: THero) {
         transition: 'opacity 0.7s ease-in-out, transform 0.7s ease-in-out',
       }}
     >
-      <h2
-        className={headLine(
-          params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
-        )}
-      >
-        {blok.headline}
-      </h2>
       <div className={imageWrapper}>
         <Image
           src={blok.image.filename}
