@@ -1,5 +1,4 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
-import { cookies } from 'next/headers'
 import { Metadata } from 'next'
 import {
   Libre_Baskerville,
@@ -59,13 +58,12 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-  const language = cookies().get('NEXT_LOCALE')?.value
   return (
     <StoryblokProvider>
       <LanguageWrapper>
         <html
           className={`${libreBaskerville.variable} ${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
-          lang={language}
+          lang={'sv'}
         >
           <body>
             {children}
