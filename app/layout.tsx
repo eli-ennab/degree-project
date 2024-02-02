@@ -42,11 +42,9 @@ const syne = Syne({
 })
 
 export const metadata: Metadata = {
-  title: {
-    default: 'Nioosha Shams',
-    template: '%s - Nioosha Shams',
-  },
-  description: 'A Digital Representation of Nioosha Shams',
+  title: 'Nioosha Shams',
+  description: 'The Digital Representation of Nioosha Shams',
+  metadataBase: new URL('https://fed22m-exjobb-eli-ennab.vercel.app'),
 }
 
 storyblokInit({
