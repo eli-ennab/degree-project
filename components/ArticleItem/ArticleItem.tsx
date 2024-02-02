@@ -58,7 +58,7 @@ export default function ArticleItem({ blok }: TItem) {
           params.lang === 'sv' ? { order: 'sv' } : { order: 'fa' }
         )}
       >
-        <span
+        <div
           className={text(
             params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
           )}
@@ -81,7 +81,7 @@ export default function ArticleItem({ blok }: TItem) {
               <SlLink /> {blok.linkText}
             </Link>
           )}
-        </span>
+        </div>
       </div>
     </div>
   )

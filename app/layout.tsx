@@ -45,6 +45,7 @@ export const metadata: Metadata = {
   title: 'Nioosha Shams',
   description: 'The Digital Representation of Nioosha Shams',
   metadataBase: new URL('https://fed22m-exjobb-eli-ennab.vercel.app'),
+  authors: [{ name: 'Eli Ennab' }],
 }
 
 storyblokInit({
