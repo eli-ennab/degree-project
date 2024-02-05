@@ -45,9 +45,9 @@ export default function CreateGuestbookMessage() {
       setResponse('Something went wrong, please try again.')
     }
 
-    // setTimeout(() => {
-    //   setResponse('')
-    // }, 5000)
+    setTimeout(() => {
+      setResponse('')
+    }, 5000)
   }
 
   useEffect(() => {
