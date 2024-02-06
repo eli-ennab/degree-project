@@ -44,5 +44,6 @@ export async function generateStaticParams({ params }: any) {
 
     paths.push({ slug: splittedSlug, lang: params.lang })
   })
+
   return paths
 }
