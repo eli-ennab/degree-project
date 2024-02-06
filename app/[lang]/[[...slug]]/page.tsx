@@ -9,8 +9,8 @@ export default async function Page({ params }: any) {
 
   const storyblokApi = getStoryblokApi()
   let { data } = await storyblokApi.get(`cdn/stories/${slug}`, {
-    version: 'published',
-    // version: 'draft',
+    // version: 'published',
+    version: 'draft',
     cv: Math.random(),
     language: lang,
     resolve_links: 'url',
@@ -23,28 +23,28 @@ export default async function Page({ params }: any) {
   )
 }
 
-// export async function generateStaticParams({ params }: any) {
-//   const storyblokApi = getStoryblokApi()
-//   let { data } = await storyblokApi.get('cdn/links/', {
-//     version: 'published',
-//     // version: 'draft',
-//     resolve_links: 'url',
-//   })
-//   let paths: { slug: any; lang: any }[] = []
-//   Object.keys(data.links).forEach((linkKey) => {
-//     if (data.links[linkKey].is_folder) {
-//       return
-//     }
-//     const slug = data.links[linkKey].slug
+export async function generateStaticParams({ params }: any) {
+  const storyblokApi = getStoryblokApi()
+  let { data } = await storyblokApi.get('cdn/links/', {
+    version: 'published',
+    // version: 'draft',
+    resolve_links: 'url',
+  })
+  let paths: { slug: any; lang: any }[] = []
+  Object.keys(data.links).forEach((linkKey) => {
+    if (data.links[linkKey].is_folder) {
+      return
+    }
+    const slug = data.links[linkKey].slug
 
-//     // if (slug == 'home') {
-//     //   return
-//     // }
+    if (slug == 'home') {
+      return paths.push({ slug: ['/'], lang: params.lang })
+    }
 
-//     let splittedSlug = slug.split('/')
+    let splittedSlug = slug.split('/')
 
-//     paths.push({ slug: splittedSlug, lang: params.lang })
-//   })
+    paths.push({ slug: splittedSlug, lang: params.lang })
+  })
 
-//   return paths
-// }
+  return paths
+}
