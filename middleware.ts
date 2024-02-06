@@ -1,10 +1,12 @@
+import { NextRequest } from "next/server"
+
 let locales = ['sv', 'fa-ir']
 
-function getLocale(request: any) {
+function getLocale(request: NextRequest) {
   return 'sv'
 }
 
-export function middleware(request: any) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   if (pathname === '/favicon.ico') {
