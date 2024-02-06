@@ -36,9 +36,9 @@ export async function generateStaticParams({ params }: any) {
     }
     const slug = data.links[linkKey].slug
 
-    if (slug == 'home') {
-      return
-    }
+    // if (slug == 'home') {
+    //   return
+    // }
 
     let splittedSlug = slug.split('/')
 
