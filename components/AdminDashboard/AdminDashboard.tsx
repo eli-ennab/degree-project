@@ -9,7 +9,7 @@ import {
 } from 'firebase/firestore'
 import { useEffect, useState } from 'react'
 import { db } from '@/services/firebase'
-import { TGuestbook, TGuestbookList } from '@/types/Guestbook.types'
+import type { TGuestbook, TGuestbookList } from '@/types/Guestbook.types'
 import Button from '../Button/Button'
 import ConfirmationBox from '../ConfirmationBox/ConfirmationBox'
 import {
@@ -59,7 +59,7 @@ export default function AdminDashboard() {
   }, [])
 
   return (
-    <div className={container}>
+    <div className={container} dir={'auto'}>
       <h2>admin dashboard</h2>
 
       <div className={grid}>

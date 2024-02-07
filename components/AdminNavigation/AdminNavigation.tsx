@@ -14,7 +14,7 @@ export default function AdminNavigation() {
   const { language } = useLanguageContext()
 
   return (
-    <div className={container}>
+    <div className={container} dir={'auto'}>
       {user ? (
         <Button
           id="login-icon"
@@ -27,7 +27,7 @@ export default function AdminNavigation() {
           <RiLoginCircleLine className={logoutIcon} />
         </Button>
       ) : (
-        <>
+        <div>
           <Link
             href={`/${language}/admin/login`}
             aria-label={'Link to go to the loginpage for admin'}
@@ -38,7 +38,7 @@ export default function AdminNavigation() {
               ''
             )}
           </Link>
-        </>
+        </div>
       )}
     </div>
   )

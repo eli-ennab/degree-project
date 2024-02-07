@@ -1,5 +1,6 @@
 import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { recipe } from '@vanilla-extract/recipes'
+import { style } from '@vanilla-extract/css'
 
 export const wrapper = recipe({
   base: {
@@ -127,15 +128,7 @@ export const container = recipe({
   },
 })
 
-export const text = recipe({
-  base: {
-    fontFamily: vars.font.playfair,
-    fontSize: sizes.font.m,
-  },
-  variants: {
-    textAlign: {
-      fa: { textAlign: 'right' },
-      sv: { textAlign: 'left' },
-    },
-  },
+export const text = style({
+  fontFamily: vars.font.playfair,
+  fontSize: sizes.font.m,
 })

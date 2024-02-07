@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react'
 import { db } from '@/services/firebase'
 import Navigation from '@/components/Navigation/Navigation'
 import { useSlider } from '@/hooks/useSlider'
-import { TGuestbookList } from '@/types/Guestbook.types'
+import type { TGuestbookList } from '@/types/Guestbook.types'
 import 'keen-slider/keen-slider.min.css'
 import {
   container,
@@ -46,6 +46,7 @@ export default function Guestbook() {
         transform: showSmooth ? 'translateY(0)' : 'translateY(10px)',
         transition: 'opacity 0.7s ease-in-out, transform 0.7s ease-in-out',
       }}
+      dir={'auto'}
     >
       <Navigation />
       <div className={container}>
@@ -58,7 +59,7 @@ export default function Guestbook() {
                     key={item.id}
                     className={`${guestbookItem} keen-slider__slide`}
                   >
-                    <q className={itemMessage}>{item.message}</q>
+                    <p className={itemMessage}>{item.message}</p>
                     <div className={divider} />
                     <span className={itemName}>{item.name}</span>
                   </div>

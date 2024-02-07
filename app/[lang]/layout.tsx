@@ -68,6 +68,7 @@ export default function RootLayout({
         <html
           className={`${libreBaskerville.variable} ${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
           lang={params.lang}
+          dir={params.lang === 'sv' ? 'ltr' : 'rtl'}
         >
           <body>
             {children}

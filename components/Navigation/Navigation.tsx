@@ -8,7 +8,8 @@ import { SlArrowLeft } from 'react-icons/sl'
 import { TfiClose } from 'react-icons/tfi'
 import { LiaGripLinesSolid } from 'react-icons/lia'
 import { useLanguageContext } from '@/context/LanguageContext'
-import { TLink } from '@/types/Storyblok.types'
+import type { TLink } from '@/types/Storyblok.types'
+import { media } from '@/vanilla_extract/styles.css'
 import {
   button,
   container,
@@ -19,7 +20,6 @@ import {
   menuIcon,
   navigation,
 } from './styles.css'
-import { media } from '@/vanilla_extract/styles.css'
 
 export default function Navigation({ blok }: any) {
   const router = useRouter()
@@ -59,7 +59,7 @@ export default function Navigation({ blok }: any) {
   }
 
   return isLoaded ? (
-    <header className={container}>
+    <header className={container} dir={'ltr'}>
       <div>
         <h1
           onClick={() => router.push(`/${language}`)}
@@ -87,7 +87,7 @@ export default function Navigation({ blok }: any) {
           className={button}
           aria-label={'Link to go back to homepage'}
         >
-          <SlArrowLeft className={menuIcon} />
+          <SlArrowLeft />
         </Link>
       )}
 

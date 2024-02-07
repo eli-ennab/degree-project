@@ -52,7 +52,7 @@ export default function Login() {
       >
         <SlArrowLeft />
       </Link>
-      <div className={container}>
+      <div className={container} dir={'auto'}>
         <form onSubmit={handleLogin} className={formWrapper}>
           <label className={formLabel}>Admin login</label>
           <input

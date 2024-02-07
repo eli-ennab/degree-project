@@ -18,10 +18,6 @@ export const headLine = recipe({
     fontSize: sizes.font.l,
   },
   variants: {
-    textAlign: {
-      fa: { textAlign: 'right' },
-      sv: { textAlign: 'left' },
-    },
     backgroundColor: {
       orange: {
         backgroundColor: vars.color.orange,

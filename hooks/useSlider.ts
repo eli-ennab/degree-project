@@ -1,6 +1,6 @@
-import { useKeenSlider } from 'keen-slider/react'
 import 'keen-slider/keen-slider.min.css'
-import { TGuestbookList } from '@/types/Guestbook.types'
+import { useKeenSlider } from 'keen-slider/react'
+import type { TGuestbookList } from '@/types/Guestbook.types'
 
 export const useSlider = (data: TGuestbookList | null) => {
   const [sliderRef] = useKeenSlider<HTMLDivElement>(

@@ -1,12 +1,10 @@
 'use client'
 import { storyblokEditable } from '@storyblok/react/rsc'
-import { useParams } from 'next/navigation'
-import { wrapper, container, text } from './styles.css'
-import { TInfoBlok } from '@/types/Storyblok.types'
+import type { TInfoBlok } from '@/types/Storyblok.types'
 import { useEffect, useState } from 'react'
+import { container, text, wrapper } from './styles.css'
 
 export default function InfoBlok({ blok }: TInfoBlok) {
-  const params = useParams()
   const [showSmooth, setShowSmooth] = useState(false)
 
   useEffect(() => {
@@ -30,13 +28,7 @@ export default function InfoBlok({ blok }: TInfoBlok) {
           width: blok.width,
         })}
       >
-        <h2
-          className={text(
-            params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
-          )}
-        >
-          {blok?.text.content[0].content[0].text}
-        </h2>
+        <h2 className={text}>{blok?.text.content[0].content[0].text}</h2>
       </div>
     </div>
   )

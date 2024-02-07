@@ -64,6 +64,7 @@ export default function CreateGuestbookMessage() {
           transform: showSmooth ? 'translateY(0)' : 'translateY(10px)',
           transition: 'opacity 0.7s ease-in-out, transform 0.7s ease-in-out',
         }}
+        dir={'auto'}
       >
         <div className={formWrapper}>
           <form onSubmit={addMessage} className={form}>

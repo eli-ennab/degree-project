@@ -1,5 +1,5 @@
 import { storyblokEditable, StoryblokComponent } from '@storyblok/react/rsc'
-import { TItemGrid } from '@/types/Storyblok.types'
+import type { TItemGrid } from '@/types/Storyblok.types'
 import { grid } from './styles.css'
 
 export default function ArticleGrid({ blok }: TItemGrid) {

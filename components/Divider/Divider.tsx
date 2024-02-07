@@ -1,5 +1,5 @@
 import { storyblokEditable } from '@storyblok/react/rsc'
-import { TDivider } from '@/types/Storyblok.types'
+import type { TDivider } from '@/types/Storyblok.types'
 import { container, divider } from './styles.css'
 
 export default function Divider({ blok }: TDivider) {

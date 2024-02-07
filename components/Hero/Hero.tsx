@@ -1,9 +1,9 @@
 'use client'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
-import { container, image, imageWrapper, text } from './styles.css'
-import { THero } from '@/types/Storyblok.types'
 import { useEffect, useState } from 'react'
+import type { THero } from '@/types/Storyblok.types'
+import { container, image, imageWrapper, text } from './styles.css'
 
 export default function Hero({ blok }: THero) {
   const [showSmooth, setShowSmooth] = useState(false)

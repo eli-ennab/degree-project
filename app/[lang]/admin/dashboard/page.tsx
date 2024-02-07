@@ -4,5 +4,5 @@ import { useAuth } from '@/context/AuthContext'
 
 export default function Dashboard() {
   const { user } = useAuth()
-  return <>{user ? <AdminDashboard /> : null}</>
+  return <div dir={'auto'}>{user ? <AdminDashboard /> : null}</div>
 }

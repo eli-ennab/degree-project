@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
-import { TImageBlok } from '@/types/Storyblok.types'
+import type { TImageBlok } from '@/types/Storyblok.types'
 import { container, image, imageWrapper, text } from './styles.css'
 
 export default function ImageBlok({ blok }: TImageBlok) {

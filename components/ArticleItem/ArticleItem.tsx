@@ -5,7 +5,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { SlLink } from 'react-icons/sl'
-import { TItem } from '@/types/Storyblok.types'
+import type { TItem } from '@/types/Storyblok.types'
 import {
   container,
   image,
@@ -41,9 +41,10 @@ export default function ArticleItem({ blok }: TItem) {
     >
       <div
         onClick={toggleImage}
-        className={imageContainer(
-          params.lang === 'sv' ? { order: 'sv' } : { order: 'fa' }
-        )}
+        className={
+          imageContainer()
+          // params.lang === 'sv' ? { order: 'sv' } : { order: 'fa' }
+        }
       >
         <Image
           src={frontImage ? blok.imageFront.filename : blok.imageBack.filename}
@@ -54,20 +55,23 @@ export default function ArticleItem({ blok }: TItem) {
         />
       </div>
       <div
-        className={textContainer(
-          params.lang === 'sv' ? { order: 'sv' } : { order: 'fa' }
-        )}
+        className={
+          textContainer()
+          // params.lang === 'sv' ? { order: 'sv' } : { order: 'fa' }
+        }
       >
         <div
-          className={text(
-            params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
-          )}
+          className={
+            text()
+            // params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
+          }
         >
           <h3 className={title}>{blok.title}</h3>
           <p
-            className={text(
-              params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
-            )}
+            className={
+              text()
+              // params.lang === 'sv' ? { textAlign: 'sv' } : { textAlign: 'fa' }
+            }
           >
             {blok.description}
           </p>
