@@ -1,5 +1,8 @@
 import { storyblokInit, apiPlugin } from '@storyblok/react/rsc'
 import { Metadata } from 'next'
+import { LanguageWrapper } from '@/context/LanguageContext'
+import Footer from '@/components/Footer/Footer'
+import StoryblokProvider from '@/components/StoryblokProvider'
 import {
   Libre_Baskerville,
   Nanum_Myeongjo,
@@ -7,9 +10,6 @@ import {
   Playfair_Display,
   Syne,
 } from 'next/font/google'
-import { LanguageWrapper } from '@/context/LanguageContext'
-import Footer from '@/components/Footer/Footer'
-import StoryblokProvider from '@/components/StoryblokProvider'
 
 const libreBaskerville = Libre_Baskerville({
   variable: '--font-libre-baskerville',
@@ -55,15 +55,19 @@ storyblokInit({
 
 export default function RootLayout({
   children,
+  params,
 }: {
   children: React.ReactNode
+  params: {
+    lang: string
+  }
 }) {
   return (
     <StoryblokProvider>
       <LanguageWrapper>
         <html
           className={`${libreBaskerville.variable} ${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
-          lang={'sv'}
+          lang={params.lang}
         >
           <body>
             {children}
