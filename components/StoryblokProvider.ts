@@ -8,7 +8,7 @@ import Footer from './Footer/Footer'
 import Headline from './Headline/Headline'
 import Hero from './Hero/Hero'
 import ImageBlok from './ImageBlok/ImageBlok'
-import InfoBlok from './infoBlok/InfoBlok'
+import TextBlok from './TextBlok/TextBlok'
 import LinkGrid from './LinkGrid/LinkGrid'
 import Links from './Links/Links'
 import Navigation from './Navigation/Navigation'
@@ -22,7 +22,7 @@ const components = {
   headline: Headline,
   hero: Hero,
   imageBlok: ImageBlok,
-  infoBlok: InfoBlok,
+  textBlok: TextBlok,
   linkGrid: LinkGrid,
   links: Links,
   navigation: Navigation,

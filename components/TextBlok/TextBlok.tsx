@@ -1,10 +1,10 @@
 'use client'
 import { storyblokEditable } from '@storyblok/react/rsc'
-import type { TInfoBlok } from '@/types/Storyblok.types'
+import type { TTextBlok } from '@/types/Storyblok.types'
 import { useEffect, useState } from 'react'
 import { container, text, wrapper } from './styles.css'
 
-export default function InfoBlok({ blok }: TInfoBlok) {
+export default function TextBlok({ blok }: TTextBlok) {
   const [showSmooth, setShowSmooth] = useState(false)
 
   useEffect(() => {

@@ -88,9 +88,9 @@ export type TRichTextItem = {
 export type TRichTextList = TRichTextItems[]
 
 /**
- * Infoblok
+ * Textblok
  */
-export type TInfoBlok = {
+export type TTextBlok = {
   blok: {
     _uid: string
     _editable: string
