@@ -11,6 +11,7 @@ export const vars = createGlobalTheme(':root', {
     lightGray: '#dcdcdc',
   },
   font: {
+    alegreya: 'var(--font-alegreya)',
     libreBaskerville: 'var(--font-libre-baskerville)',
     nanumMyengjo: 'var(--font-nanum-myengjo)',
     noto: 'var(--font-noto-serif-display)',

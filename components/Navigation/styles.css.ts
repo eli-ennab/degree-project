@@ -100,19 +100,11 @@ export const navigation = recipe({
 export const logo = recipe({
   base: {
     cursor: 'pointer',
-    fontFamily: vars.font.syne,
-    textTransform: 'uppercase',
+    fontFamily: vars.font.alegreya,
     color: vars.color.kleinBlue,
     fontSize: sizes.font.m,
     margin: 0,
     padding: sizes.padding.m,
-    transition: 'transform 1s ease-out',
-    ':hover': {
-      transform: 'scale(1.05)',
-    },
-    ':active': {
-      transform: 'scale(0.8)',
-    },
   },
   variants: {
     fontSize: {

@@ -4,12 +4,20 @@ import { LanguageWrapper } from '@/context/LanguageContext'
 import Footer from '@/components/Footer/Footer'
 import StoryblokProvider from '@/components/StoryblokProvider'
 import {
+  Alegreya,
   Libre_Baskerville,
   Nanum_Myeongjo,
   Noto_Serif_Display,
   Playfair_Display,
   Syne,
 } from 'next/font/google'
+
+const alegreya = Alegreya({
+  variable: '--font-alegreya',
+  weight: ['400'],
+  style: ['italic'],
+  subsets: ['latin'],
+})
 
 const libreBaskerville = Libre_Baskerville({
   variable: '--font-libre-baskerville',
@@ -66,7 +74,7 @@ export default function RootLayout({
     <StoryblokProvider>
       <LanguageWrapper>
         <html
-          className={`${libreBaskerville.variable} ${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
+          className={`${alegreya.variable} ${libreBaskerville.variable} ${nanumMyeongjo.variable} ${noto.variable} ${playfair.variable} ${syne.variable}`}
           lang={params.lang}
           dir={params.lang === 'sv' ? 'ltr' : 'rtl'}
         >
