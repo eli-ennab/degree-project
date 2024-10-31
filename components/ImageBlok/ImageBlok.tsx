@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
 import type { TImageBlok } from '@/types/Storyblok.types'
-import { container, image, imageWrapper, text } from './styles.css'
+import { container, image, imageWrapper } from './styles.css'
 
 export default function ImageBlok({ blok }: TImageBlok) {
   const [showSmooth, setShowSmooth] = useState(false)
@@ -31,7 +31,6 @@ export default function ImageBlok({ blok }: TImageBlok) {
           className={image}
           priority={true}
         />
-        <span className={text}>{blok.text}</span>
       </div>
     </div>
   )

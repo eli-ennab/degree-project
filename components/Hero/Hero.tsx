@@ -3,7 +3,7 @@ import { storyblokEditable } from '@storyblok/react/rsc'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import type { THero } from '@/types/Storyblok.types'
-import { container, image, imageWrapper, text } from './styles.css'
+import { container, image, imageWrapper } from './styles.css'
 
 export default function Hero({ blok }: THero) {
   const [showSmooth, setShowSmooth] = useState(false)
@@ -31,7 +31,6 @@ export default function Hero({ blok }: THero) {
           className={image}
           priority={true}
         />
-        <span className={text}>{blok.text}</span>
       </div>
     </div>
   )

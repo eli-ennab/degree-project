@@ -76,6 +76,7 @@ globalStyle('body', {
   margin: `0px 0px ${sizes.margin.l} 0px`,
   padding: 0,
   lineHeight: 1.8,
+  scrollBehavior: 'smooth',
 })
 
 globalStyle('li', {
