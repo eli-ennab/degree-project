@@ -101,7 +101,7 @@ export const logo = recipe({
         },
       },
       sv: {
-        fontSize: sizes.font.s,
+        fontSize: sizes.font.m,
         '@media': {
           [`screen and (min-width: ${media.tablet})`]: {
             fontSize: sizes.font.xl,
