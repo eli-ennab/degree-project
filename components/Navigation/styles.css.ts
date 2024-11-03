@@ -14,11 +14,9 @@ export const container = style({
   display: 'flex',
   justifyContent: 'space-between',
   padding: sizes.padding.mobile,
-  minHeight: '80px',
   '@media': {
     [`screen and (min-width: ${media.tablet})`]: {
       padding: sizes.padding.desktop,
-      minHeight: '110px',
     },
   },
 })

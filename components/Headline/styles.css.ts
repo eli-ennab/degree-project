@@ -2,18 +2,15 @@ import { sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 import { recipe } from '@vanilla-extract/recipes'
 
-export const container = style({
-  alignItems: 'center',
-  borderRadius: sizes.padding.xs,
-  display: 'flex',
-  height: '10vh',
-  justifyContent: 'center',
-  width: '100vw',
-  padding: `${sizes.padding.l} 0px`,
-})
-
 export const headLine = recipe({
   base: {
+    alignItems: 'center',
+    borderRadius: sizes.padding.xs,
+    display: 'flex',
+    height: '10vh',
+    justifyContent: 'center',
+    width: '100vw',
+    padding: `${sizes.padding.l} 0px`,
     fontFamily: vars.font.libreBaskerville,
     fontSize: sizes.font.l,
   },
