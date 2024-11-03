@@ -23,22 +23,6 @@ export const container = style({
   },
 })
 
-export const icon = style({
-  color: vars.color.gray,
-  fontSize: sizes.font.m,
-  padding: `0px 0px ${sizes.padding.m} 0px`,
-  zIndex: ZIndex.top,
-  ':hover': {
-    color: vars.color.black,
-  },
-  '@media': {
-    [`screen and (min-width: ${media.tablet})`]: {
-      fontSize: sizes.font.m,
-      padding: `0px 60px ${sizes.padding.l} 0px`,
-    },
-  },
-})
-
 export const link = style({
   cursor: 'pointer',
   color: vars.color.black,

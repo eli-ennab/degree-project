@@ -39,7 +39,7 @@ export default function Footer() {
 
   return (
     <footer className={container}>
-      {!params.slug &&
+      {/* {!params.slug &&
         (pathname.endsWith('sv') || pathname.endsWith('fa-ir')) && (
           <Link
             href={`/${language}/admin`}
@@ -48,9 +48,9 @@ export default function Footer() {
           >
             <CgKey />
           </Link>
-        )}
+        )} */}
 
-      {pathname.endsWith('guestbook') && (
+      {/* {pathname.endsWith('guestbook') && (
         <Link
           href={'guestbook/create'}
           className={envelope}
@@ -58,7 +58,7 @@ export default function Footer() {
         >
           <SlEnvolope />
         </Link>
-      )}
+      )} */}
 
       {isScrolled && <SlArrowUp onClick={scrollToTop} className={arrow} />}
     </footer>

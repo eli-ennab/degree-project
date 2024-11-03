@@ -1,10 +1,9 @@
 'use client'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { storyblokEditable } from '@storyblok/react/rsc'
-import Link from 'next/link'
 import { useRouter, usePathname, useParams } from 'next/navigation'
 import { useMediaQuery } from 'react-responsive'
-import { SlArrowLeft } from 'react-icons/sl'
 import { TfiClose } from 'react-icons/tfi'
 import { LiaGripLinesSolid } from 'react-icons/lia'
 import { useLanguageContext } from '@/context/LanguageContext'
@@ -13,7 +12,6 @@ import { media } from '@/vanilla_extract/styles.css'
 import {
   button,
   container,
-  icon,
   link,
   links,
   logo,
@@ -71,7 +69,7 @@ export default function Navigation({ blok }: any) {
         </h1>
       </div>
 
-      {isTabletOrMobile && !pathname.startsWith(`/${language}/guestbook`) && (
+      {isTabletOrMobile && (
         <button onClick={() => setOpen(!open)} className={button} id="icon">
           {open ? (
             <TfiClose className={menuIcon} />
@@ -79,16 +77,6 @@ export default function Navigation({ blok }: any) {
             <LiaGripLinesSolid className={menuIcon} />
           )}
         </button>
-      )}
-
-      {isTabletOrMobile && pathname.startsWith(`/${language}/guestbook`) && (
-        <Link
-          href={`/${language}`}
-          className={button}
-          aria-label={'Link to go back to homepage'}
-        >
-          <SlArrowLeft />
-        </Link>
       )}
 
       {(isTabletOrMobile && open) || !isTabletOrMobile ? (
@@ -112,28 +100,17 @@ export default function Navigation({ blok }: any) {
                 </Link>
               </li>
             ))}
-
-            {pathname.startsWith(`/${language}/guestbook`) ? (
-              <Link
-                href={`/${language}`}
-                className={icon}
-                aria-label={'Link to go back to homepage'}
+            <li>
+              <a
+                onClick={handleLanguageSwitch}
+                className={link}
+                aria-label={
+                  'Link to switch between swedish and persian language content'
+                }
               >
-                <SlArrowLeft />
-              </Link>
-            ) : (
-              <li>
-                <a
-                  onClick={handleLanguageSwitch}
-                  className={link}
-                  aria-label={
-                    'Link to switch between swedish and persian language content'
-                  }
-                >
-                  {language === 'sv' ? 'فارسی' : 'Svenska'}
-                </a>
-              </li>
-            )}
+                {language === 'sv' ? 'فارسی' : 'Svenska'}
+              </a>
+            </li>
           </ul>
         </div>
       ) : null}

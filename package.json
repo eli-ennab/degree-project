@@ -1,5 +1,5 @@
 {
-  "name": "fed22m-exjobb-eli-ennab",
+  "name": "nioosha-shams",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -10,10 +10,8 @@
     "proxy": "mkcert -install && mkcert localhost && local-ssl-proxy --source 3010 --target 3000 --cert localhost.pem --key localhost-key.pem"
   },
   "dependencies": {
-    "@firebase/auth": "^1.5.1",
     "@storyblok/react": "^2.4.8",
     "@vanilla-extract/recipes": "^0.5.1",
-    "firebase": "^10.7.1",
     "keen-slider": "^6.8.6",
     "next": "^14.2.13",
     "react": "^18",
