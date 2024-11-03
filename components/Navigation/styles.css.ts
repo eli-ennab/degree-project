@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css'
-import { ZIndex, media, sizes, vars } from '../../vanilla_extract/styles.css'
+import { ZIndex, media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { recipe } from '@vanilla-extract/recipes'
 
 export const button = style({
@@ -54,7 +54,7 @@ export const link = style({
 
 export const links = style({
   display: 'flex',
-  fontFamily: vars.font.noto,
+  fontFamily: vars.font.alegreya,
   flexDirection: 'column',
   textAlign: 'right',
   textDecoration: 'none',

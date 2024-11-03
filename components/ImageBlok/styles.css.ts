@@ -1,4 +1,3 @@
-import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { style } from '@vanilla-extract/css'
 
 export const container = style({
