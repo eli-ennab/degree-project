@@ -1,11 +1,12 @@
 import { media, sizes, vars } from '@/vanilla_extract/styles.css'
 import { recipe } from '@vanilla-extract/recipes'
-import { style } from '@vanilla-extract/css'
 
 export const wrapper = recipe({
   base: {
     display: 'flex',
     flexDirection: 'column',
+    fontFamily: vars.font.playfair,
+    fontSize: sizes.font.m,
   },
   variants: {
     alignment: {
@@ -86,9 +87,4 @@ export const container = recipe({
       },
     },
   },
-})
-
-export const text = style({
-  fontFamily: vars.font.playfair,
-  fontSize: sizes.font.m,
 })
