@@ -13,6 +13,7 @@ import LinkGrid from './LinkGrid/LinkGrid'
 import Links from './Links/Links'
 import Navigation from './Navigation/Navigation'
 import Page from './Page'
+import RichText from './RichText/RichText'
 
 const components = {
   articleItem: ArticleItem,
@@ -27,6 +28,7 @@ const components = {
   links: Links,
   navigation: Navigation,
   page: Page,
+  richText: RichText,
 }
 
 storyblokInit({
