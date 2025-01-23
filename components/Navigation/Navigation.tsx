@@ -40,11 +40,12 @@ export default function Navigation({ blok }: any) {
   }
 
   const blokLinkData = blok?.links
-    .map((linkGrid: any) =>
-      linkGrid.links.map((linkItem: TLink) => ({
-        name: linkItem.name,
-        href: linkItem.href,
-      }))
+    .map(
+      (linkGrid: any) =>
+        linkGrid?.links?.map((linkItem: TLink) => ({
+          name: linkItem.name,
+          href: linkItem.href,
+        }))
     )
     .flat()
 
@@ -92,11 +93,11 @@ export default function Navigation({ blok }: any) {
             {blokLinkData?.map((linkData: any, index: number) => (
               <li key={index}>
                 <Link
-                  href={`/${language}/${linkData.href}`}
+                  href={`/${language}/${linkData?.href}`}
                   className={link}
-                  aria-label={`Link to go to ${linkData.name}`}
+                  aria-label={`Link to go to ${linkData?.name}`}
                 >
-                  {linkData.name}
+                  {linkData?.name}
                 </Link>
               </li>
             ))}

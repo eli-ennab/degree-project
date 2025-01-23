@@ -1,19 +1,10 @@
 'use client'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
-import { useParams, usePathname } from 'next/navigation'
-import { CgKey } from 'react-icons/cg'
 import { SlArrowUp } from 'react-icons/sl'
-import { SlEnvolope } from 'react-icons/sl'
-import { arrow, container, envelope, key } from './styles.css'
-import { useLanguageContext } from '@/context/LanguageContext'
+import { arrow, container } from './styles.css'
 
 export default function Footer() {
   const [isScrolled, setIsScrolled] = useState(false)
-  const params = useParams()
-  const pathname = usePathname()
-  const { language } = useLanguageContext()
-
   const isBrowser = () => typeof window !== 'undefined'
 
   const scrollToTop = () => {
@@ -39,27 +30,6 @@ export default function Footer() {
 
   return (
     <footer className={container}>
-      {/* {!params.slug &&
-        (pathname.endsWith('sv') || pathname.endsWith('fa-ir')) && (
-          <Link
-            href={`/${language}/admin`}
-            className={key}
-            aria-label={'Link to go admin page'}
-          >
-            <CgKey />
-          </Link>
-        )} */}
-
-      {/* {pathname.endsWith('guestbook') && (
-        <Link
-          href={'guestbook/create'}
-          className={envelope}
-          aria-label={'Link to guestbook form'}
-        >
-          <SlEnvolope />
-        </Link>
-      )} */}
-
       {isScrolled && <SlArrowUp onClick={scrollToTop} className={arrow} />}
     </footer>
   )
